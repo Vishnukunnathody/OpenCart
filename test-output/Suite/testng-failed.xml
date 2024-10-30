@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Test(failed)">
+    <classes>
+      <class name="tests.Register">
+        <methods>
+          <include name="verifyUserCannotuseInvalidPhoneNumber"/>
+          <include name="Setup"/>
+          <include name="verifyPassWordFieldFollowComplexityStandards"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- tests.Register -->
+      <class name="tests.Login">
+        <methods>
+          <include name="verifyNavigatingBackAfterSuccessfullLogin"/>
+          <include name="Setup"/>
+          <include name="tearDown"/>
+          <include name="verifyNavigatingBackAfterLogout"/>
+        </methods>
+      </class> <!-- tests.Login -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->

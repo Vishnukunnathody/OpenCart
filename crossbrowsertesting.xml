@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Crossbrowser-Suite" >
+	
+      
+	<listeners>
+		<listener class-name="utils.ReportUtil"></listener>
+	</listeners>
+	
+	<test name="chrometest">
+		<parameter name="os" value="Windows"></parameter>       <!-- Created parameter with os Windows -->
+		<parameter name="browser" value="chrome"></parameter>   <!-- Created parameter with browser chrome -->
+		<classes>
+			<class name="tests.LoginTest"></class>
+			<class name="tests.RegisterTest"></class>
+		</classes>
+	</test>
+	
+	<test name="edgetest">
+		<parameter name="os" value="Windows"></parameter>       <!-- Created parameter with os Windows -->
+		<parameter name="browser" value="edge"></parameter>   <!-- Created parameter with browser chrome -->
+		<classes>
+			<class name="tests.LoginTest"></class>
+			<class name="tests.RegisterTest"></class>
+		</classes>
+	</test>
+	
+	<test name="firefoxtest">
+		<parameter name="os" value="Windows"></parameter>       <!-- Created parameter with os Windows -->
+		<parameter name="browser" value="firefox"></parameter>   <!-- Created parameter with browser chrome -->
+		<classes>
+			<class name="tests.LoginTest"></class>
+			<class name="tests.RegisterTest"></class>
+		</classes>
+	</test>
+	
+</suite> 
