@@ -34,12 +34,14 @@ public class ReportUtil implements ITestListener {
 	public static void setDriver(WebDriver driver) {
 		ReportUtil.driver = driver;
 	}
-	
-	public static void addStepLog(Status status, String message) {
+
+	public static String addStepLog(Status status, String message) {
 		if (test != null) {
-	        test.log(status, message);
-	    }
+			test.log(status, message);
+		}
+		return message;
 	}
+
 	public void onStart(ITestContext testContext) {
 
 		/*
@@ -79,36 +81,34 @@ public class ReportUtil implements ITestListener {
 		if (!includedGroups.isEmpty()) {
 			extent.setSystemInfo("Groups", includedGroups.toString()); // displays the info about the groupings
 		}
-		
+
 		logger.info("Test execution started for: {}", testContext.getSuite().getName());
+
 	}
 
 	@Override
 	public void onTestStart(ITestResult result) {
+		test = extent.createTest(result.getName());
 		// Log when a test starts
-
 		logger.info("Test '{}' started running.", result.getName());
+		test.log(Status.INFO, result.getName() + "    TEST EXECUTION STARTED.");
 
 	}
 
 	public void onTestSuccess(ITestResult result) {
-		test = extent.createTest(result.getTestClass().getName());// on success getting the class name
 		test.assignCategory(result.getMethod().getGroups()); // on success getting the groups in the report
-		test.log(Status.PASS, result.getName() + " --> got successfully executed.");
+		test.log(Status.PASS, result.getName() + "    TEST GOT PASSED.");
 		logger.info("Test '{}'Test PASSED.", result.getName());
 	}
 
 	public void onTestFailure(ITestResult result) {
-		test = extent.createTest(result.getTestClass().getName());
 		test.assignCategory(result.getMethod().getGroups());
-
-		test.log(Status.FAIL, result.getName() + " got failed.");
 		test.log(Status.INFO, result.getThrowable().getMessage());// displays the fail message
+		test.log(Status.FAIL, result.getName() + " TEST GOT FAILED");
+		
 		if (driver != null) {
 			try {
 				String imgPath = new BasePage(driver).captureScreen(result.getName());// taking the screen shot when the
-																						// test
-																						// fails .
 				test.addScreenCaptureFromPath(imgPath);
 			} catch (IOException e1) {
 				e1.printStackTrace();

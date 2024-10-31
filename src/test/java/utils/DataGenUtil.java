@@ -20,12 +20,12 @@ public class DataGenUtil {
 		return (generatedEmail.toUpperCase() + "@gmail.com");
 	}
 
-	public String randomNum(int maxlength) {
+	public static String randomNum(int maxlength) {
 		String generatedNum = RandomStringUtils.randomNumeric(maxlength);
 		return generatedNum;
 	}
 
-	public String randomPass() {
+	public static String randomPass() {
 		String generatedPass = randomString(4) + randomNum(3) + "@";
 		return generatedPass;
 	}

@@ -33,5 +33,27 @@ public class DataProviders {
 		
 		return data;
 	}
+	@DataProvider(name="PwdComplexityDataSupplier")
+	public Object[][] dataProviderMethodForValidatingPwdComplexity() {
+		try {
+			myXLSReader = new MyXLSReader(excelFilePath);
+		    data = ExcelUtil.getTestData(myXLSReader,"RegisterTest- Password complexity","data");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return data;
+	}
+	@DataProvider(name="invalidPhoneNumbersDataSupplier")
+	public Object[][] dataProviderMethodForValidatingInvalidPhoneNumbers() {
+		try {
+			myXLSReader = new MyXLSReader(excelFilePath);
+		    data = ExcelUtil.getTestData(myXLSReader,"RegisterTest- InvalidPhone Numbers","data");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return data;
+	}
 
 }

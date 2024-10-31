@@ -1,11 +1,17 @@
 package tests;
 
+import java.util.HashMap;
+
 import org.testng.Assert;
 import org.testng.annotations.Test;
+
+import com.aventstack.extentreports.Status;
 
 import pagesobjects.LandingPage;
 import utils.Constant;
 import utils.DataGenUtil;
+import utils.DataProviders;
+import utils.ReportUtil;
 
 public class RegisterTest extends BaseSteps {
 
@@ -107,38 +113,16 @@ public class RegisterTest extends BaseSteps {
 
 	}
 
-	@Test(priority = 10,groups= {"Regression","Master"})
-	public void verifyUserCannotuseInvalidPhoneNumber() {
+	@Test(priority = 10,groups= {"DataDriven","Master"},dataProvider="invalidPhoneNumbersDataSupplier",dataProviderClass=DataProviders.class)
+	public void verifyUserCannotuseInvalidPhoneNumber(HashMap<String,String>hmap) {
 		registerPage = new LandingPage(driver).navigateToRegisterPage();
-		registerPage.validateTelephoneField(prop.getProperty("fristname"), prop.getProperty("lastname"),
-				DataGenUtil.generateRandomNewEmail(), prop.getProperty("tooshortint"),
-				prop.getProperty("validpassword"), prop.getProperty("validpassword"));
+		registerPage.validateTelephoneField(hmap.get("FirstName"), hmap.get("LastName"),
+				DataGenUtil.generateRandomNewEmail(), hmap.get("Telephone"),
+				hmap.get("Password"), hmap.get("PasswordConfirm"));
+		ReportUtil.addStepLog(Status.INFO, hmap.get("Description"));
 		Assert.assertNotEquals(driver.getTitle(), Constant.Your_Account_Created_PageTitle);
 
-		registerPage.validateTelephoneField(prop.getProperty("fristname"), prop.getProperty("lastname"),
-				DataGenUtil.generateRandomNewEmail(), prop.getProperty("nonnemeric"), prop.getProperty("validpassword"),
-				prop.getProperty("validpassword"));
-		Assert.assertNotEquals(driver.getTitle(), Constant.Your_Account_Created_PageTitle);
-
-		registerPage.validateTelephoneField(prop.getProperty("fristname"), prop.getProperty("lastname"),
-				DataGenUtil.generateRandomNewEmail(), prop.getProperty("Specialchar"),
-				prop.getProperty("validpassword"), prop.getProperty("validpassword"));
-		Assert.assertNotEquals(driver.getTitle(), Constant.Your_Account_Created_PageTitle);
-
-		registerPage.validateTelephoneField(prop.getProperty("fristname"), prop.getProperty("lastname"),
-				DataGenUtil.generateRandomNewEmail(), prop.getProperty("toolong"), prop.getProperty("validpassword"),
-				prop.getProperty("validpassword"));
-		Assert.assertNotEquals(driver.getTitle(), Constant.Your_Account_Created_PageTitle);
-
-		registerPage.validateTelephoneField(prop.getProperty("fristname"), prop.getProperty("lastname"),
-				DataGenUtil.generateRandomNewEmail(), "", prop.getProperty("validpassword"),
-				prop.getProperty("validpassword"));
-		Assert.assertNotEquals(driver.getTitle(), Constant.Your_Account_Created_PageTitle);
-
-		registerPage.validateTelephoneField(prop.getProperty("fristname"), prop.getProperty("lastname"),
-				DataGenUtil.generateRandomNewEmail(), prop.getProperty("telephone"), prop.getProperty("validpassword"),
-				prop.getProperty("validpassword"));
-		Assert.assertEquals(driver.getTitle(), Constant.Your_Account_Created_PageTitle);
+		
 	}
 
 	@Test(priority = 11,groups= {"Regression","Master"})
@@ -173,34 +157,16 @@ public class RegisterTest extends BaseSteps {
 
 	}
 
-	@Test(priority = 13,groups= {"Regression","Master"})
-	public void verifyPassWordFieldFollowComplexityStandards() {
+	@Test(priority = 13,dataProvider="PwdComplexityDataSupplier",dataProviderClass = DataProviders.class,groups= {"DataDriven","Master"})
+	public void verifyPassWordFieldFollowComplexityStandards(HashMap<String, String> hMap) {
 
 		registerPage = new LandingPage(driver).navigateToRegisterPage();
-		registerPage.registerAnAccount(prop.getProperty("fristname"), prop.getProperty("lastname"),
-				DataGenUtil.generateRandomNewEmail(), prop.getProperty("telephone"),
-				prop.getProperty("passnouppercaseletters"), prop.getProperty("passnouppercaseletters"), null, true);
+		registerPage.registerAnAccount(hMap.get("FirstName"), hMap.get("LastName"),
+				DataGenUtil.generateRandomNewEmail(),hMap.get("Telephone"),
+				hMap.get("Password"), hMap.get("PasswordConfirm"), null, true);
+		ReportUtil.addStepLog(Status.INFO, hMap.get("Description"));
 		Assert.assertNotEquals(registerPage.getTitle(), Constant.Your_Account_Created_PageTitle);
-
-		registerPage.registerAnAccount(prop.getProperty("fristname"), prop.getProperty("lastname"),
-				DataGenUtil.generateRandomNewEmail(), prop.getProperty("telephone"),
-				prop.getProperty("passnolowercaseletters"), prop.getProperty("passnouppercaseletters"), null, true);
-		Assert.assertNotEquals(registerPage.getTitle(), Constant.Your_Account_Created_PageTitle);
-
-		registerPage.registerAnAccount(prop.getProperty("fristname"), prop.getProperty("lastname"),
-				DataGenUtil.generateRandomNewEmail(), prop.getProperty("telephone"), prop.getProperty("passnonumbers"),
-				prop.getProperty("passnouppercaseletters"), null, true);
-		Assert.assertNotEquals(registerPage.getTitle(), Constant.Your_Account_Created_PageTitle);
-
-		registerPage.registerAnAccount(prop.getProperty("fristname"), prop.getProperty("lastname"),
-				DataGenUtil.generateRandomNewEmail(), prop.getProperty("telephone"),
-				prop.getProperty("passnospecialchars"), prop.getProperty("passnouppercaseletters"), null, true);
-		Assert.assertNotEquals(registerPage.getTitle(), Constant.Your_Account_Created_PageTitle);
-
-		registerPage.registerAnAccount(prop.getProperty("fristname"), prop.getProperty("lastname"),
-				DataGenUtil.generateRandomNewEmail(), prop.getProperty("telephone"), prop.getProperty("passwithspaces"),
-				prop.getProperty("passnouppercaseletters"), null, true);
-		Assert.assertNotEquals(registerPage.getTitle(), Constant.Your_Account_Created_PageTitle);
+			
 	}
 
 	@Test(priority = 14,groups= {"Regression","Master"})

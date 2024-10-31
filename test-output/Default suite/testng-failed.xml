@@ -5,20 +5,9 @@
     <classes>
       <class name="tests.LoginTest">
         <methods>
-          <include name="verifyPasswordFieldToggleToHide"/>
-          <include name="verifyLoginToApplicationUsingValidEmailInvalidPass"/>
           <include name="Setup"/>
-          <include name="verifyPasswordNotVisibleInPageSource"/>
-          <include name="verifyLoginUsingInvalidCredentials"/>
-          <include name="verifyForgotPasswordLink"/>
-          <include name="verifyLoginToApplicationUsingInvalidCredentials"/>
-          <include name="verifyPasswordCannotCopied"/>
-          <include name="verifyMaxLoginAttempts"/>
-          <include name="verifyLoginToApplicationUsingInvalidEmailValidPass"/>
-          <include name="verifyPlaceholdersOnLoginPage"/>
-          <include name="verifyLoginToApplicationUsingvalidCredentials"/>
+          <include name="verifyLoggingAfterchangingPassword"/>
           <include name="tearDown"/>
-          <include name="verifyLoginToApplicationUsingNoCredentilals"/>
         </methods>
       </class> <!-- tests.LoginTest -->
     </classes>

@@ -36,7 +36,7 @@ public class BaseSteps {
 	AccountLogoutPage accountLogoutPage;
 	ChangePasswordPage changePasswordPage;
 
-	@BeforeMethod(groups = { "Sanity", "Regression", "Master", "DataDriven" })
+	@BeforeMethod(groups = { "Sanity", "Regression", "Master", "DataDriven","test" })
 	@Parameters({ "os", "browser" })
 	public void Setup(String os, String br) {
 
@@ -71,7 +71,7 @@ public class BaseSteps {
 		driver.get(prop.getProperty("url"));
 	}
 
-	@AfterMethod(groups = { "Sanity", "Regression", "Master", "DataDriven" })
+	@AfterMethod(groups = { "Sanity", "Regression", "Master", "DataDriven" ,"test"})
 	public void tearDown() {
 		if (driver != null) {
 			driver.quit();

@@ -25,7 +25,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+      <span class="top-banner-font-1">1 suite</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -39,7 +39,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Grouping_Suite" class="navigator-link">
-              <span class="suite-name border-failed">Grouping-Suite</span>
+              <span class="suite-name border-passed">Grouping-Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -92,21 +92,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">4 methods, 1 failed,   3 passed</span>
-                  </li>
-                  <li>
-                    <span class="method-list-title failed">Failed methods</span>
-                    <span class="show-or-hide-methods failed">
-                      <a href="#" panel-name="suite-Grouping_Suite" class="hide-methods failed suite-Grouping_Suite"> (hide)</a> <!-- hide-methods failed suite-Grouping_Suite -->
-                      <a href="#" panel-name="suite-Grouping_Suite" class="show-methods failed suite-Grouping_Suite"> (show)</a> <!-- show-methods failed suite-Grouping_Suite -->
-                    </span>
-                    <div class="method-list-content failed suite-Grouping_Suite">
-                      <span>
-                        <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Grouping_Suite" title="tests.LoginTest" class="method navigator-link" hash-for-method="verifyLoginToApplicationUsingvalidCredentials({Runmode=Y, Description=Admin Login, Username=vishnu.71881@gmail.com, Expected Result=Success, Passw...)">verifyLoginToApplicationUsingvalidCredentials({Runmode=Y, Description=Admin Login, Username=vishnu.71881@gmail.com, Expected Result=Success, Passw...)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                    </div> <!-- method-list-content failed suite-Grouping_Suite -->
+                    <span class="method-stats">1 method,   1 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -117,17 +103,7 @@
                     <div class="method-list-content passed suite-Grouping_Suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Grouping_Suite" title="tests.LoginTest" class="method navigator-link" hash-for-method="verifyLoginToApplicationUsingvalidCredentials({Runmode=Y, Description=Supervisor Login, Username=vishnu.71882@gmail.com, Expected Result=Success, ...)">verifyLoginToApplicationUsingvalidCredentials({Runmode=Y, Description=Supervisor Login, Username=vishnu.71882@gmail.com, Expected Result=Success, ...)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Grouping_Suite" title="tests.LoginTest" class="method navigator-link" hash-for-method="verifyLoginToApplicationUsingvalidCredentials({Runmode=Y, Description=Team Member Login, Username=vishnu.71883@gmail.com, Expected Result=Success,...)">verifyLoginToApplicationUsingvalidCredentials({Runmode=Y, Description=Team Member Login, Username=vishnu.71883@gmail.com, Expected Result=Success,...)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Grouping_Suite" title="tests.LoginTest" class="method navigator-link" hash-for-method="verifyLoginToApplicationUsingvalidCredentials({Runmode=Y, Description=Trainee Login, Username=vishnu.71884@gmail.com, Expected Result=Success, Pas...)">verifyLoginToApplicationUsingvalidCredentials({Runmode=Y, Description=Trainee Login, Username=vishnu.71884@gmail.com, Expected Result=Success, Pas...)</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Grouping_Suite" title="tests.LogoutTest" class="method navigator-link" hash-for-method="logoutFromMyAccountDropMenu">logoutFromMyAccountDropMenu</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Grouping_Suite -->
@@ -142,56 +118,17 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Grouping_Suite" class="panel Grouping_Suite">
-          <div class="suite-Grouping_Suite-class-failed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="failed.png"/>
-              <span class="class-name">tests.LoginTest</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="verifyLoginToApplicationUsingvalidCredentials({Runmode=Y, Description=Admin Login, Username=vishnu.71881@gmail.com, Expected Result=Success, Passw...)">
-                  </a> <!-- verifyLoginToApplicationUsingvalidCredentials({Runmode=Y, Description=Admin Login, Username=vishnu.71881@gmail.com, Expected Result=Success, Passw...) -->
-                  <span class="method-name">verifyLoginToApplicationUsingvalidCredentials</span>
-                  <span class="parameters">({Runmode=Y, Description=Admin Login, Username=vishnu.71881@gmail.com, Expected Result=Success, Password=Vishnu123})</span>
-                  <div class="stack-trace">java.lang.NullPointerException: Cannot invoke &quot;com.aventstack.extentreports.ExtentTest.log(com.aventstack.extentreports.Status, String)&quot; because &quot;utils.ReportUtil.test&quot; is null
-	at utils.ReportUtil.addStepLog(ReportUtil.java:40)
-	at tests.LoginTest.verifyLoginToApplicationUsingvalidCredentials(LoginTest.java:24)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-... Removed 25 stack frames
-</div> <!-- stack-trace -->
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Grouping_Suite-class-failed -->
           <div class="suite-Grouping_Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">tests.LoginTest</span>
+              <span class="class-name">tests.LogoutTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="verifyLoginToApplicationUsingvalidCredentials({Runmode=Y, Description=Supervisor Login, Username=vishnu.71882@gmail.com, Expected Result=Success, ...)">
-                  </a> <!-- verifyLoginToApplicationUsingvalidCredentials({Runmode=Y, Description=Supervisor Login, Username=vishnu.71882@gmail.com, Expected Result=Success, ...) -->
-                  <span class="method-name">verifyLoginToApplicationUsingvalidCredentials</span>
-                  <span class="parameters">({Runmode=Y, Description=Supervisor Login, Username=vishnu.71882@gmail.com, Expected Result=Success, Password=Vishnu123})</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="verifyLoginToApplicationUsingvalidCredentials({Runmode=Y, Description=Team Member Login, Username=vishnu.71883@gmail.com, Expected Result=Success,...)">
-                  </a> <!-- verifyLoginToApplicationUsingvalidCredentials({Runmode=Y, Description=Team Member Login, Username=vishnu.71883@gmail.com, Expected Result=Success,...) -->
-                  <span class="method-name">verifyLoginToApplicationUsingvalidCredentials</span>
-                  <span class="parameters">({Runmode=Y, Description=Team Member Login, Username=vishnu.71883@gmail.com, Expected Result=Success, Password=Vishnu123})</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="verifyLoginToApplicationUsingvalidCredentials({Runmode=Y, Description=Trainee Login, Username=vishnu.71884@gmail.com, Expected Result=Success, Pas...)">
-                  </a> <!-- verifyLoginToApplicationUsingvalidCredentials({Runmode=Y, Description=Trainee Login, Username=vishnu.71884@gmail.com, Expected Result=Success, Pas...) -->
-                  <span class="method-name">verifyLoginToApplicationUsingvalidCredentials</span>
-                  <span class="parameters">({Runmode=Y, Description=Trainee Login, Username=vishnu.71884@gmail.com, Expected Result=Success, Password=Vishnu123})</span>
+                  <a name="logoutFromMyAccountDropMenu">
+                  </a> <!-- logoutFromMyAccountDropMenu -->
+                  <span class="method-name">logoutFromMyAccountDropMenu</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -205,25 +142,27 @@
             <pre>
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
-&lt;suite name=&quot;Grouping-Suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
+&lt;suite name=&quot;Grouping-Suite&quot; guice-stage=&quot;DEVELOPMENT&quot; verbose=&quot;5&quot;&gt;
   &lt;groups&gt;
     &lt;run&gt;
-      &lt;include name=&quot;DataDriven&quot;/&gt;
+      &lt;include name=&quot;test&quot;/&gt;
     &lt;/run&gt;
   &lt;/groups&gt;
   &lt;groups&gt;
     &lt;run&gt;
-      &lt;include name=&quot;DataDriven&quot;/&gt;
+      &lt;include name=&quot;test&quot;/&gt;
     &lt;/run&gt;
   &lt;/groups&gt;
   &lt;listeners&gt;
     &lt;listener class-name=&quot;utils.ReportUtil&quot;/&gt;
   &lt;/listeners&gt;
-  &lt;test thread-count=&quot;5&quot; name=&quot;Test&quot;&gt;
+  &lt;test thread-count=&quot;5&quot; name=&quot;Test&quot; verbose=&quot;5&quot;&gt;
     &lt;parameter name=&quot;os&quot; value=&quot;Windows&quot;/&gt;
     &lt;parameter name=&quot;browser&quot; value=&quot;chrome&quot;/&gt;
     &lt;classes&gt;
       &lt;class name=&quot;tests.LoginTest&quot;/&gt;
+      &lt;class name=&quot;tests.RegisterTest&quot;/&gt;
+      &lt;class name=&quot;tests.LogoutTest&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Test --&gt;
 &lt;/suite&gt; &lt;!-- Grouping-Suite --&gt;
@@ -237,7 +176,7 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">Test (1 class)</span>
+                <span class="test-name">Test (3 classes)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -248,10 +187,10 @@
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="test-group">
-              <span class="test-group-name">DataDriven</span>
+              <span class="test-group-name">test</span>
               <br/>
               <div class="method-in-group">
-                <span class="method-in-group-name">verifyLoginToApplicationUsingvalidCredentials</span>
+                <span class="method-in-group-name">logoutFromMyAccountDropMenu</span>
                 <br/>
               </div> <!-- method-in-group -->
             </div> <!-- test-group -->
@@ -271,28 +210,16 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(4);
+data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'verifyLoginToApplicationUsingvalidCredentials')
-data.setCell(0, 2, 'tests.LoginTest')
-data.setCell(0, 3, 2251);
-data.setCell(1, 0, 1)
-data.setCell(1, 1, 'verifyLoginToApplicationUsingvalidCredentials')
-data.setCell(1, 2, 'tests.LoginTest')
-data.setCell(1, 3, 2219);
-data.setCell(2, 0, 2)
-data.setCell(2, 1, 'verifyLoginToApplicationUsingvalidCredentials')
-data.setCell(2, 2, 'tests.LoginTest')
-data.setCell(2, 3, 2195);
-data.setCell(3, 0, 3)
-data.setCell(3, 1, 'verifyLoginToApplicationUsingvalidCredentials')
-data.setCell(3, 2, 'tests.LoginTest')
-data.setCell(3, 3, 2190);
+data.setCell(0, 1, 'logoutFromMyAccountDropMenu')
+data.setCell(0, 2, 'tests.LogoutTest')
+data.setCell(0, 3, 3975);
 window.suiteTableData['Grouping_Suite']= { tableData: data, tableDiv: 'times-div-Grouping_Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 8 seconds</span>
+              <span class="suite-total-time">Total running time: 3 seconds</span>
               <div id="times-div-Grouping_Suite">
               </div> <!-- times-div-Grouping_Suite -->
             </div> <!-- times-div -->
@@ -307,35 +234,72 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Grouping_Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">13 ignored methods</span>
+            <span class="header-content">29 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="ignored-class-div">
+              <span class="ignored-class-name">tests.RegisterTest</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">verifyRegisteringWithNotSelectingPrivacyPolicy</span>
+                <br/>
+                <span class="ignored-method-name">verifyRegisteringWithExistingDetails</span>
+                <br/>
+                <span class="ignored-method-name">verifyRegisteringWithNotEnteringPassConfirm</span>
+                <br/>
+                <span class="ignored-method-name">verifyAsterickSymbolForMandatoryFields</span>
+                <br/>
+                <span class="ignored-method-name">verifyRegisterAccountWithoutanyDetails</span>
+                <br/>
+                <span class="ignored-method-name">verifyDiffWayNavigatingToRegisterAccount</span>
+                <br/>
+                <span class="ignored-method-name">verifyRegisterAccountUsingAllFields</span>
+                <br/>
+                <span class="ignored-method-name">verifyConfirmationEmailSendForSuccessfullRegistration</span>
+                <br/>
+                <span class="ignored-method-name">verifyPasswordAndConfirmPasswordToggledToHide</span>
+                <br/>
+                <span class="ignored-method-name">verifyRegisterAccountNoSelectedForNewsletter</span>
+                <br/>
+                <span class="ignored-method-name">verifyRegisterAccountYesSelectedForNewsletter</span>
+                <br/>
+                <span class="ignored-method-name">verifyUserCannotuseInvalidPhoneNumber</span>
+                <br/>
+                <span class="ignored-method-name">verifyRegisterAccountUsingMandatoryFields</span>
+                <br/>
+                <span class="ignored-method-name">verifyCheckboxNotCheckedByDefault</span>
+                <br/>
+                <span class="ignored-method-name">verifyInvalidEmailTooltipMsg</span>
+                <br/>
+                <span class="ignored-method-name">verifyThePlaceholders</span>
+                <br/>
+                <span class="ignored-method-name">verifyRegisteringWithDifferentPassAndConfirmPass</span>
+                <br/>
+                <span class="ignored-method-name">verifyPassWordFieldFollowComplexityStandards</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
+            <div class="ignored-class-div">
               <span class="ignored-class-name">tests.LoginTest</span>
               <div class="ignored-methods-div">
+                <span class="ignored-method-name">verifyMaxLoginAttempts</span>
+                <br/>
+                <span class="ignored-method-name">verifyNavigatingBackAfterSuccessfullLogin</span>
+                <br/>
                 <span class="ignored-method-name">verifyPasswordCannotCopied</span>
                 <br/>
                 <span class="ignored-method-name">verifyPasswordFieldToggleToHide</span>
                 <br/>
-                <span class="ignored-method-name">verifyLoginToApplicationUsingValidEmailInvalidPass</span>
-                <br/>
-                <span class="ignored-method-name">verifyLoginToApplicationUsingInvalidEmailValidPass</span>
-                <br/>
-                <span class="ignored-method-name">verifyPasswordNotVisibleInPageSource</span>
-                <br/>
-                <span class="ignored-method-name">verifyLoginToApplicationUsingInvalidCredentials</span>
-                <br/>
-                <span class="ignored-method-name">verifyLoginToApplicationUsingNoCredentilals</span>
-                <br/>
-                <span class="ignored-method-name">verifyMaxLoginAttempts</span>
-                <br/>
-                <span class="ignored-method-name">verifyLoginUsingInvalidCredentials</span>
+                <span class="ignored-method-name">verifyLoginToApplicationUsingvalidCredentials</span>
                 <br/>
                 <span class="ignored-method-name">verifyForgotPasswordLink</span>
                 <br/>
-                <span class="ignored-method-name">verifyNavigatingBackAfterSuccessfullLogin</span>
-                <br/>
                 <span class="ignored-method-name">verifyPlaceholdersOnLoginPage</span>
+                <br/>
+                <span class="ignored-method-name">verifyPasswordNotVisibleInPageSource</span>
+                <br/>
+                <span class="ignored-method-name">verifyLoggingAfterchangingPassword</span>
+                <br/>
+                <span class="ignored-method-name">verifyLoginToApplicationUsingInvalidCredentials</span>
                 <br/>
                 <span class="ignored-method-name">verifyNavigatingBackAfterLogout</span>
                 <br/>
@@ -349,56 +313,18 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">tests.LoginTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">tests.LogoutTest</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
                 <span class="method-name">Setup(Windows, chrome)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <img src="failed.png">
-                </img>
-                <span class="method-name">verifyLoginToApplicationUsingvalidCredentials({Runmode=Y, Description=Admin Login, Username=vishnu.71881@gmail.com, Expected Result=Success, Passw...)</span>
-                <span class="method-start">4583 ms</span>
+                <span class="method-name">logoutFromMyAccountDropMenu</span>
+                <span class="method-start">4755 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">6979 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-method before">
-                <span class="method-name">Setup(Windows, chrome)</span>
-                <span class="method-start">7101 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">verifyLoginToApplicationUsingvalidCredentials({Runmode=Y, Description=Supervisor Login, Username=vishnu.71882@gmail.com, Expected Result=Success, ...)</span>
-                <span class="method-start">11272 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">tearDown</span>
-                <span class="method-start">13493 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-method before">
-                <span class="method-name">Setup(Windows, chrome)</span>
-                <span class="method-start">13619 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">verifyLoginToApplicationUsingvalidCredentials({Runmode=Y, Description=Team Member Login, Username=vishnu.71883@gmail.com, Expected Result=Success,...)</span>
-                <span class="method-start">17728 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">tearDown</span>
-                <span class="method-start">19919 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-method before">
-                <span class="method-name">Setup(Windows, chrome)</span>
-                <span class="method-start">20012 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">verifyLoginToApplicationUsingvalidCredentials({Runmode=Y, Description=Trainee Login, Username=vishnu.71884@gmail.com, Expected Result=Success, Pas...)</span>
-                <span class="method-start">24171 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">tearDown</span>
-                <span class="method-start">26367 ms</span>
+                <span class="method-start">8735 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

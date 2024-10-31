@@ -151,7 +151,7 @@ public class RegisterPage extends BasePage {
 		return getText(emailAddressAlreadyRegMsg);
 	}
 
-	public void registerAnAccount(String fristnameData, String lastnameData, String emailData, String telephoneData,
+	public AccountSuccessPage registerAnAccount(String fristnameData, String lastnameData, String emailData, String telephoneData,
 			String passwordData, String confirmPassData, Boolean subscribeNewsLetter, boolean checkPrivacyPolicy) {
 		enterFristName(fristnameData);
 		enterLastName(lastnameData);
@@ -173,6 +173,8 @@ public class RegisterPage extends BasePage {
 			checkPrivacyPolicy();
 		}
 		clickOnContinueButton();
+		return new AccountSuccessPage(driver);
+		
 	}
 
 	public RegisterPage clickOnRightregisterGrplink() {
