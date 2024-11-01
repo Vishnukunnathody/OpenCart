@@ -15,7 +15,7 @@ import utils.ReportUtil;
 
 public class LoginTest extends BaseSteps {
 
-	@Test(priority = 1, dataProvider = "ValidloginDataSupplier", dataProviderClass = DataProviders.class, groups = {
+	@Test(priority = 1, dataProvider = "ValidloginDataSupplier", dataProviderClass = DataProviders.class, groups = {"Regression",
 			"DataDriven", "Master" })
 	public void verifyLoginToApplicationUsingvalidCredentials(HashMap<String, String> hMap) throws Exception {
 		loginPage = new LandingPage(driver).navigateToLoginPage();
@@ -25,7 +25,7 @@ public class LoginTest extends BaseSteps {
 
 	}
 
-	@Test(priority = 2, dataProvider = "InvalidloginDataSupplier", dataProviderClass = DataProviders.class, groups = {
+	@Test(priority = 2, dataProvider = "InvalidloginDataSupplier", dataProviderClass = DataProviders.class, groups = {"Regression",
 			"DataDriven", "Master" })
 	public void verifyLoginToApplicationUsingInvalidCredentials(HashMap<String, String> hMap) {
 		loginPage = new LandingPage(driver).navigateToLoginPage();

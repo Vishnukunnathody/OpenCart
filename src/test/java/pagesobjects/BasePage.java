@@ -69,6 +69,10 @@ public class BasePage {
 	public void navigateBack(WebDriver driver) {
 		driver.navigate().back();
 	}
+	public static void deleteCookies(WebDriver driver) {
+		driver.manage().deleteAllCookies();
+		driver.navigate().refresh();
+	}
 
 	protected void getNewWindowTab(WebDriver driver) {
 		driver.switchTo().newWindow(WindowType.TAB);

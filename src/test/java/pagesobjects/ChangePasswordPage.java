@@ -15,19 +15,19 @@ public class ChangePasswordPage extends BasePage {
 	
 	
 	@FindBy(how = How.XPATH, using = "//h1[text()='Change Password']")
-	WebElement ChangePasswordLabel;
+	private WebElement ChangePasswordLabel;
 
 	@FindBy(how = How.XPATH, using = "//input[@id='input-password']")
-	WebElement enterPassword;
+	private WebElement enterPassword;
 
 	@FindBy(how = How.XPATH, using = "//input[@id='input-confirm']")
-	WebElement PasswordConfirm;
+	private WebElement PasswordConfirm;
 	
 	@FindBy(how = How.XPATH, using = "//input[@class='btn btn-primary']")
-	WebElement continueButton;
+	private WebElement continueButton;
 	
 	@FindBy(how = How.XPATH, using = "//a[@class='btn btn-default']")
-	WebElement backButton;
+	private WebElement backButton;
 	
 	
 	public void enterPassword( String text) {

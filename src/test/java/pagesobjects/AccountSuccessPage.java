@@ -22,10 +22,15 @@ public class AccountSuccessPage extends BasePage{
 	private WebElement logOutoptionUnderMyAccount;
 
 	@FindBy(how=How.XPATH, using =" //div[@class='alert alert-success alert-dismissible']")
-	public WebElement passwordUpdatedSuccessMsg;
+	private WebElement passwordUpdatedSuccessMsg;
 	
 	@FindBy(xpath="//a[text()='Change your password']")
 	private WebElement changePasswordLink;
+	
+	@FindBy(how=How.XPATH,using ="//a[@class='list-group-item'][text()='Logout']")
+	private WebElement rightColumnLogoutOption;
+	
+	
 	
 	
 	public boolean displayLogoutOptionStatus() {
@@ -50,6 +55,9 @@ public class AccountSuccessPage extends BasePage{
      public ChangePasswordPage clickOnchangePasswordLink() {
     	 clickElement(changePasswordLink);
   		return new ChangePasswordPage(driver);
-	
-}
+	}
+     public AccountLogoutPage clickOnRightColumnLogoutOption() {
+ 		clickElement(rightColumnLogoutOption);
+ 		return new AccountLogoutPage(driver);
+ 	}
 }

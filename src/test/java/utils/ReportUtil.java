@@ -22,14 +22,15 @@ import com.aventstack.extentreports.reporter.configuration.Theme;
 
 import pagesobjects.BasePage;
 
+ 
 public class ReportUtil implements ITestListener {
-	public ExtentSparkReporter sparkReporter;
-	public ExtentReports extent;
+	
+	private ExtentSparkReporter sparkReporter;
+	private ExtentReports extent;
 	public static ExtentTest test;
 	static WebDriver driver;
 	String repName;
-
-	private static Logger logger = LogManager.getLogger(ReportUtil.class);
+	public static Logger logger = LogManager.getLogger(ReportUtil.class);
 
 	public static void setDriver(WebDriver driver) {
 		ReportUtil.driver = driver;
@@ -41,7 +42,7 @@ public class ReportUtil implements ITestListener {
 		}
 		return message;
 	}
-
+	@Override
 	public void onStart(ITestContext testContext) {
 
 		/*
@@ -51,14 +52,10 @@ public class ReportUtil implements ITestListener {
 		 */
 
 		String timeStamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());// creating a time stamp and
-																							// returning in a string
-																							// format.
+																							// returning in a string format.
 		repName = "Test-Report-" + timeStamp + ".html";// creating a report name with .html format
 		sparkReporter = new ExtentSparkReporter(System.getProperty("user.dir") + "\\reports\\" + repName);// specify the
-																											// location
-																											// of the
-																											// report.
-
+																								// location of the report.
 		sparkReporter.config().setDocumentTitle("opencart Automation Report");// Title of the report
 		sparkReporter.config().setReportName("opencart Functional Testing");// name of the report.
 		sparkReporter.config().setTheme(Theme.DARK);// Theme of the report.
@@ -89,26 +86,26 @@ public class ReportUtil implements ITestListener {
 	@Override
 	public void onTestStart(ITestResult result) {
 		test = extent.createTest(result.getName());
-		// Log when a test starts
 		logger.info("Test '{}' started running.", result.getName());
 		test.log(Status.INFO, result.getName() + "    TEST EXECUTION STARTED.");
 
 	}
-
+	@Override
 	public void onTestSuccess(ITestResult result) {
 		test.assignCategory(result.getMethod().getGroups()); // on success getting the groups in the report
 		test.log(Status.PASS, result.getName() + "    TEST GOT PASSED.");
 		logger.info("Test '{}'Test PASSED.", result.getName());
 	}
-
+	@Override
 	public void onTestFailure(ITestResult result) {
-		test.assignCategory(result.getMethod().getGroups());
+		test.assignCategory(result.getMethod().getGroups()) ;
 		test.log(Status.INFO, result.getThrowable().getMessage());// displays the fail message
 		test.log(Status.FAIL, result.getName() + " TEST GOT FAILED");
 		
+		 // Capture screenshot on final failure
 		if (driver != null) {
 			try {
-				String imgPath = new BasePage(driver).captureScreen(result.getName());// taking the screen shot when the
+				String imgPath = new BasePage(driver).captureScreen(result.getName());
 				test.addScreenCaptureFromPath(imgPath);
 			} catch (IOException e1) {
 				e1.printStackTrace();
@@ -118,9 +115,9 @@ public class ReportUtil implements ITestListener {
 			test.log(Status.WARNING, "WebDriver is not initialized. Cannot capture screenshot.");
 			System.out.println("Screenshot not taken: driver is null.");
 		}
-		logger.info("Test '{}'Test FAILED.", result.getName());
+		logger.info("Test '{}' failed after all retry attempts.", result.getName());
 	}
-
+	@Override
 	public void onFinish(ITestContext testContext) {
 		extent.flush();
 		String pathOfExtentReport = System.getProperty("user.dir") + "\\reports\\" + repName;
@@ -137,5 +134,6 @@ public class ReportUtil implements ITestListener {
 		// E-mailing the report
 
 	}
-
 }
+
+	

@@ -1,0 +1,4308 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>opencart Automation Report</title>
+<link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@d6562a79075e061305ccfdb82f01e5e195e2d307/spark/css/spark-style.css" rel="stylesheet" />
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@7cc78ce/spark/js/jsontree.js"></script>
+<style type="text/css"></style></head><body class="spa -report dark">
+  <div class="app">
+    <div class="layout">
+<div class="header navbar">
+<div class="vheader">
+<div class="nav-logo">
+<a href="#">
+<div class="logo" style="background-image: url('https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png')"></div>
+</a>
+</div>
+<ul class="nav-left">
+<li class="search-box">
+<a class="search-toggle" href="#">
+<i class="search-icon fa fa-search"></i>
+<i class="search-icon-close fa fa-close"></i>
+</a>
+</li>
+<li class="search-input"><input id="search-tests" class="form-control" type="text" placeholder="Search..."></li>
+</ul>
+<ul class="nav-right">
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary">opencart Functional Testing</span></a>
+</li>
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary">Nov 1, 2024 04:56:12 PM</span></a>
+</li>
+</ul>
+</div>
+</div><div class="side-nav">
+<div class="side-nav-inner">
+<ul class="side-nav-menu">
+<li class="nav-item dropdown" onclick="toggleView('test-view')">
+<a id="nav-test" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-list"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('category-view')">
+<a id="nav-category" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-tag"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('dashboard-view')">
+<a id="nav-dashboard" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bar-chart"></i></span>
+</a>
+</li>
+</ul>
+</div>
+</div>      <div class="vcontainer">
+        <div class="main-content">
+<div class="test-wrapper row view test-view">
+  <div class="test-list">
+    <div class="test-list-tools">
+<ul class="tools pull-left">
+<li><a href="#"><span class="font-size-14">Tests</span></a></li>
+</ul>
+<ul class="tools text-right">
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
+<ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success"></span></a>
+<a class="dropdown-item" status="fail" href="#"><span>Fail</span><span class="status danger"></span></a>
+<a class="dropdown-item" status="warning" href="#"><span>Warning</span><span class="status warning"></span></a>
+<div class="dropdown-divider"></div>
+<a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
+</ul>
+</li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-tag"></i></a>
+<ul id="tag-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" href="#">DataDriven</a><a class="dropdown-item" href="#">Master</a><a class="dropdown-item" href="#">Regression</a>
+</ul>
+</li>
+</ul>
+</div>    <div class="test-list-wrapper scrollable">
+      <ul class="test-list-item">
+        <li class="test-item"  status="pass" test-id="1"
+          author=""
+          tag="Regression Master DataDriven"
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyLoginToApplicationUsingvalidCredentials</p>
+            <p class="text-sm">
+              <span>4:56:18 PM</span> / <span>00:00:02:307</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyLoginToApplicationUsingvalidCredentials</h5>
+<span class='badge badge-success'>11.01.2024 4:56:18 PM</span>
+<span class='badge badge-danger'>11.01.2024 4:56:20 PM</span>
+<span class='badge badge-default'>00:00:02:307</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Regression</span>
+<span class="badge badge-pill badge-default">Master</span>
+<span class="badge badge-pill badge-default">DataDriven</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:56:18 PM</td>
+        <td>
+          verifyLoginToApplicationUsingvalidCredentials    TEST EXECUTION STARTED.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:56:20 PM</td>
+        <td>
+          Admin Login
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:56:20 PM</td>
+        <td>
+          verifyLoginToApplicationUsingvalidCredentials    TEST GOT PASSED.
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="2"
+          author=""
+          tag="Regression Master DataDriven"
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyLoginToApplicationUsingvalidCredentials</p>
+            <p class="text-sm">
+              <span>4:56:24 PM</span> / <span>00:00:01:971</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyLoginToApplicationUsingvalidCredentials</h5>
+<span class='badge badge-success'>11.01.2024 4:56:24 PM</span>
+<span class='badge badge-danger'>11.01.2024 4:56:26 PM</span>
+<span class='badge badge-default'>00:00:01:971</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=2</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Regression</span>
+<span class="badge badge-pill badge-default">Master</span>
+<span class="badge badge-pill badge-default">DataDriven</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:56:24 PM</td>
+        <td>
+          verifyLoginToApplicationUsingvalidCredentials    TEST EXECUTION STARTED.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:56:26 PM</td>
+        <td>
+          Supervisor Login
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:56:26 PM</td>
+        <td>
+          verifyLoginToApplicationUsingvalidCredentials    TEST GOT PASSED.
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="3"
+          author=""
+          tag="Regression Master DataDriven"
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyLoginToApplicationUsingvalidCredentials</p>
+            <p class="text-sm">
+              <span>4:56:30 PM</span> / <span>00:00:02:099</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyLoginToApplicationUsingvalidCredentials</h5>
+<span class='badge badge-success'>11.01.2024 4:56:30 PM</span>
+<span class='badge badge-danger'>11.01.2024 4:56:32 PM</span>
+<span class='badge badge-default'>00:00:02:099</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=3</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Regression</span>
+<span class="badge badge-pill badge-default">Master</span>
+<span class="badge badge-pill badge-default">DataDriven</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:56:30 PM</td>
+        <td>
+          verifyLoginToApplicationUsingvalidCredentials    TEST EXECUTION STARTED.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:56:32 PM</td>
+        <td>
+          Team Member Login
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:56:32 PM</td>
+        <td>
+          verifyLoginToApplicationUsingvalidCredentials    TEST GOT PASSED.
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="4"
+          author=""
+          tag="Regression Master DataDriven"
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyLoginToApplicationUsingvalidCredentials</p>
+            <p class="text-sm">
+              <span>4:56:36 PM</span> / <span>00:00:02:039</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyLoginToApplicationUsingvalidCredentials</h5>
+<span class='badge badge-success'>11.01.2024 4:56:36 PM</span>
+<span class='badge badge-danger'>11.01.2024 4:56:38 PM</span>
+<span class='badge badge-default'>00:00:02:039</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=4</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Regression</span>
+<span class="badge badge-pill badge-default">Master</span>
+<span class="badge badge-pill badge-default">DataDriven</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:56:36 PM</td>
+        <td>
+          verifyLoginToApplicationUsingvalidCredentials    TEST EXECUTION STARTED.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:56:37 PM</td>
+        <td>
+          Trainee Login
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:56:38 PM</td>
+        <td>
+          verifyLoginToApplicationUsingvalidCredentials    TEST GOT PASSED.
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="5"
+          author=""
+          tag="Regression Master DataDriven"
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyLoginToApplicationUsingInvalidCredentials</p>
+            <p class="text-sm">
+              <span>4:56:42 PM</span> / <span>00:00:01:725</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyLoginToApplicationUsingInvalidCredentials</h5>
+<span class='badge badge-success'>11.01.2024 4:56:42 PM</span>
+<span class='badge badge-danger'>11.01.2024 4:56:44 PM</span>
+<span class='badge badge-default'>00:00:01:725</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=5</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Regression</span>
+<span class="badge badge-pill badge-default">Master</span>
+<span class="badge badge-pill badge-default">DataDriven</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:56:42 PM</td>
+        <td>
+          verifyLoginToApplicationUsingInvalidCredentials    TEST EXECUTION STARTED.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:56:44 PM</td>
+        <td>
+          Both Email &Pass In-Valid 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:56:44 PM</td>
+        <td>
+          verifyLoginToApplicationUsingInvalidCredentials    TEST GOT PASSED.
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="6"
+          author=""
+          tag="Regression Master DataDriven"
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyLoginToApplicationUsingInvalidCredentials</p>
+            <p class="text-sm">
+              <span>4:56:48 PM</span> / <span>00:00:01:509</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyLoginToApplicationUsingInvalidCredentials</h5>
+<span class='badge badge-success'>11.01.2024 4:56:48 PM</span>
+<span class='badge badge-danger'>11.01.2024 4:56:49 PM</span>
+<span class='badge badge-default'>00:00:01:509</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=6</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Regression</span>
+<span class="badge badge-pill badge-default">Master</span>
+<span class="badge badge-pill badge-default">DataDriven</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:56:48 PM</td>
+        <td>
+          verifyLoginToApplicationUsingInvalidCredentials    TEST EXECUTION STARTED.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:56:49 PM</td>
+        <td>
+          InvalidEmail & ValidPass
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:56:49 PM</td>
+        <td>
+          verifyLoginToApplicationUsingInvalidCredentials    TEST GOT PASSED.
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="7"
+          author=""
+          tag="Regression Master DataDriven"
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyLoginToApplicationUsingInvalidCredentials</p>
+            <p class="text-sm">
+              <span>4:56:53 PM</span> / <span>00:00:01:790</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyLoginToApplicationUsingInvalidCredentials</h5>
+<span class='badge badge-success'>11.01.2024 4:56:53 PM</span>
+<span class='badge badge-danger'>11.01.2024 4:56:55 PM</span>
+<span class='badge badge-default'>00:00:01:790</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=7</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Regression</span>
+<span class="badge badge-pill badge-default">Master</span>
+<span class="badge badge-pill badge-default">DataDriven</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:56:53 PM</td>
+        <td>
+          verifyLoginToApplicationUsingInvalidCredentials    TEST EXECUTION STARTED.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:56:55 PM</td>
+        <td>
+          ValidEmail & InvalidPass
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:56:55 PM</td>
+        <td>
+          verifyLoginToApplicationUsingInvalidCredentials    TEST GOT PASSED.
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="8"
+          author=""
+          tag="Regression Master DataDriven"
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyLoginToApplicationUsingInvalidCredentials</p>
+            <p class="text-sm">
+              <span>4:57:00 PM</span> / <span>00:00:01:792</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyLoginToApplicationUsingInvalidCredentials</h5>
+<span class='badge badge-success'>11.01.2024 4:57:00 PM</span>
+<span class='badge badge-danger'>11.01.2024 4:57:02 PM</span>
+<span class='badge badge-default'>00:00:01:792</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=8</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Regression</span>
+<span class="badge badge-pill badge-default">Master</span>
+<span class="badge badge-pill badge-default">DataDriven</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:57:00 PM</td>
+        <td>
+          verifyLoginToApplicationUsingInvalidCredentials    TEST EXECUTION STARTED.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:57:02 PM</td>
+        <td>
+          NoCredentilals
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:57:02 PM</td>
+        <td>
+          verifyLoginToApplicationUsingInvalidCredentials    TEST GOT PASSED.
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="9"
+          author=""
+          tag="Regression Master"
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyForgotPasswordLink</p>
+            <p class="text-sm">
+              <span>4:57:06 PM</span> / <span>00:00:01:201</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyForgotPasswordLink</h5>
+<span class='badge badge-success'>11.01.2024 4:57:06 PM</span>
+<span class='badge badge-danger'>11.01.2024 4:57:07 PM</span>
+<span class='badge badge-default'>00:00:01:201</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=9</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Regression</span>
+<span class="badge badge-pill badge-default">Master</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:57:06 PM</td>
+        <td>
+          verifyForgotPasswordLink    TEST EXECUTION STARTED.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:57:07 PM</td>
+        <td>
+          verifyForgotPasswordLink    TEST GOT PASSED.
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="10"
+          author=""
+          tag="Regression Master"
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyPlaceholdersOnLoginPage</p>
+            <p class="text-sm">
+              <span>4:57:12 PM</span> / <span>00:00:00:766</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyPlaceholdersOnLoginPage</h5>
+<span class='badge badge-success'>11.01.2024 4:57:12 PM</span>
+<span class='badge badge-danger'>11.01.2024 4:57:13 PM</span>
+<span class='badge badge-default'>00:00:00:766</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=10</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Regression</span>
+<span class="badge badge-pill badge-default">Master</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:57:12 PM</td>
+        <td>
+          verifyPlaceholdersOnLoginPage    TEST EXECUTION STARTED.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:57:13 PM</td>
+        <td>
+          verifyPlaceholdersOnLoginPage    TEST GOT PASSED.
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="11"
+          author=""
+          tag="Regression Master"
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyMaxLoginAttempts</p>
+            <p class="text-sm">
+              <span>4:57:17 PM</span> / <span>00:00:04:312</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyMaxLoginAttempts</h5>
+<span class='badge badge-success'>11.01.2024 4:57:17 PM</span>
+<span class='badge badge-danger'>11.01.2024 4:57:21 PM</span>
+<span class='badge badge-default'>00:00:04:312</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=11</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Regression</span>
+<span class="badge badge-pill badge-default">Master</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:57:17 PM</td>
+        <td>
+          verifyMaxLoginAttempts    TEST EXECUTION STARTED.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:57:21 PM</td>
+        <td>
+          verifyMaxLoginAttempts    TEST GOT PASSED.
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="12"
+          author=""
+          tag="Regression Master"
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyPasswordFieldToggleToHide</p>
+            <p class="text-sm">
+              <span>4:57:26 PM</span> / <span>00:00:00:942</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyPasswordFieldToggleToHide</h5>
+<span class='badge badge-success'>11.01.2024 4:57:26 PM</span>
+<span class='badge badge-danger'>11.01.2024 4:57:27 PM</span>
+<span class='badge badge-default'>00:00:00:942</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=12</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Regression</span>
+<span class="badge badge-pill badge-default">Master</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:57:26 PM</td>
+        <td>
+          verifyPasswordFieldToggleToHide    TEST EXECUTION STARTED.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:57:27 PM</td>
+        <td>
+          verifyPasswordFieldToggleToHide    TEST GOT PASSED.
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="13"
+          author=""
+          tag="Regression Master"
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyPasswordCannotCopied</p>
+            <p class="text-sm">
+              <span>4:57:31 PM</span> / <span>00:00:01:156</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyPasswordCannotCopied</h5>
+<span class='badge badge-success'>11.01.2024 4:57:31 PM</span>
+<span class='badge badge-danger'>11.01.2024 4:57:32 PM</span>
+<span class='badge badge-default'>00:00:01:156</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=13</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Regression</span>
+<span class="badge badge-pill badge-default">Master</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:57:31 PM</td>
+        <td>
+          verifyPasswordCannotCopied    TEST EXECUTION STARTED.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:57:32 PM</td>
+        <td>
+          verifyPasswordCannotCopied    TEST GOT PASSED.
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="14"
+          author=""
+          tag="Regression Master"
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyPasswordNotVisibleInPageSource</p>
+            <p class="text-sm">
+              <span>4:57:36 PM</span> / <span>00:00:00:964</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyPasswordNotVisibleInPageSource</h5>
+<span class='badge badge-success'>11.01.2024 4:57:36 PM</span>
+<span class='badge badge-danger'>11.01.2024 4:57:37 PM</span>
+<span class='badge badge-default'>00:00:00:964</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=14</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Regression</span>
+<span class="badge badge-pill badge-default">Master</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:57:36 PM</td>
+        <td>
+          verifyPasswordNotVisibleInPageSource    TEST EXECUTION STARTED.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:57:37 PM</td>
+        <td>
+          verifyPasswordNotVisibleInPageSource    TEST GOT PASSED.
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="15"
+          author=""
+          tag="Regression Master"
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyLoggingAfterchangingPassword</p>
+            <p class="text-sm">
+              <span>4:57:41 PM</span> / <span>00:00:10:892</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyLoggingAfterchangingPassword</h5>
+<span class='badge badge-success'>11.01.2024 4:57:41 PM</span>
+<span class='badge badge-danger'>11.01.2024 4:57:52 PM</span>
+<span class='badge badge-default'>00:00:10:892</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=15</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Regression</span>
+<span class="badge badge-pill badge-default">Master</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:57:41 PM</td>
+        <td>
+          verifyLoggingAfterchangingPassword    TEST EXECUTION STARTED.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:57:52 PM</td>
+        <td>
+          verifyLoggingAfterchangingPassword    TEST GOT PASSED.
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="16"
+          author=""
+          tag="Regression Master"
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyRegisterAccountUsingMandatoryFields</p>
+            <p class="text-sm">
+              <span>4:57:56 PM</span> / <span>00:00:03:594</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyRegisterAccountUsingMandatoryFields</h5>
+<span class='badge badge-success'>11.01.2024 4:57:56 PM</span>
+<span class='badge badge-danger'>11.01.2024 4:57:59 PM</span>
+<span class='badge badge-default'>00:00:03:594</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=16</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Regression</span>
+<span class="badge badge-pill badge-default">Master</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:57:56 PM</td>
+        <td>
+          verifyRegisterAccountUsingMandatoryFields    TEST EXECUTION STARTED.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:57:59 PM</td>
+        <td>
+          verifyRegisterAccountUsingMandatoryFields    TEST GOT PASSED.
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="17"
+          author=""
+          tag="Regression Master"
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyRegisterAccountUsingAllFields</p>
+            <p class="text-sm">
+              <span>4:58:03 PM</span> / <span>00:00:04:038</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyRegisterAccountUsingAllFields</h5>
+<span class='badge badge-success'>11.01.2024 4:58:03 PM</span>
+<span class='badge badge-danger'>11.01.2024 4:58:07 PM</span>
+<span class='badge badge-default'>00:00:04:038</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=17</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Regression</span>
+<span class="badge badge-pill badge-default">Master</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:58:03 PM</td>
+        <td>
+          verifyRegisterAccountUsingAllFields    TEST EXECUTION STARTED.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:58:07 PM</td>
+        <td>
+          verifyRegisterAccountUsingAllFields    TEST GOT PASSED.
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="18"
+          author=""
+          tag="Regression Master"
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyRegisterAccountWithoutanyDetails</p>
+            <p class="text-sm">
+              <span>4:58:12 PM</span> / <span>00:00:03:036</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyRegisterAccountWithoutanyDetails</h5>
+<span class='badge badge-success'>11.01.2024 4:58:12 PM</span>
+<span class='badge badge-danger'>11.01.2024 4:58:15 PM</span>
+<span class='badge badge-default'>00:00:03:036</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=18</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Regression</span>
+<span class="badge badge-pill badge-default">Master</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:58:12 PM</td>
+        <td>
+          verifyRegisterAccountWithoutanyDetails    TEST EXECUTION STARTED.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:58:15 PM</td>
+        <td>
+          verifyRegisterAccountWithoutanyDetails    TEST GOT PASSED.
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="19"
+          author=""
+          tag="Regression Master"
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyRegisterAccountYesSelectedForNewsletter</p>
+            <p class="text-sm">
+              <span>4:58:19 PM</span> / <span>00:00:04:053</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyRegisterAccountYesSelectedForNewsletter</h5>
+<span class='badge badge-success'>11.01.2024 4:58:19 PM</span>
+<span class='badge badge-danger'>11.01.2024 4:58:23 PM</span>
+<span class='badge badge-default'>00:00:04:053</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=19</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Regression</span>
+<span class="badge badge-pill badge-default">Master</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:58:19 PM</td>
+        <td>
+          verifyRegisterAccountYesSelectedForNewsletter    TEST EXECUTION STARTED.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:58:23 PM</td>
+        <td>
+          verifyRegisterAccountYesSelectedForNewsletter    TEST GOT PASSED.
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="20"
+          author=""
+          tag="Regression Master"
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyRegisterAccountNoSelectedForNewsletter</p>
+            <p class="text-sm">
+              <span>4:58:27 PM</span> / <span>00:00:03:558</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyRegisterAccountNoSelectedForNewsletter</h5>
+<span class='badge badge-success'>11.01.2024 4:58:27 PM</span>
+<span class='badge badge-danger'>11.01.2024 4:58:30 PM</span>
+<span class='badge badge-default'>00:00:03:558</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=20</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Regression</span>
+<span class="badge badge-pill badge-default">Master</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:58:27 PM</td>
+        <td>
+          verifyRegisterAccountNoSelectedForNewsletter    TEST EXECUTION STARTED.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:58:30 PM</td>
+        <td>
+          verifyRegisterAccountNoSelectedForNewsletter    TEST GOT PASSED.
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="21"
+          author=""
+          tag="Regression Master"
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyDiffWayNavigatingToRegisterAccount</p>
+            <p class="text-sm">
+              <span>4:58:35 PM</span> / <span>00:00:02:777</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyDiffWayNavigatingToRegisterAccount</h5>
+<span class='badge badge-success'>11.01.2024 4:58:35 PM</span>
+<span class='badge badge-danger'>11.01.2024 4:58:38 PM</span>
+<span class='badge badge-default'>00:00:02:777</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=21</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Regression</span>
+<span class="badge badge-pill badge-default">Master</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:58:35 PM</td>
+        <td>
+          verifyDiffWayNavigatingToRegisterAccount    TEST EXECUTION STARTED.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:58:38 PM</td>
+        <td>
+          verifyDiffWayNavigatingToRegisterAccount    TEST GOT PASSED.
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="22"
+          author=""
+          tag="Regression Master"
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyRegisteringWithDifferentPassAndConfirmPass</p>
+            <p class="text-sm">
+              <span>4:58:41 PM</span> / <span>00:00:03:605</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyRegisteringWithDifferentPassAndConfirmPass</h5>
+<span class='badge badge-success'>11.01.2024 4:58:41 PM</span>
+<span class='badge badge-danger'>11.01.2024 4:58:45 PM</span>
+<span class='badge badge-default'>00:00:03:605</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=22</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Regression</span>
+<span class="badge badge-pill badge-default">Master</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:58:41 PM</td>
+        <td>
+          verifyRegisteringWithDifferentPassAndConfirmPass    TEST EXECUTION STARTED.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:58:45 PM</td>
+        <td>
+          verifyRegisteringWithDifferentPassAndConfirmPass    TEST GOT PASSED.
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="23"
+          author=""
+          tag="Regression Master"
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyRegisteringWithExistingDetails</p>
+            <p class="text-sm">
+              <span>4:58:48 PM</span> / <span>00:00:03:440</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyRegisteringWithExistingDetails</h5>
+<span class='badge badge-success'>11.01.2024 4:58:48 PM</span>
+<span class='badge badge-danger'>11.01.2024 4:58:52 PM</span>
+<span class='badge badge-default'>00:00:03:440</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=23</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Regression</span>
+<span class="badge badge-pill badge-default">Master</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:58:48 PM</td>
+        <td>
+          verifyRegisteringWithExistingDetails    TEST EXECUTION STARTED.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:58:52 PM</td>
+        <td>
+          verifyRegisteringWithExistingDetails    TEST GOT PASSED.
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="24"
+          author=""
+          tag="Regression Master"
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyInvalidEmailTooltipMsg</p>
+            <p class="text-sm">
+              <span>4:58:56 PM</span> / <span>00:00:05:376</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyInvalidEmailTooltipMsg</h5>
+<span class='badge badge-success'>11.01.2024 4:58:56 PM</span>
+<span class='badge badge-danger'>11.01.2024 4:59:02 PM</span>
+<span class='badge badge-default'>00:00:05:376</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=24</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Regression</span>
+<span class="badge badge-pill badge-default">Master</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:58:56 PM</td>
+        <td>
+          verifyInvalidEmailTooltipMsg    TEST EXECUTION STARTED.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:59:02 PM</td>
+        <td>
+          verifyInvalidEmailTooltipMsg    TEST GOT PASSED.
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="warning" test-id="25"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyUserCannotuseInvalidPhoneNumber</p>
+            <p class="text-sm">
+              <span>4:59:06 PM</span> / <span>00:00:03:730</span>
+              <span class="badge warning-bg log float-right">Warning</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-warning">verifyUserCannotuseInvalidPhoneNumber</h5>
+<span class='badge badge-success'>11.01.2024 4:59:06 PM</span>
+<span class='badge badge-danger'>11.01.2024 4:59:09 PM</span>
+<span class='badge badge-default'>00:00:03:730</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=25</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:59:06 PM</td>
+        <td>
+          verifyUserCannotuseInvalidPhoneNumber    TEST EXECUTION STARTED.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:59:09 PM</td>
+        <td>
+          Phone Text Entered ::  Nine Digits
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log warning-bg">Warning</span></td>
+        <td>4:59:09 PM</td>
+        <td>
+          verifyUserCannotuseInvalidPhoneNumber :: ERROR,Retrying test - Attempt 1
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="26"
+          author=""
+          tag="Regression Master DataDriven"
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyUserCannotuseInvalidPhoneNumber</p>
+            <p class="text-sm">
+              <span>4:59:13 PM</span> / <span>00:00:05:406</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">verifyUserCannotuseInvalidPhoneNumber</h5>
+<span class='badge badge-success'>11.01.2024 4:59:13 PM</span>
+<span class='badge badge-danger'>11.01.2024 4:59:18 PM</span>
+<span class='badge badge-default'>00:00:05:406</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=26</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Regression</span>
+<span class="badge badge-pill badge-default">Master</span>
+<span class="badge badge-pill badge-default">DataDriven</span></div>
+</div>
+</div>    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='C:\Users\Vishnu\FrameworkConcepts\OpenCart\screenshots\verifyUserCannotuseInvalidPhoneNumber_20241101045918.png' src="C:\Users\Vishnu\FrameworkConcepts\OpenCart\screenshots\verifyUserCannotuseInvalidPhoneNumber_20241101045918.png">
+    
+    </div></div>
+<div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:59:13 PM</td>
+        <td>
+          verifyUserCannotuseInvalidPhoneNumber    TEST EXECUTION STARTED.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:59:18 PM</td>
+        <td>
+          Phone Text Entered ::  Nine Digits
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:59:18 PM</td>
+        <td>
+          did not expect [Your Account Has Been Created!] but found [Your Account Has Been Created!]
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>4:59:18 PM</td>
+        <td>
+          verifyUserCannotuseInvalidPhoneNumber TEST GOT FAILED
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="warning" test-id="27"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyUserCannotuseInvalidPhoneNumber</p>
+            <p class="text-sm">
+              <span>4:59:22 PM</span> / <span>00:00:03:632</span>
+              <span class="badge warning-bg log float-right">Warning</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-warning">verifyUserCannotuseInvalidPhoneNumber</h5>
+<span class='badge badge-success'>11.01.2024 4:59:22 PM</span>
+<span class='badge badge-danger'>11.01.2024 4:59:26 PM</span>
+<span class='badge badge-default'>00:00:03:632</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=27</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:59:22 PM</td>
+        <td>
+          verifyUserCannotuseInvalidPhoneNumber    TEST EXECUTION STARTED.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:59:26 PM</td>
+        <td>
+          Phone Text Entered ::  Eleven Digits
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log warning-bg">Warning</span></td>
+        <td>4:59:26 PM</td>
+        <td>
+          verifyUserCannotuseInvalidPhoneNumber :: ERROR,Retrying test - Attempt 1
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="28"
+          author=""
+          tag="Regression Master DataDriven"
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyUserCannotuseInvalidPhoneNumber</p>
+            <p class="text-sm">
+              <span>4:59:30 PM</span> / <span>00:00:03:791</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">verifyUserCannotuseInvalidPhoneNumber</h5>
+<span class='badge badge-success'>11.01.2024 4:59:30 PM</span>
+<span class='badge badge-danger'>11.01.2024 4:59:34 PM</span>
+<span class='badge badge-default'>00:00:03:791</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=28</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Regression</span>
+<span class="badge badge-pill badge-default">Master</span>
+<span class="badge badge-pill badge-default">DataDriven</span></div>
+</div>
+</div>    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='C:\Users\Vishnu\FrameworkConcepts\OpenCart\screenshots\verifyUserCannotuseInvalidPhoneNumber_20241101045933.png' src="C:\Users\Vishnu\FrameworkConcepts\OpenCart\screenshots\verifyUserCannotuseInvalidPhoneNumber_20241101045933.png">
+    
+    </div></div>
+<div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:59:30 PM</td>
+        <td>
+          verifyUserCannotuseInvalidPhoneNumber    TEST EXECUTION STARTED.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:59:33 PM</td>
+        <td>
+          Phone Text Entered ::  Eleven Digits
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:59:33 PM</td>
+        <td>
+          did not expect [Your Account Has Been Created!] but found [Your Account Has Been Created!]
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>4:59:33 PM</td>
+        <td>
+          verifyUserCannotuseInvalidPhoneNumber TEST GOT FAILED
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="warning" test-id="29"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyUserCannotuseInvalidPhoneNumber</p>
+            <p class="text-sm">
+              <span>4:59:37 PM</span> / <span>00:00:03:521</span>
+              <span class="badge warning-bg log float-right">Warning</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-warning">verifyUserCannotuseInvalidPhoneNumber</h5>
+<span class='badge badge-success'>11.01.2024 4:59:37 PM</span>
+<span class='badge badge-danger'>11.01.2024 4:59:41 PM</span>
+<span class='badge badge-default'>00:00:03:521</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=29</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:59:37 PM</td>
+        <td>
+          verifyUserCannotuseInvalidPhoneNumber    TEST EXECUTION STARTED.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:59:41 PM</td>
+        <td>
+          Phone Text Entered :: Non Numeric
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log warning-bg">Warning</span></td>
+        <td>4:59:41 PM</td>
+        <td>
+          verifyUserCannotuseInvalidPhoneNumber :: ERROR,Retrying test - Attempt 1
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="30"
+          author=""
+          tag="Regression Master DataDriven"
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyUserCannotuseInvalidPhoneNumber</p>
+            <p class="text-sm">
+              <span>4:59:45 PM</span> / <span>00:00:04:114</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">verifyUserCannotuseInvalidPhoneNumber</h5>
+<span class='badge badge-success'>11.01.2024 4:59:45 PM</span>
+<span class='badge badge-danger'>11.01.2024 4:59:49 PM</span>
+<span class='badge badge-default'>00:00:04:114</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=30</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Regression</span>
+<span class="badge badge-pill badge-default">Master</span>
+<span class="badge badge-pill badge-default">DataDriven</span></div>
+</div>
+</div>    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='C:\Users\Vishnu\FrameworkConcepts\OpenCart\screenshots\verifyUserCannotuseInvalidPhoneNumber_20241101045949.png' src="C:\Users\Vishnu\FrameworkConcepts\OpenCart\screenshots\verifyUserCannotuseInvalidPhoneNumber_20241101045949.png">
+    
+    </div></div>
+<div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:59:45 PM</td>
+        <td>
+          verifyUserCannotuseInvalidPhoneNumber    TEST EXECUTION STARTED.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:59:49 PM</td>
+        <td>
+          Phone Text Entered :: Non Numeric
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:59:49 PM</td>
+        <td>
+          did not expect [Your Account Has Been Created!] but found [Your Account Has Been Created!]
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>4:59:49 PM</td>
+        <td>
+          verifyUserCannotuseInvalidPhoneNumber TEST GOT FAILED
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="warning" test-id="31"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyUserCannotuseInvalidPhoneNumber</p>
+            <p class="text-sm">
+              <span>4:59:53 PM</span> / <span>00:00:03:552</span>
+              <span class="badge warning-bg log float-right">Warning</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-warning">verifyUserCannotuseInvalidPhoneNumber</h5>
+<span class='badge badge-success'>11.01.2024 4:59:53 PM</span>
+<span class='badge badge-danger'>11.01.2024 4:59:57 PM</span>
+<span class='badge badge-default'>00:00:03:552</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=31</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:59:53 PM</td>
+        <td>
+          verifyUserCannotuseInvalidPhoneNumber    TEST EXECUTION STARTED.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:59:57 PM</td>
+        <td>
+          Phone Text Entered ::   All Special Characters
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log warning-bg">Warning</span></td>
+        <td>4:59:57 PM</td>
+        <td>
+          verifyUserCannotuseInvalidPhoneNumber :: ERROR,Retrying test - Attempt 1
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="32"
+          author=""
+          tag="Regression Master DataDriven"
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyUserCannotuseInvalidPhoneNumber</p>
+            <p class="text-sm">
+              <span>5:00:01 PM</span> / <span>00:00:04:173</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">verifyUserCannotuseInvalidPhoneNumber</h5>
+<span class='badge badge-success'>11.01.2024 5:00:01 PM</span>
+<span class='badge badge-danger'>11.01.2024 5:00:05 PM</span>
+<span class='badge badge-default'>00:00:04:173</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=32</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Regression</span>
+<span class="badge badge-pill badge-default">Master</span>
+<span class="badge badge-pill badge-default">DataDriven</span></div>
+</div>
+</div>    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='C:\Users\Vishnu\FrameworkConcepts\OpenCart\screenshots\verifyUserCannotuseInvalidPhoneNumber_20241101050005.png' src="C:\Users\Vishnu\FrameworkConcepts\OpenCart\screenshots\verifyUserCannotuseInvalidPhoneNumber_20241101050005.png">
+    
+    </div></div>
+<div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:00:01 PM</td>
+        <td>
+          verifyUserCannotuseInvalidPhoneNumber    TEST EXECUTION STARTED.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:00:05 PM</td>
+        <td>
+          Phone Text Entered ::   All Special Characters
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:00:05 PM</td>
+        <td>
+          did not expect [Your Account Has Been Created!] but found [Your Account Has Been Created!]
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>5:00:05 PM</td>
+        <td>
+          verifyUserCannotuseInvalidPhoneNumber TEST GOT FAILED
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="warning" test-id="33"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyUserCannotuseInvalidPhoneNumber</p>
+            <p class="text-sm">
+              <span>5:00:09 PM</span> / <span>00:00:03:630</span>
+              <span class="badge warning-bg log float-right">Warning</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-warning">verifyUserCannotuseInvalidPhoneNumber</h5>
+<span class='badge badge-success'>11.01.2024 5:00:09 PM</span>
+<span class='badge badge-danger'>11.01.2024 5:00:13 PM</span>
+<span class='badge badge-default'>00:00:03:630</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=33</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:00:09 PM</td>
+        <td>
+          verifyUserCannotuseInvalidPhoneNumber    TEST EXECUTION STARTED.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:00:13 PM</td>
+        <td>
+           Phone Text Entered :: With Spaces
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log warning-bg">Warning</span></td>
+        <td>5:00:13 PM</td>
+        <td>
+          verifyUserCannotuseInvalidPhoneNumber :: ERROR,Retrying test - Attempt 1
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="34"
+          author=""
+          tag="Regression Master DataDriven"
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyUserCannotuseInvalidPhoneNumber</p>
+            <p class="text-sm">
+              <span>5:00:16 PM</span> / <span>00:00:03:790</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">verifyUserCannotuseInvalidPhoneNumber</h5>
+<span class='badge badge-success'>11.01.2024 5:00:16 PM</span>
+<span class='badge badge-danger'>11.01.2024 5:00:20 PM</span>
+<span class='badge badge-default'>00:00:03:790</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=34</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Regression</span>
+<span class="badge badge-pill badge-default">Master</span>
+<span class="badge badge-pill badge-default">DataDriven</span></div>
+</div>
+</div>    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='C:\Users\Vishnu\FrameworkConcepts\OpenCart\screenshots\verifyUserCannotuseInvalidPhoneNumber_20241101050020.png' src="C:\Users\Vishnu\FrameworkConcepts\OpenCart\screenshots\verifyUserCannotuseInvalidPhoneNumber_20241101050020.png">
+    
+    </div></div>
+<div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:00:16 PM</td>
+        <td>
+          verifyUserCannotuseInvalidPhoneNumber    TEST EXECUTION STARTED.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:00:20 PM</td>
+        <td>
+           Phone Text Entered :: With Spaces
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:00:20 PM</td>
+        <td>
+          did not expect [Your Account Has Been Created!] but found [Your Account Has Been Created!]
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>5:00:20 PM</td>
+        <td>
+          verifyUserCannotuseInvalidPhoneNumber TEST GOT FAILED
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="35"
+          author=""
+          tag="Regression Master"
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyThePlaceholders</p>
+            <p class="text-sm">
+              <span>5:00:24 PM</span> / <span>00:00:00:993</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyThePlaceholders</h5>
+<span class='badge badge-success'>11.01.2024 5:00:24 PM</span>
+<span class='badge badge-danger'>11.01.2024 5:00:25 PM</span>
+<span class='badge badge-default'>00:00:00:993</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=35</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Regression</span>
+<span class="badge badge-pill badge-default">Master</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:00:24 PM</td>
+        <td>
+          verifyThePlaceholders    TEST EXECUTION STARTED.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:00:25 PM</td>
+        <td>
+          verifyThePlaceholders    TEST GOT PASSED.
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="36"
+          author=""
+          tag="Regression Master"
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyAsterickSymbolForMandatoryFields</p>
+            <p class="text-sm">
+              <span>5:00:29 PM</span> / <span>00:00:01:168</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyAsterickSymbolForMandatoryFields</h5>
+<span class='badge badge-success'>11.01.2024 5:00:29 PM</span>
+<span class='badge badge-danger'>11.01.2024 5:00:30 PM</span>
+<span class='badge badge-default'>00:00:01:168</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=36</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Regression</span>
+<span class="badge badge-pill badge-default">Master</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:00:29 PM</td>
+        <td>
+          verifyAsterickSymbolForMandatoryFields    TEST EXECUTION STARTED.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:00:30 PM</td>
+        <td>
+          verifyAsterickSymbolForMandatoryFields    TEST GOT PASSED.
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="warning" test-id="37"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyPassWordFieldFollowComplexityStandards</p>
+            <p class="text-sm">
+              <span>5:00:34 PM</span> / <span>00:00:03:580</span>
+              <span class="badge warning-bg log float-right">Warning</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-warning">verifyPassWordFieldFollowComplexityStandards</h5>
+<span class='badge badge-success'>11.01.2024 5:00:34 PM</span>
+<span class='badge badge-danger'>11.01.2024 5:00:38 PM</span>
+<span class='badge badge-default'>00:00:03:580</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=37</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:00:34 PM</td>
+        <td>
+          verifyPassWordFieldFollowComplexityStandards    TEST EXECUTION STARTED.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:00:38 PM</td>
+        <td>
+          PWD Entered ::  All Uppercase
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log warning-bg">Warning</span></td>
+        <td>5:00:38 PM</td>
+        <td>
+          verifyPassWordFieldFollowComplexityStandards :: ERROR,Retrying test - Attempt 1
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="38"
+          author=""
+          tag="Regression Master DataDriven"
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyPassWordFieldFollowComplexityStandards</p>
+            <p class="text-sm">
+              <span>5:00:42 PM</span> / <span>00:00:05:044</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">verifyPassWordFieldFollowComplexityStandards</h5>
+<span class='badge badge-success'>11.01.2024 5:00:42 PM</span>
+<span class='badge badge-danger'>11.01.2024 5:00:47 PM</span>
+<span class='badge badge-default'>00:00:05:044</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=38</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Regression</span>
+<span class="badge badge-pill badge-default">Master</span>
+<span class="badge badge-pill badge-default">DataDriven</span></div>
+</div>
+</div>    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='C:\Users\Vishnu\FrameworkConcepts\OpenCart\screenshots\verifyPassWordFieldFollowComplexityStandards_20241101050047.png' src="C:\Users\Vishnu\FrameworkConcepts\OpenCart\screenshots\verifyPassWordFieldFollowComplexityStandards_20241101050047.png">
+    
+    </div></div>
+<div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:00:42 PM</td>
+        <td>
+          verifyPassWordFieldFollowComplexityStandards    TEST EXECUTION STARTED.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:00:47 PM</td>
+        <td>
+          PWD Entered ::  All Uppercase
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:00:47 PM</td>
+        <td>
+          did not expect [Your Account Has Been Created!] but found [Your Account Has Been Created!]
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>5:00:47 PM</td>
+        <td>
+          verifyPassWordFieldFollowComplexityStandards TEST GOT FAILED
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="warning" test-id="39"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyPassWordFieldFollowComplexityStandards</p>
+            <p class="text-sm">
+              <span>5:00:51 PM</span> / <span>00:00:03:799</span>
+              <span class="badge warning-bg log float-right">Warning</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-warning">verifyPassWordFieldFollowComplexityStandards</h5>
+<span class='badge badge-success'>11.01.2024 5:00:51 PM</span>
+<span class='badge badge-danger'>11.01.2024 5:00:55 PM</span>
+<span class='badge badge-default'>00:00:03:799</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=39</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:00:51 PM</td>
+        <td>
+          verifyPassWordFieldFollowComplexityStandards    TEST EXECUTION STARTED.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:00:55 PM</td>
+        <td>
+          PWD Entered ::  All Lowercase
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log warning-bg">Warning</span></td>
+        <td>5:00:55 PM</td>
+        <td>
+          verifyPassWordFieldFollowComplexityStandards :: ERROR,Retrying test - Attempt 1
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="40"
+          author=""
+          tag="Regression Master DataDriven"
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyPassWordFieldFollowComplexityStandards</p>
+            <p class="text-sm">
+              <span>5:00:59 PM</span> / <span>00:00:03:561</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">verifyPassWordFieldFollowComplexityStandards</h5>
+<span class='badge badge-success'>11.01.2024 5:00:59 PM</span>
+<span class='badge badge-danger'>11.01.2024 5:01:02 PM</span>
+<span class='badge badge-default'>00:00:03:561</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=40</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Regression</span>
+<span class="badge badge-pill badge-default">Master</span>
+<span class="badge badge-pill badge-default">DataDriven</span></div>
+</div>
+</div>    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='C:\Users\Vishnu\FrameworkConcepts\OpenCart\screenshots\verifyPassWordFieldFollowComplexityStandards_20241101050102.png' src="C:\Users\Vishnu\FrameworkConcepts\OpenCart\screenshots\verifyPassWordFieldFollowComplexityStandards_20241101050102.png">
+    
+    </div></div>
+<div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:00:59 PM</td>
+        <td>
+          verifyPassWordFieldFollowComplexityStandards    TEST EXECUTION STARTED.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:01:02 PM</td>
+        <td>
+          PWD Entered ::  All Lowercase
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:01:02 PM</td>
+        <td>
+          did not expect [Your Account Has Been Created!] but found [Your Account Has Been Created!]
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>5:01:02 PM</td>
+        <td>
+          verifyPassWordFieldFollowComplexityStandards TEST GOT FAILED
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="warning" test-id="41"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyPassWordFieldFollowComplexityStandards</p>
+            <p class="text-sm">
+              <span>5:01:06 PM</span> / <span>00:00:03:515</span>
+              <span class="badge warning-bg log float-right">Warning</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-warning">verifyPassWordFieldFollowComplexityStandards</h5>
+<span class='badge badge-success'>11.01.2024 5:01:06 PM</span>
+<span class='badge badge-danger'>11.01.2024 5:01:09 PM</span>
+<span class='badge badge-default'>00:00:03:515</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=41</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:01:06 PM</td>
+        <td>
+          verifyPassWordFieldFollowComplexityStandards    TEST EXECUTION STARTED.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:01:09 PM</td>
+        <td>
+          PWD Entered ::  All Numbers
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log warning-bg">Warning</span></td>
+        <td>5:01:09 PM</td>
+        <td>
+          verifyPassWordFieldFollowComplexityStandards :: ERROR,Retrying test - Attempt 1
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="42"
+          author=""
+          tag="Regression Master DataDriven"
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyPassWordFieldFollowComplexityStandards</p>
+            <p class="text-sm">
+              <span>5:01:13 PM</span> / <span>00:00:03:094</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">verifyPassWordFieldFollowComplexityStandards</h5>
+<span class='badge badge-success'>11.01.2024 5:01:13 PM</span>
+<span class='badge badge-danger'>11.01.2024 5:01:16 PM</span>
+<span class='badge badge-default'>00:00:03:094</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=42</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Regression</span>
+<span class="badge badge-pill badge-default">Master</span>
+<span class="badge badge-pill badge-default">DataDriven</span></div>
+</div>
+</div>    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='C:\Users\Vishnu\FrameworkConcepts\OpenCart\screenshots\verifyPassWordFieldFollowComplexityStandards_20241101050116.png' src="C:\Users\Vishnu\FrameworkConcepts\OpenCart\screenshots\verifyPassWordFieldFollowComplexityStandards_20241101050116.png">
+    
+    </div></div>
+<div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:01:13 PM</td>
+        <td>
+          verifyPassWordFieldFollowComplexityStandards    TEST EXECUTION STARTED.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:01:16 PM</td>
+        <td>
+          PWD Entered ::  All Numbers
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:01:16 PM</td>
+        <td>
+          did not expect [Your Account Has Been Created!] but found [Your Account Has Been Created!]
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>5:01:16 PM</td>
+        <td>
+          verifyPassWordFieldFollowComplexityStandards TEST GOT FAILED
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="warning" test-id="43"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyPassWordFieldFollowComplexityStandards</p>
+            <p class="text-sm">
+              <span>5:01:21 PM</span> / <span>00:00:02:974</span>
+              <span class="badge warning-bg log float-right">Warning</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-warning">verifyPassWordFieldFollowComplexityStandards</h5>
+<span class='badge badge-success'>11.01.2024 5:01:21 PM</span>
+<span class='badge badge-danger'>11.01.2024 5:01:23 PM</span>
+<span class='badge badge-default'>00:00:02:974</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=43</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:01:21 PM</td>
+        <td>
+          verifyPassWordFieldFollowComplexityStandards    TEST EXECUTION STARTED.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:01:23 PM</td>
+        <td>
+          PWD Entered ::  No Numbers
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log warning-bg">Warning</span></td>
+        <td>5:01:23 PM</td>
+        <td>
+          verifyPassWordFieldFollowComplexityStandards :: ERROR,Retrying test - Attempt 1
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="44"
+          author=""
+          tag="Regression Master DataDriven"
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyPassWordFieldFollowComplexityStandards</p>
+            <p class="text-sm">
+              <span>5:01:28 PM</span> / <span>00:00:03:369</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">verifyPassWordFieldFollowComplexityStandards</h5>
+<span class='badge badge-success'>11.01.2024 5:01:28 PM</span>
+<span class='badge badge-danger'>11.01.2024 5:01:31 PM</span>
+<span class='badge badge-default'>00:00:03:369</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=44</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Regression</span>
+<span class="badge badge-pill badge-default">Master</span>
+<span class="badge badge-pill badge-default">DataDriven</span></div>
+</div>
+</div>    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='C:\Users\Vishnu\FrameworkConcepts\OpenCart\screenshots\verifyPassWordFieldFollowComplexityStandards_20241101050131.png' src="C:\Users\Vishnu\FrameworkConcepts\OpenCart\screenshots\verifyPassWordFieldFollowComplexityStandards_20241101050131.png">
+    
+    </div></div>
+<div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:01:28 PM</td>
+        <td>
+          verifyPassWordFieldFollowComplexityStandards    TEST EXECUTION STARTED.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:01:31 PM</td>
+        <td>
+          PWD Entered ::  No Numbers
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:01:31 PM</td>
+        <td>
+          did not expect [Your Account Has Been Created!] but found [Your Account Has Been Created!]
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>5:01:31 PM</td>
+        <td>
+          verifyPassWordFieldFollowComplexityStandards TEST GOT FAILED
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="warning" test-id="45"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyPassWordFieldFollowComplexityStandards</p>
+            <p class="text-sm">
+              <span>5:01:36 PM</span> / <span>00:00:03:329</span>
+              <span class="badge warning-bg log float-right">Warning</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-warning">verifyPassWordFieldFollowComplexityStandards</h5>
+<span class='badge badge-success'>11.01.2024 5:01:36 PM</span>
+<span class='badge badge-danger'>11.01.2024 5:01:39 PM</span>
+<span class='badge badge-default'>00:00:03:329</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=45</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:01:36 PM</td>
+        <td>
+          verifyPassWordFieldFollowComplexityStandards    TEST EXECUTION STARTED.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:01:39 PM</td>
+        <td>
+          PWD Entered ::  All Special Characters
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log warning-bg">Warning</span></td>
+        <td>5:01:39 PM</td>
+        <td>
+          verifyPassWordFieldFollowComplexityStandards :: ERROR,Retrying test - Attempt 1
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="46"
+          author=""
+          tag="Regression Master DataDriven"
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyPassWordFieldFollowComplexityStandards</p>
+            <p class="text-sm">
+              <span>5:01:43 PM</span> / <span>00:00:04:004</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">verifyPassWordFieldFollowComplexityStandards</h5>
+<span class='badge badge-success'>11.01.2024 5:01:43 PM</span>
+<span class='badge badge-danger'>11.01.2024 5:01:47 PM</span>
+<span class='badge badge-default'>00:00:04:004</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=46</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Regression</span>
+<span class="badge badge-pill badge-default">Master</span>
+<span class="badge badge-pill badge-default">DataDriven</span></div>
+</div>
+</div>    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='C:\Users\Vishnu\FrameworkConcepts\OpenCart\screenshots\verifyPassWordFieldFollowComplexityStandards_20241101050147.png' src="C:\Users\Vishnu\FrameworkConcepts\OpenCart\screenshots\verifyPassWordFieldFollowComplexityStandards_20241101050147.png">
+    
+    </div></div>
+<div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:01:43 PM</td>
+        <td>
+          verifyPassWordFieldFollowComplexityStandards    TEST EXECUTION STARTED.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:01:47 PM</td>
+        <td>
+          PWD Entered ::  All Special Characters
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:01:47 PM</td>
+        <td>
+          did not expect [Your Account Has Been Created!] but found [Your Account Has Been Created!]
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>5:01:47 PM</td>
+        <td>
+          verifyPassWordFieldFollowComplexityStandards TEST GOT FAILED
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="warning" test-id="47"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyPassWordFieldFollowComplexityStandards</p>
+            <p class="text-sm">
+              <span>5:01:51 PM</span> / <span>00:00:03:386</span>
+              <span class="badge warning-bg log float-right">Warning</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-warning">verifyPassWordFieldFollowComplexityStandards</h5>
+<span class='badge badge-success'>11.01.2024 5:01:51 PM</span>
+<span class='badge badge-danger'>11.01.2024 5:01:55 PM</span>
+<span class='badge badge-default'>00:00:03:386</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=47</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:01:51 PM</td>
+        <td>
+          verifyPassWordFieldFollowComplexityStandards    TEST EXECUTION STARTED.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:01:55 PM</td>
+        <td>
+          PWD Entered ::  No Special Characters
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log warning-bg">Warning</span></td>
+        <td>5:01:55 PM</td>
+        <td>
+          verifyPassWordFieldFollowComplexityStandards :: ERROR,Retrying test - Attempt 1
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="48"
+          author=""
+          tag="Regression Master DataDriven"
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyPassWordFieldFollowComplexityStandards</p>
+            <p class="text-sm">
+              <span>5:01:59 PM</span> / <span>00:00:03:690</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">verifyPassWordFieldFollowComplexityStandards</h5>
+<span class='badge badge-success'>11.01.2024 5:01:59 PM</span>
+<span class='badge badge-danger'>11.01.2024 5:02:02 PM</span>
+<span class='badge badge-default'>00:00:03:690</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=48</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Regression</span>
+<span class="badge badge-pill badge-default">Master</span>
+<span class="badge badge-pill badge-default">DataDriven</span></div>
+</div>
+</div>    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='C:\Users\Vishnu\FrameworkConcepts\OpenCart\screenshots\verifyPassWordFieldFollowComplexityStandards_20241101050202.png' src="C:\Users\Vishnu\FrameworkConcepts\OpenCart\screenshots\verifyPassWordFieldFollowComplexityStandards_20241101050202.png">
+    
+    </div></div>
+<div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:01:59 PM</td>
+        <td>
+          verifyPassWordFieldFollowComplexityStandards    TEST EXECUTION STARTED.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:02:02 PM</td>
+        <td>
+          PWD Entered ::  No Special Characters
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:02:02 PM</td>
+        <td>
+          did not expect [Your Account Has Been Created!] but found [Your Account Has Been Created!]
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>5:02:02 PM</td>
+        <td>
+          verifyPassWordFieldFollowComplexityStandards TEST GOT FAILED
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="warning" test-id="49"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyPassWordFieldFollowComplexityStandards</p>
+            <p class="text-sm">
+              <span>5:02:06 PM</span> / <span>00:00:03:519</span>
+              <span class="badge warning-bg log float-right">Warning</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-warning">verifyPassWordFieldFollowComplexityStandards</h5>
+<span class='badge badge-success'>11.01.2024 5:02:06 PM</span>
+<span class='badge badge-danger'>11.01.2024 5:02:10 PM</span>
+<span class='badge badge-default'>00:00:03:519</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=49</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:02:06 PM</td>
+        <td>
+          verifyPassWordFieldFollowComplexityStandards    TEST EXECUTION STARTED.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:02:10 PM</td>
+        <td>
+          PWD Entered ::  With Spaces
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log warning-bg">Warning</span></td>
+        <td>5:02:10 PM</td>
+        <td>
+          verifyPassWordFieldFollowComplexityStandards :: ERROR,Retrying test - Attempt 1
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="50"
+          author=""
+          tag="Regression Master DataDriven"
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyPassWordFieldFollowComplexityStandards</p>
+            <p class="text-sm">
+              <span>5:02:13 PM</span> / <span>00:00:04:172</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">verifyPassWordFieldFollowComplexityStandards</h5>
+<span class='badge badge-success'>11.01.2024 5:02:13 PM</span>
+<span class='badge badge-danger'>11.01.2024 5:02:17 PM</span>
+<span class='badge badge-default'>00:00:04:172</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=50</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Regression</span>
+<span class="badge badge-pill badge-default">Master</span>
+<span class="badge badge-pill badge-default">DataDriven</span></div>
+</div>
+</div>    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='C:\Users\Vishnu\FrameworkConcepts\OpenCart\screenshots\verifyPassWordFieldFollowComplexityStandards_20241101050217.png' src="C:\Users\Vishnu\FrameworkConcepts\OpenCart\screenshots\verifyPassWordFieldFollowComplexityStandards_20241101050217.png">
+    
+    </div></div>
+<div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:02:13 PM</td>
+        <td>
+          verifyPassWordFieldFollowComplexityStandards    TEST EXECUTION STARTED.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:02:17 PM</td>
+        <td>
+          PWD Entered ::  With Spaces
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:02:17 PM</td>
+        <td>
+          did not expect [Your Account Has Been Created!] but found [Your Account Has Been Created!]
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>5:02:17 PM</td>
+        <td>
+          verifyPassWordFieldFollowComplexityStandards TEST GOT FAILED
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="51"
+          author=""
+          tag="Regression Master"
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyCheckboxNotCheckedByDefault</p>
+            <p class="text-sm">
+              <span>5:02:21 PM</span> / <span>00:00:00:896</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyCheckboxNotCheckedByDefault</h5>
+<span class='badge badge-success'>11.01.2024 5:02:21 PM</span>
+<span class='badge badge-danger'>11.01.2024 5:02:22 PM</span>
+<span class='badge badge-default'>00:00:00:896</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=51</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Regression</span>
+<span class="badge badge-pill badge-default">Master</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:02:21 PM</td>
+        <td>
+          verifyCheckboxNotCheckedByDefault    TEST EXECUTION STARTED.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:02:22 PM</td>
+        <td>
+          verifyCheckboxNotCheckedByDefault    TEST GOT PASSED.
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="52"
+          author=""
+          tag="Regression Master"
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyRegisteringWithNotSelectingPrivacyPolicy</p>
+            <p class="text-sm">
+              <span>5:02:26 PM</span> / <span>00:00:03:277</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyRegisteringWithNotSelectingPrivacyPolicy</h5>
+<span class='badge badge-success'>11.01.2024 5:02:26 PM</span>
+<span class='badge badge-danger'>11.01.2024 5:02:29 PM</span>
+<span class='badge badge-default'>00:00:03:277</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=52</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Regression</span>
+<span class="badge badge-pill badge-default">Master</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:02:26 PM</td>
+        <td>
+          verifyRegisteringWithNotSelectingPrivacyPolicy    TEST EXECUTION STARTED.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:02:29 PM</td>
+        <td>
+          verifyRegisteringWithNotSelectingPrivacyPolicy    TEST GOT PASSED.
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="53"
+          author=""
+          tag="Regression Master"
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyPasswordAndConfirmPasswordToggledToHide</p>
+            <p class="text-sm">
+              <span>5:02:33 PM</span> / <span>00:00:01:349</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyPasswordAndConfirmPasswordToggledToHide</h5>
+<span class='badge badge-success'>11.01.2024 5:02:33 PM</span>
+<span class='badge badge-danger'>11.01.2024 5:02:34 PM</span>
+<span class='badge badge-default'>00:00:01:349</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=53</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Regression</span>
+<span class="badge badge-pill badge-default">Master</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:02:33 PM</td>
+        <td>
+          verifyPasswordAndConfirmPasswordToggledToHide    TEST EXECUTION STARTED.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:02:34 PM</td>
+        <td>
+          verifyPasswordAndConfirmPasswordToggledToHide    TEST GOT PASSED.
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="54"
+          author=""
+          tag="Regression Master"
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyRegisteringWithNotEnteringPassConfirm</p>
+            <p class="text-sm">
+              <span>5:02:38 PM</span> / <span>00:00:03:365</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyRegisteringWithNotEnteringPassConfirm</h5>
+<span class='badge badge-success'>11.01.2024 5:02:38 PM</span>
+<span class='badge badge-danger'>11.01.2024 5:02:42 PM</span>
+<span class='badge badge-default'>00:00:03:365</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=54</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Regression</span>
+<span class="badge badge-pill badge-default">Master</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:02:38 PM</td>
+        <td>
+          verifyRegisteringWithNotEnteringPassConfirm    TEST EXECUTION STARTED.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:02:42 PM</td>
+        <td>
+          verifyRegisteringWithNotEnteringPassConfirm    TEST GOT PASSED.
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="55"
+          author=""
+          tag="Regression Master"
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyConfirmationEmailSendForSuccessfullRegistration</p>
+            <p class="text-sm">
+              <span>5:02:45 PM</span> / <span>00:00:03:813</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyConfirmationEmailSendForSuccessfullRegistration</h5>
+<span class='badge badge-success'>11.01.2024 5:02:45 PM</span>
+<span class='badge badge-danger'>11.01.2024 5:02:49 PM</span>
+<span class='badge badge-default'>00:00:03:813</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=55</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Regression</span>
+<span class="badge badge-pill badge-default">Master</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:02:45 PM</td>
+        <td>
+          verifyConfirmationEmailSendForSuccessfullRegistration    TEST EXECUTION STARTED.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:02:49 PM</td>
+        <td>
+          verifyConfirmationEmailSendForSuccessfullRegistration    TEST GOT PASSED.
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="56"
+          author=""
+          tag="Regression Master"
+          device="">
+          <div class="test-detail">
+            <p class="name">logoutFromMyAccountDropMenu</p>
+            <p class="text-sm">
+              <span>5:02:53 PM</span> / <span>00:00:02:767</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">logoutFromMyAccountDropMenu</h5>
+<span class='badge badge-success'>11.01.2024 5:02:53 PM</span>
+<span class='badge badge-danger'>11.01.2024 5:02:56 PM</span>
+<span class='badge badge-default'>00:00:02:767</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=56</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Regression</span>
+<span class="badge badge-pill badge-default">Master</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:02:53 PM</td>
+        <td>
+          logoutFromMyAccountDropMenu    TEST EXECUTION STARTED.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:02:56 PM</td>
+        <td>
+          logoutFromMyAccountDropMenu    TEST GOT PASSED.
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="57"
+          author=""
+          tag="Regression Master"
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyLogoutFromRightColumnOption</p>
+            <p class="text-sm">
+              <span>5:03:00 PM</span> / <span>00:00:02:953</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyLogoutFromRightColumnOption</h5>
+<span class='badge badge-success'>11.01.2024 5:03:00 PM</span>
+<span class='badge badge-danger'>11.01.2024 5:03:03 PM</span>
+<span class='badge badge-default'>00:00:02:953</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=57</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Regression</span>
+<span class="badge badge-pill badge-default">Master</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:03:00 PM</td>
+        <td>
+          verifyLogoutFromRightColumnOption    TEST EXECUTION STARTED.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:03:03 PM</td>
+        <td>
+          verifyLogoutFromRightColumnOption    TEST GOT PASSED.
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+<div class="test-content scrollable">
+<div class="test-content-tools">
+<ul><li><a class="back-to-test" href="#"><i class="fa fa-arrow-left"></i></a></li></ul>
+</div>
+<div class="test-content-detail"><div class="detail-body"></div></div>
+</div></div>
+<div class="test-wrapper row view category-view attributes-view">
+<div class="test-list">
+<div class="test-list-tools">
+<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Category</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">3</span></a></li></ul>
+</div>
+<div class="test-list-wrapper scrollable">
+<ul class="test-list-item">
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>8</span>
+<span class='badge log badge-danger'>12</span>
+</span>
+<p class="name">DataDriven</p>
+<p class="duration text-sm">20 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>DataDriven</h4>
+<span status="pass" class='badge log pass-bg'>8 passed</span>
+<span status="fail" class='badge log badge-danger'>12 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:56:18 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='1'>verifyLoginToApplicationUsingvalidCredentials</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:56:24 PM</td>
+<td>
+<a href="#" class="linked" test-id='2' id='2'>verifyLoginToApplicationUsingvalidCredentials</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:56:30 PM</td>
+<td>
+<a href="#" class="linked" test-id='3' id='3'>verifyLoginToApplicationUsingvalidCredentials</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:56:36 PM</td>
+<td>
+<a href="#" class="linked" test-id='4' id='4'>verifyLoginToApplicationUsingvalidCredentials</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:56:42 PM</td>
+<td>
+<a href="#" class="linked" test-id='5' id='5'>verifyLoginToApplicationUsingInvalidCredentials</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:56:48 PM</td>
+<td>
+<a href="#" class="linked" test-id='6' id='6'>verifyLoginToApplicationUsingInvalidCredentials</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:56:53 PM</td>
+<td>
+<a href="#" class="linked" test-id='7' id='7'>verifyLoginToApplicationUsingInvalidCredentials</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:57:00 PM</td>
+<td>
+<a href="#" class="linked" test-id='8' id='8'>verifyLoginToApplicationUsingInvalidCredentials</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>16:59:13 PM</td>
+<td>
+<a href="#" class="linked" test-id='26' id='26'>verifyUserCannotuseInvalidPhoneNumber</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>16:59:30 PM</td>
+<td>
+<a href="#" class="linked" test-id='28' id='28'>verifyUserCannotuseInvalidPhoneNumber</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>16:59:45 PM</td>
+<td>
+<a href="#" class="linked" test-id='30' id='30'>verifyUserCannotuseInvalidPhoneNumber</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>17:00:01 PM</td>
+<td>
+<a href="#" class="linked" test-id='32' id='32'>verifyUserCannotuseInvalidPhoneNumber</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>17:00:16 PM</td>
+<td>
+<a href="#" class="linked" test-id='34' id='34'>verifyUserCannotuseInvalidPhoneNumber</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>17:00:42 PM</td>
+<td>
+<a href="#" class="linked" test-id='38' id='38'>verifyPassWordFieldFollowComplexityStandards</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>17:00:59 PM</td>
+<td>
+<a href="#" class="linked" test-id='40' id='40'>verifyPassWordFieldFollowComplexityStandards</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>17:01:13 PM</td>
+<td>
+<a href="#" class="linked" test-id='42' id='42'>verifyPassWordFieldFollowComplexityStandards</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>17:01:28 PM</td>
+<td>
+<a href="#" class="linked" test-id='44' id='44'>verifyPassWordFieldFollowComplexityStandards</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>17:01:43 PM</td>
+<td>
+<a href="#" class="linked" test-id='46' id='46'>verifyPassWordFieldFollowComplexityStandards</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>17:01:59 PM</td>
+<td>
+<a href="#" class="linked" test-id='48' id='48'>verifyPassWordFieldFollowComplexityStandards</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>17:02:13 PM</td>
+<td>
+<a href="#" class="linked" test-id='50' id='50'>verifyPassWordFieldFollowComplexityStandards</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>33</span>
+<span class='badge log badge-danger'>12</span>
+</span>
+<p class="name">Master</p>
+<p class="duration text-sm">45 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>Master</h4>
+<span status="pass" class='badge log pass-bg'>33 passed</span>
+<span status="fail" class='badge log badge-danger'>12 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:56:18 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='1'>verifyLoginToApplicationUsingvalidCredentials</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:56:24 PM</td>
+<td>
+<a href="#" class="linked" test-id='2' id='2'>verifyLoginToApplicationUsingvalidCredentials</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:56:30 PM</td>
+<td>
+<a href="#" class="linked" test-id='3' id='3'>verifyLoginToApplicationUsingvalidCredentials</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:56:36 PM</td>
+<td>
+<a href="#" class="linked" test-id='4' id='4'>verifyLoginToApplicationUsingvalidCredentials</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:56:42 PM</td>
+<td>
+<a href="#" class="linked" test-id='5' id='5'>verifyLoginToApplicationUsingInvalidCredentials</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:56:48 PM</td>
+<td>
+<a href="#" class="linked" test-id='6' id='6'>verifyLoginToApplicationUsingInvalidCredentials</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:56:53 PM</td>
+<td>
+<a href="#" class="linked" test-id='7' id='7'>verifyLoginToApplicationUsingInvalidCredentials</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:57:00 PM</td>
+<td>
+<a href="#" class="linked" test-id='8' id='8'>verifyLoginToApplicationUsingInvalidCredentials</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:57:06 PM</td>
+<td>
+<a href="#" class="linked" test-id='9' id='9'>verifyForgotPasswordLink</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:57:12 PM</td>
+<td>
+<a href="#" class="linked" test-id='10' id='10'>verifyPlaceholdersOnLoginPage</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:57:17 PM</td>
+<td>
+<a href="#" class="linked" test-id='11' id='11'>verifyMaxLoginAttempts</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:57:26 PM</td>
+<td>
+<a href="#" class="linked" test-id='12' id='12'>verifyPasswordFieldToggleToHide</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:57:31 PM</td>
+<td>
+<a href="#" class="linked" test-id='13' id='13'>verifyPasswordCannotCopied</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:57:36 PM</td>
+<td>
+<a href="#" class="linked" test-id='14' id='14'>verifyPasswordNotVisibleInPageSource</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:57:41 PM</td>
+<td>
+<a href="#" class="linked" test-id='15' id='15'>verifyLoggingAfterchangingPassword</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:57:56 PM</td>
+<td>
+<a href="#" class="linked" test-id='16' id='16'>verifyRegisterAccountUsingMandatoryFields</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:58:03 PM</td>
+<td>
+<a href="#" class="linked" test-id='17' id='17'>verifyRegisterAccountUsingAllFields</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:58:12 PM</td>
+<td>
+<a href="#" class="linked" test-id='18' id='18'>verifyRegisterAccountWithoutanyDetails</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:58:19 PM</td>
+<td>
+<a href="#" class="linked" test-id='19' id='19'>verifyRegisterAccountYesSelectedForNewsletter</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:58:27 PM</td>
+<td>
+<a href="#" class="linked" test-id='20' id='20'>verifyRegisterAccountNoSelectedForNewsletter</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:58:35 PM</td>
+<td>
+<a href="#" class="linked" test-id='21' id='21'>verifyDiffWayNavigatingToRegisterAccount</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:58:41 PM</td>
+<td>
+<a href="#" class="linked" test-id='22' id='22'>verifyRegisteringWithDifferentPassAndConfirmPass</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:58:48 PM</td>
+<td>
+<a href="#" class="linked" test-id='23' id='23'>verifyRegisteringWithExistingDetails</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:58:56 PM</td>
+<td>
+<a href="#" class="linked" test-id='24' id='24'>verifyInvalidEmailTooltipMsg</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>16:59:13 PM</td>
+<td>
+<a href="#" class="linked" test-id='26' id='26'>verifyUserCannotuseInvalidPhoneNumber</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>16:59:30 PM</td>
+<td>
+<a href="#" class="linked" test-id='28' id='28'>verifyUserCannotuseInvalidPhoneNumber</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>16:59:45 PM</td>
+<td>
+<a href="#" class="linked" test-id='30' id='30'>verifyUserCannotuseInvalidPhoneNumber</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>17:00:01 PM</td>
+<td>
+<a href="#" class="linked" test-id='32' id='32'>verifyUserCannotuseInvalidPhoneNumber</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>17:00:16 PM</td>
+<td>
+<a href="#" class="linked" test-id='34' id='34'>verifyUserCannotuseInvalidPhoneNumber</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:00:24 PM</td>
+<td>
+<a href="#" class="linked" test-id='35' id='35'>verifyThePlaceholders</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:00:29 PM</td>
+<td>
+<a href="#" class="linked" test-id='36' id='36'>verifyAsterickSymbolForMandatoryFields</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>17:00:42 PM</td>
+<td>
+<a href="#" class="linked" test-id='38' id='38'>verifyPassWordFieldFollowComplexityStandards</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>17:00:59 PM</td>
+<td>
+<a href="#" class="linked" test-id='40' id='40'>verifyPassWordFieldFollowComplexityStandards</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>17:01:13 PM</td>
+<td>
+<a href="#" class="linked" test-id='42' id='42'>verifyPassWordFieldFollowComplexityStandards</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>17:01:28 PM</td>
+<td>
+<a href="#" class="linked" test-id='44' id='44'>verifyPassWordFieldFollowComplexityStandards</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>17:01:43 PM</td>
+<td>
+<a href="#" class="linked" test-id='46' id='46'>verifyPassWordFieldFollowComplexityStandards</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>17:01:59 PM</td>
+<td>
+<a href="#" class="linked" test-id='48' id='48'>verifyPassWordFieldFollowComplexityStandards</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>17:02:13 PM</td>
+<td>
+<a href="#" class="linked" test-id='50' id='50'>verifyPassWordFieldFollowComplexityStandards</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:02:21 PM</td>
+<td>
+<a href="#" class="linked" test-id='51' id='51'>verifyCheckboxNotCheckedByDefault</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:02:26 PM</td>
+<td>
+<a href="#" class="linked" test-id='52' id='52'>verifyRegisteringWithNotSelectingPrivacyPolicy</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:02:33 PM</td>
+<td>
+<a href="#" class="linked" test-id='53' id='53'>verifyPasswordAndConfirmPasswordToggledToHide</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:02:38 PM</td>
+<td>
+<a href="#" class="linked" test-id='54' id='54'>verifyRegisteringWithNotEnteringPassConfirm</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:02:45 PM</td>
+<td>
+<a href="#" class="linked" test-id='55' id='55'>verifyConfirmationEmailSendForSuccessfullRegistration</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:02:53 PM</td>
+<td>
+<a href="#" class="linked" test-id='56' id='56'>logoutFromMyAccountDropMenu</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:03:00 PM</td>
+<td>
+<a href="#" class="linked" test-id='57' id='57'>verifyLogoutFromRightColumnOption</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>33</span>
+<span class='badge log badge-danger'>12</span>
+</span>
+<p class="name">Regression</p>
+<p class="duration text-sm">45 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>Regression</h4>
+<span status="pass" class='badge log pass-bg'>33 passed</span>
+<span status="fail" class='badge log badge-danger'>12 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:56:18 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='1'>verifyLoginToApplicationUsingvalidCredentials</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:56:24 PM</td>
+<td>
+<a href="#" class="linked" test-id='2' id='2'>verifyLoginToApplicationUsingvalidCredentials</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:56:30 PM</td>
+<td>
+<a href="#" class="linked" test-id='3' id='3'>verifyLoginToApplicationUsingvalidCredentials</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:56:36 PM</td>
+<td>
+<a href="#" class="linked" test-id='4' id='4'>verifyLoginToApplicationUsingvalidCredentials</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:56:42 PM</td>
+<td>
+<a href="#" class="linked" test-id='5' id='5'>verifyLoginToApplicationUsingInvalidCredentials</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:56:48 PM</td>
+<td>
+<a href="#" class="linked" test-id='6' id='6'>verifyLoginToApplicationUsingInvalidCredentials</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:56:53 PM</td>
+<td>
+<a href="#" class="linked" test-id='7' id='7'>verifyLoginToApplicationUsingInvalidCredentials</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:57:00 PM</td>
+<td>
+<a href="#" class="linked" test-id='8' id='8'>verifyLoginToApplicationUsingInvalidCredentials</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:57:06 PM</td>
+<td>
+<a href="#" class="linked" test-id='9' id='9'>verifyForgotPasswordLink</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:57:12 PM</td>
+<td>
+<a href="#" class="linked" test-id='10' id='10'>verifyPlaceholdersOnLoginPage</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:57:17 PM</td>
+<td>
+<a href="#" class="linked" test-id='11' id='11'>verifyMaxLoginAttempts</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:57:26 PM</td>
+<td>
+<a href="#" class="linked" test-id='12' id='12'>verifyPasswordFieldToggleToHide</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:57:31 PM</td>
+<td>
+<a href="#" class="linked" test-id='13' id='13'>verifyPasswordCannotCopied</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:57:36 PM</td>
+<td>
+<a href="#" class="linked" test-id='14' id='14'>verifyPasswordNotVisibleInPageSource</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:57:41 PM</td>
+<td>
+<a href="#" class="linked" test-id='15' id='15'>verifyLoggingAfterchangingPassword</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:57:56 PM</td>
+<td>
+<a href="#" class="linked" test-id='16' id='16'>verifyRegisterAccountUsingMandatoryFields</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:58:03 PM</td>
+<td>
+<a href="#" class="linked" test-id='17' id='17'>verifyRegisterAccountUsingAllFields</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:58:12 PM</td>
+<td>
+<a href="#" class="linked" test-id='18' id='18'>verifyRegisterAccountWithoutanyDetails</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:58:19 PM</td>
+<td>
+<a href="#" class="linked" test-id='19' id='19'>verifyRegisterAccountYesSelectedForNewsletter</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:58:27 PM</td>
+<td>
+<a href="#" class="linked" test-id='20' id='20'>verifyRegisterAccountNoSelectedForNewsletter</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:58:35 PM</td>
+<td>
+<a href="#" class="linked" test-id='21' id='21'>verifyDiffWayNavigatingToRegisterAccount</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:58:41 PM</td>
+<td>
+<a href="#" class="linked" test-id='22' id='22'>verifyRegisteringWithDifferentPassAndConfirmPass</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:58:48 PM</td>
+<td>
+<a href="#" class="linked" test-id='23' id='23'>verifyRegisteringWithExistingDetails</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:58:56 PM</td>
+<td>
+<a href="#" class="linked" test-id='24' id='24'>verifyInvalidEmailTooltipMsg</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>16:59:13 PM</td>
+<td>
+<a href="#" class="linked" test-id='26' id='26'>verifyUserCannotuseInvalidPhoneNumber</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>16:59:30 PM</td>
+<td>
+<a href="#" class="linked" test-id='28' id='28'>verifyUserCannotuseInvalidPhoneNumber</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>16:59:45 PM</td>
+<td>
+<a href="#" class="linked" test-id='30' id='30'>verifyUserCannotuseInvalidPhoneNumber</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>17:00:01 PM</td>
+<td>
+<a href="#" class="linked" test-id='32' id='32'>verifyUserCannotuseInvalidPhoneNumber</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>17:00:16 PM</td>
+<td>
+<a href="#" class="linked" test-id='34' id='34'>verifyUserCannotuseInvalidPhoneNumber</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:00:24 PM</td>
+<td>
+<a href="#" class="linked" test-id='35' id='35'>verifyThePlaceholders</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:00:29 PM</td>
+<td>
+<a href="#" class="linked" test-id='36' id='36'>verifyAsterickSymbolForMandatoryFields</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>17:00:42 PM</td>
+<td>
+<a href="#" class="linked" test-id='38' id='38'>verifyPassWordFieldFollowComplexityStandards</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>17:00:59 PM</td>
+<td>
+<a href="#" class="linked" test-id='40' id='40'>verifyPassWordFieldFollowComplexityStandards</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>17:01:13 PM</td>
+<td>
+<a href="#" class="linked" test-id='42' id='42'>verifyPassWordFieldFollowComplexityStandards</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>17:01:28 PM</td>
+<td>
+<a href="#" class="linked" test-id='44' id='44'>verifyPassWordFieldFollowComplexityStandards</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>17:01:43 PM</td>
+<td>
+<a href="#" class="linked" test-id='46' id='46'>verifyPassWordFieldFollowComplexityStandards</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>17:01:59 PM</td>
+<td>
+<a href="#" class="linked" test-id='48' id='48'>verifyPassWordFieldFollowComplexityStandards</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>17:02:13 PM</td>
+<td>
+<a href="#" class="linked" test-id='50' id='50'>verifyPassWordFieldFollowComplexityStandards</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:02:21 PM</td>
+<td>
+<a href="#" class="linked" test-id='51' id='51'>verifyCheckboxNotCheckedByDefault</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:02:26 PM</td>
+<td>
+<a href="#" class="linked" test-id='52' id='52'>verifyRegisteringWithNotSelectingPrivacyPolicy</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:02:33 PM</td>
+<td>
+<a href="#" class="linked" test-id='53' id='53'>verifyPasswordAndConfirmPasswordToggledToHide</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:02:38 PM</td>
+<td>
+<a href="#" class="linked" test-id='54' id='54'>verifyRegisteringWithNotEnteringPassConfirm</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:02:45 PM</td>
+<td>
+<a href="#" class="linked" test-id='55' id='55'>verifyConfirmationEmailSendForSuccessfullRegistration</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:02:53 PM</td>
+<td>
+<a href="#" class="linked" test-id='56' id='56'>logoutFromMyAccountDropMenu</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:03:00 PM</td>
+<td>
+<a href="#" class="linked" test-id='57' id='57'>verifyLogoutFromRightColumnOption</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="test-content scrollable">
+<div class="test-content-detail">
+<div class="detail-body"></div>
+</div>
+</div>
+</div><div class="container-fluid p-4 view dashboard-view">
+<div class="row">
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Started</p>
+<h3>Nov 1, 2024 04:56:12 PM</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Ended</p>
+<h3>Nov 1, 2024 05:03:03 PM</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-pass">Tests Passed</p>
+<h3>33</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-fail">Tests Failed</p>
+<h3>12</h3>
+</div></div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-6">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Tests</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='parent-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='57%'>
+<b>33</b> tests passed
+</small>
+</div>
+<div>
+<small data-tooltip='21%'><b>12</b> tests failed,
+<b>0</b> skipped, <b data-tooltip='21%'>12</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-6">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Log events</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='events-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='20%'><b>33</b> events passed</small></div>
+<div>
+<small data-tooltip='7%'><b>12</b> events failed,
+<b data-tooltip='%'>113</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><div class="col-md-12">
+<div class="card"><div class="card-header"><p>Timeline</p></div>
+<div class="card-body pt-0"><div>
+<canvas id="timeline" height="120"></canvas>
+</div></div>
+</div>
+</div></div>
+<script>
+var timeline = {
+"verifyLoginToApplicationUsingvalidCredentials":2.307,"verifyLoginToApplicationUsingvalidCredentials":1.971,"verifyLoginToApplicationUsingvalidCredentials":2.099,"verifyLoginToApplicationUsingvalidCredentials":2.039,"verifyLoginToApplicationUsingInvalidCredentials":1.725,"verifyLoginToApplicationUsingInvalidCredentials":1.509,"verifyLoginToApplicationUsingInvalidCredentials":1.79,"verifyLoginToApplicationUsingInvalidCredentials":1.792,"verifyForgotPasswordLink":1.201,"verifyPlaceholdersOnLoginPage":0.766,"verifyMaxLoginAttempts":4.312,"verifyPasswordFieldToggleToHide":0.942,"verifyPasswordCannotCopied":1.156,"verifyPasswordNotVisibleInPageSource":0.964,"verifyLoggingAfterchangingPassword":10.892,"verifyRegisterAccountUsingMandatoryFields":3.594,"verifyRegisterAccountUsingAllFields":4.038,"verifyRegisterAccountWithoutanyDetails":3.036,"verifyRegisterAccountYesSelectedForNewsletter":4.053,"verifyRegisterAccountNoSelectedForNewsletter":3.558,"verifyDiffWayNavigatingToRegisterAccount":2.777,"verifyRegisteringWithDifferentPassAndConfirmPass":3.605,"verifyRegisteringWithExistingDetails":3.44,"verifyInvalidEmailTooltipMsg":5.376,"verifyUserCannotuseInvalidPhoneNumber":3.73,"verifyUserCannotuseInvalidPhoneNumber":5.406,"verifyUserCannotuseInvalidPhoneNumber":3.632,"verifyUserCannotuseInvalidPhoneNumber":3.791,"verifyUserCannotuseInvalidPhoneNumber":3.521,"verifyUserCannotuseInvalidPhoneNumber":4.114,"verifyUserCannotuseInvalidPhoneNumber":3.552,"verifyUserCannotuseInvalidPhoneNumber":4.173,"verifyUserCannotuseInvalidPhoneNumber":3.63,"verifyUserCannotuseInvalidPhoneNumber":3.79,"verifyThePlaceholders":0.993,"verifyAsterickSymbolForMandatoryFields":1.168,"verifyPassWordFieldFollowComplexityStandards":3.58,"verifyPassWordFieldFollowComplexityStandards":5.044,"verifyPassWordFieldFollowComplexityStandards":3.799,"verifyPassWordFieldFollowComplexityStandards":3.561,"verifyPassWordFieldFollowComplexityStandards":3.515,"verifyPassWordFieldFollowComplexityStandards":3.094,"verifyPassWordFieldFollowComplexityStandards":2.974,"verifyPassWordFieldFollowComplexityStandards":3.369,"verifyPassWordFieldFollowComplexityStandards":3.329,"verifyPassWordFieldFollowComplexityStandards":4.004,"verifyPassWordFieldFollowComplexityStandards":3.386,"verifyPassWordFieldFollowComplexityStandards":3.69,"verifyPassWordFieldFollowComplexityStandards":3.519,"verifyPassWordFieldFollowComplexityStandards":4.172,"verifyCheckboxNotCheckedByDefault":0.896,"verifyRegisteringWithNotSelectingPrivacyPolicy":3.277,"verifyPasswordAndConfirmPasswordToggledToHide":1.349,"verifyRegisteringWithNotEnteringPassConfirm":3.365,"verifyConfirmationEmailSendForSuccessfullRegistration":3.813,"logoutFromMyAccountDropMenu":2.767,"verifyLogoutFromRightColumnOption":2.953
+};
+</script>
+<div class="row">
+<div class="col-lg-6 col-md-12 category-container">
+<div class="card">
+<div class="card-header"><p>Tags</p></div>
+<div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
+<thead><tr class="bg-gray"><th>Name</th><th>Passed</th><th>Failed</th><th>Skipped</th><th>Others</th><th>Passed %</th></tr></thead><tbody>
+<tr>
+<td>DataDriven</td>
+<td>8</td>
+<td>12</td>
+<td>0</td>
+<td>0</td>
+<td>40%</td>
+</tr>
+<tr>
+<td>Master</td>
+<td>33</td>
+<td>12</td>
+<td>0</td>
+<td>0</td>
+<td>73.333%</td>
+</tr>
+<tr>
+<td>Regression</td>
+<td>33</td>
+<td>12</td>
+<td>0</td>
+<td>0</td>
+<td>73.333%</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="col-lg-6 col-md-12 sysenv-container">
+<div class="card">
+<div class="card-header"><p>System/Environment</p></div>
+<div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
+<thead><tr class="bg-gray"><th>Name</th><th>Value</th></tr></thead>
+<tbody>
+<tr>
+<td>Application</td>
+<td>opencart</td>
+</tr>
+<tr>
+<td>Module</td>
+<td>Admin</td>
+</tr>
+<tr>
+<td>Sub Module</td>
+<td>Customers</td>
+</tr>
+<tr>
+<td>User Name</td>
+<td>Vishnu</td>
+</tr>
+<tr>
+<td>Environment</td>
+<td>QA</td>
+</tr>
+<tr>
+<td>Operating System</td>
+<td>Windows</td>
+</tr>
+<tr>
+<td>Browser</td>
+<td>chrome</td>
+</tr>
+<tr>
+<td>Groups</td>
+<td>[Master]</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+</div>
+<script>
+var statusGroup = {
+parentCount: 5,
+passParent: 33,
+failParent: 12,
+warningParent: 12,
+skipParent: 0,
+childCount: 5,
+passChild: 0,
+failChild: 0,
+warningChild: 0,
+skipChild: 0,
+infoChild: 0,
+grandChildCount: 5,
+passGrandChild: 0,
+failGrandChild: 0,
+warningGrandChild: 0,
+skipGrandChild: 0,
+infoGrandChild: 0,
+eventsCount: 5,
+passEvents: 33,
+failEvents: 12,
+warningEvents: 12,
+skipEvents: 0,
+infoEvents: 101
+};
+</script>        </div>
+      </div>
+    </div>
+  </div>
+<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@d6562a79075e061305ccfdb82f01e5e195e2d307/spark/js/spark-script.js"></script>
+<script type="text/javascript"></script></body>
+</html>

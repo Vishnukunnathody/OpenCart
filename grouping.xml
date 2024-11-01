@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Grouping-Suite" verbose="5"  >
+<suite name="Grouping-Suite" verbose="3"  >
 	<groups>
 		<run>
-			<include name="test"></include>
+			<include name="Master"></include>
 			<!--<exclude name="DataDriven"></exclude> -->
 			<!--<exclude name="Sanity"></exclude>-->
 		</run>
       </groups>
       
 	<listeners>
+		
 		<listener class-name="utils.ReportUtil"></listener>
+		<listener class-name="utils.RetryUtil"></listener>
+		
 	</listeners>
 	
 	<test  name="Test">

@@ -17,18 +17,21 @@ public class AccountLogoutPage extends BasePage {
 
 	@FindBy(how = How.XPATH, using = "//ul[@class='dropdown-menu dropdown-menu-right']//a[text()='Login']")
 	private WebElement loginOption;
+	
+	
 
-	private void clickOnMyAccountBtn() {
+	public void clickOnMyAccountBtn() {
 		clickElement(myAccountOption);
-	}
-
-	public LoginPage clickOnLoginBtn() {
-		clickElement(myAccountOption);
-		clickElement(loginOption);
-		return new LoginPage(driver);
 	}
 	public boolean displayLoginOption() {
 		clickOnMyAccountBtn();
 		return isElementVisible(loginOption);
 	}
+	public LoginPage clickOnLoginBtn() {
+		clickElement(myAccountOption);
+		clickElement(loginOption);
+		return new LoginPage(driver);
+	}
+	
+	
 }

@@ -113,7 +113,7 @@ public class RegisterTest extends BaseSteps {
 
 	}
 
-	@Test(priority = 10,groups= {"DataDriven","Master"},dataProvider="invalidPhoneNumbersDataSupplier",dataProviderClass=DataProviders.class)
+	@Test(priority = 10,groups= {"Regression","Master","DataDriven"},dataProvider="invalidPhoneNumbersDataSupplier",dataProviderClass=DataProviders.class)
 	public void verifyUserCannotuseInvalidPhoneNumber(HashMap<String,String>hmap) {
 		registerPage = new LandingPage(driver).navigateToRegisterPage();
 		registerPage.validateTelephoneField(hmap.get("FirstName"), hmap.get("LastName"),
@@ -157,7 +157,7 @@ public class RegisterTest extends BaseSteps {
 
 	}
 
-	@Test(priority = 13,dataProvider="PwdComplexityDataSupplier",dataProviderClass = DataProviders.class,groups= {"DataDriven","Master"})
+	@Test(priority = 13,dataProvider="PwdComplexityDataSupplier",dataProviderClass = DataProviders.class,groups= {"DataDriven","Master","Regression"})
 	public void verifyPassWordFieldFollowComplexityStandards(HashMap<String, String> hMap) {
 
 		registerPage = new LandingPage(driver).navigateToRegisterPage();

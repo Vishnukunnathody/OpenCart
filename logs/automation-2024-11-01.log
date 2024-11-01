@@ -1,0 +1,186 @@
+17:00:05.903 [main] INFO  org.testng.internal.Utils - [Invoker 1159190947] Invoking @BeforeMethod BaseSteps.Setup(java.lang.String,java.lang.String)[pri:0, instance:tests.RegisterTest@4b3a45f1]
+17:00:09.767 [main] INFO  utils.ReportUtil - Test 'verifyUserCannotuseInvalidPhoneNumber' started running.
+17:00:09.767 [main] INFO  org.testng.internal.Utils - [Invoker 1159190947] Invoking tests.RegisterTest.verifyUserCannotuseInvalidPhoneNumber
+17:00:13.396 [main] WARN  utils.ReportUtil - verifyUserCannotuseInvalidPhoneNumber :: ERROR,Retrying test - Attempt 1
+17:00:13.397 [main] INFO  org.testng.internal.Utils - [Invoker 1159190947] Invoking @AfterMethod BaseSteps.tearDown()[pri:0, instance:tests.RegisterTest@4b3a45f1]
+17:00:13.520 [main] INFO  org.testng.internal.Utils - [Invoker 1159190947] Invoking @BeforeMethod BaseSteps.Setup(java.lang.String,java.lang.String)[pri:0, instance:tests.RegisterTest@4b3a45f1]
+17:00:16.910 [main] INFO  utils.ReportUtil - Test 'verifyUserCannotuseInvalidPhoneNumber' started running.
+17:00:16.910 [main] INFO  org.testng.internal.Utils - [Invoker 1159190947] Invoking tests.RegisterTest.verifyUserCannotuseInvalidPhoneNumber
+17:00:20.700 [main] INFO  utils.ReportUtil - Test 'verifyUserCannotuseInvalidPhoneNumber' failed after all retry attempts.
+17:00:20.701 [main] INFO  org.testng.internal.Utils - [Invoker 1159190947] Invoking @AfterMethod BaseSteps.tearDown()[pri:0, instance:tests.RegisterTest@4b3a45f1]
+17:00:20.816 [main] INFO  org.testng.internal.Utils - [Invoker 1159190947] Invoking @BeforeMethod BaseSteps.Setup(java.lang.String,java.lang.String)[pri:0, instance:tests.RegisterTest@4b3a45f1]
+17:00:24.549 [main] INFO  utils.ReportUtil - Test 'verifyThePlaceholders' started running.
+17:00:24.549 [main] INFO  org.testng.internal.Utils - [Invoker 1159190947] Invoking tests.RegisterTest.verifyThePlaceholders
+17:00:25.542 [main] INFO  utils.ReportUtil - Test 'verifyThePlaceholders'Test PASSED.
+17:00:25.543 [main] INFO  org.testng.internal.Utils - [Invoker 1159190947] Invoking @AfterMethod BaseSteps.tearDown()[pri:0, instance:tests.RegisterTest@4b3a45f1]
+17:00:25.670 [main] INFO  org.testng.internal.Utils - [Invoker 1159190947] Invoking @BeforeMethod BaseSteps.Setup(java.lang.String,java.lang.String)[pri:0, instance:tests.RegisterTest@4b3a45f1]
+17:00:29.452 [main] INFO  utils.ReportUtil - Test 'verifyAsterickSymbolForMandatoryFields' started running.
+17:00:29.452 [main] INFO  org.testng.internal.Utils - [Invoker 1159190947] Invoking tests.RegisterTest.verifyAsterickSymbolForMandatoryFields
+17:00:30.620 [main] INFO  utils.ReportUtil - Test 'verifyAsterickSymbolForMandatoryFields'Test PASSED.
+17:00:30.620 [main] INFO  org.testng.internal.Utils - [Invoker 1159190947] Invoking @AfterMethod BaseSteps.tearDown()[pri:0, instance:tests.RegisterTest@4b3a45f1]
+17:00:30.820 [main] ERROR org.apache.poi.openxml4j.opc.PackageRelationshipCollection - Cannot convert mailto:!@#$%^&*() in a valid relationship URI-> dummy-URI used
+java.net.URISyntaxException: Malformed escape pair at index 11: mailto:!@#$%^&*()
+	at java.base/java.net.URI$Parser.fail(URI.java:2995) ~[?:?]
+	at java.base/java.net.URI$Parser.scanEscape(URI.java:3123) ~[?:?]
+	at java.base/java.net.URI$Parser.scan(URI.java:3146) ~[?:?]
+	at java.base/java.net.URI$Parser.checkChars(URI.java:3164) ~[?:?]
+	at java.base/java.net.URI$Parser.parse(URI.java:3210) ~[?:?]
+	at java.base/java.net.URI.<init>(URI.java:645) ~[?:?]
+	at org.apache.poi.openxml4j.opc.PackagingURIHelper.toURI(PackagingURIHelper.java:723) ~[poi-ooxml-5.2.5.jar:5.2.5]
+	at org.apache.poi.openxml4j.opc.PackageRelationshipCollection.parseRelationshipsPart(PackageRelationshipCollection.java:356) ~[poi-ooxml-5.2.5.jar:5.2.5]
+	at org.apache.poi.openxml4j.opc.PackageRelationshipCollection.<init>(PackageRelationshipCollection.java:155) ~[poi-ooxml-5.2.5.jar:5.2.5]
+	at org.apache.poi.openxml4j.opc.PackageRelationshipCollection.<init>(PackageRelationshipCollection.java:125) ~[poi-ooxml-5.2.5.jar:5.2.5]
+	at org.apache.poi.openxml4j.opc.PackagePart.loadRelationships(PackagePart.java:565) ~[poi-ooxml-5.2.5.jar:5.2.5]
+	at org.apache.poi.openxml4j.opc.OPCPackage.getParts(OPCPackage.java:783) ~[poi-ooxml-5.2.5.jar:5.2.5]
+	at org.apache.poi.openxml4j.opc.OPCPackage.open(OPCPackage.java:354) ~[poi-ooxml-5.2.5.jar:5.2.5]
+	at org.apache.poi.ooxml.util.PackageHelper.open(PackageHelper.java:64) ~[poi-ooxml-5.2.5.jar:5.2.5]
+	at org.apache.poi.xssf.usermodel.XSSFWorkbook.<init>(XSSFWorkbook.java:313) ~[poi-ooxml-5.2.5.jar:5.2.5]
+	at org.apache.poi.xssf.usermodel.XSSFWorkbook.<init>(XSSFWorkbook.java:287) ~[poi-ooxml-5.2.5.jar:5.2.5]
+	at utils.MyXLSReader.<init>(MyXLSReader.java:44) ~[test-classes/:?]
+	at utils.DataProviders.dataProviderMethodForValidatingPwdComplexity(DataProviders.java:39) ~[test-classes/:?]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?]
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141) ~[testng-7.10.1.jar:7.10.1]
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86) ~[testng-7.10.1.jar:7.10.1]
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodNoCheckedException(MethodInvocationHelper.java:54) ~[testng-7.10.1.jar:7.10.1]
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeDataProvider(MethodInvocationHelper.java:159) ~[testng-7.10.1.jar:7.10.1]
+	at org.testng.internal.Parameters.handleParameters(Parameters.java:809) ~[testng-7.10.1.jar:7.10.1]
+	at org.testng.internal.Parameters.handleParameters(Parameters.java:734) ~[testng-7.10.1.jar:7.10.1]
+	at org.testng.internal.invokers.ParameterHandler.handleParameters(ParameterHandler.java:72) ~[testng-7.10.1.jar:7.10.1]
+	at org.testng.internal.invokers.ParameterHandler.createParameters(ParameterHandler.java:51) ~[testng-7.10.1.jar:7.10.1]
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:946) ~[testng-7.10.1.jar:7.10.1]
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203) ~[testng-7.10.1.jar:7.10.1]
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154) ~[testng-7.10.1.jar:7.10.1]
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134) ~[testng-7.10.1.jar:7.10.1]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596) [?:?]
+	at org.testng.TestRunner.privateRun(TestRunner.java:739) [testng-7.10.1.jar:7.10.1]
+	at org.testng.TestRunner.run(TestRunner.java:614) [testng-7.10.1.jar:7.10.1]
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421) [testng-7.10.1.jar:7.10.1]
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413) [testng-7.10.1.jar:7.10.1]
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373) [testng-7.10.1.jar:7.10.1]
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312) [testng-7.10.1.jar:7.10.1]
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52) [testng-7.10.1.jar:7.10.1]
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95) [testng-7.10.1.jar:7.10.1]
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274) [testng-7.10.1.jar:7.10.1]
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208) [testng-7.10.1.jar:7.10.1]
+	at org.testng.TestNG.runSuites(TestNG.java:1112) [testng-7.10.1.jar:7.10.1]
+	at org.testng.TestNG.run(TestNG.java:1079) [testng-7.10.1.jar:7.10.1]
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115) [testng-remote.jar:?]
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293) [testng-remote.jar:?]
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91) [testng-remote.jar:?]
+17:00:30.864 [main] INFO  org.testng.internal.Utils - [Invoker 1159190947] Invoking @BeforeMethod BaseSteps.Setup(java.lang.String,java.lang.String)[pri:0, instance:tests.RegisterTest@4b3a45f1]
+17:00:34.815 [main] INFO  utils.ReportUtil - Test 'verifyPassWordFieldFollowComplexityStandards' started running.
+17:00:34.815 [main] INFO  org.testng.internal.Utils - [Invoker 1159190947] Invoking tests.RegisterTest.verifyPassWordFieldFollowComplexityStandards
+17:00:38.395 [main] WARN  utils.ReportUtil - verifyPassWordFieldFollowComplexityStandards :: ERROR,Retrying test - Attempt 1
+17:00:38.396 [main] INFO  org.testng.internal.Utils - [Invoker 1159190947] Invoking @AfterMethod BaseSteps.tearDown()[pri:0, instance:tests.RegisterTest@4b3a45f1]
+17:00:38.489 [main] INFO  org.testng.internal.Utils - [Invoker 1159190947] Invoking @BeforeMethod BaseSteps.Setup(java.lang.String,java.lang.String)[pri:0, instance:tests.RegisterTest@4b3a45f1]
+17:00:42.224 [main] INFO  utils.ReportUtil - Test 'verifyPassWordFieldFollowComplexityStandards' started running.
+17:00:42.224 [main] INFO  org.testng.internal.Utils - [Invoker 1159190947] Invoking tests.RegisterTest.verifyPassWordFieldFollowComplexityStandards
+17:00:47.268 [main] INFO  utils.ReportUtil - Test 'verifyPassWordFieldFollowComplexityStandards' failed after all retry attempts.
+17:00:47.269 [main] INFO  org.testng.internal.Utils - [Invoker 1159190947] Invoking @AfterMethod BaseSteps.tearDown()[pri:0, instance:tests.RegisterTest@4b3a45f1]
+17:00:47.384 [main] INFO  org.testng.internal.Utils - [Invoker 1159190947] Invoking @BeforeMethod BaseSteps.Setup(java.lang.String,java.lang.String)[pri:0, instance:tests.RegisterTest@4b3a45f1]
+17:00:51.322 [main] INFO  utils.ReportUtil - Test 'verifyPassWordFieldFollowComplexityStandards' started running.
+17:00:51.322 [main] INFO  org.testng.internal.Utils - [Invoker 1159190947] Invoking tests.RegisterTest.verifyPassWordFieldFollowComplexityStandards
+17:00:55.121 [main] WARN  utils.ReportUtil - verifyPassWordFieldFollowComplexityStandards :: ERROR,Retrying test - Attempt 1
+17:00:55.124 [main] INFO  org.testng.internal.Utils - [Invoker 1159190947] Invoking @AfterMethod BaseSteps.tearDown()[pri:0, instance:tests.RegisterTest@4b3a45f1]
+17:00:55.219 [main] INFO  org.testng.internal.Utils - [Invoker 1159190947] Invoking @BeforeMethod BaseSteps.Setup(java.lang.String,java.lang.String)[pri:0, instance:tests.RegisterTest@4b3a45f1]
+17:00:59.241 [main] INFO  utils.ReportUtil - Test 'verifyPassWordFieldFollowComplexityStandards' started running.
+17:00:59.242 [main] INFO  org.testng.internal.Utils - [Invoker 1159190947] Invoking tests.RegisterTest.verifyPassWordFieldFollowComplexityStandards
+17:01:02.802 [main] INFO  utils.ReportUtil - Test 'verifyPassWordFieldFollowComplexityStandards' failed after all retry attempts.
+17:01:02.803 [main] INFO  org.testng.internal.Utils - [Invoker 1159190947] Invoking @AfterMethod BaseSteps.tearDown()[pri:0, instance:tests.RegisterTest@4b3a45f1]
+17:01:02.914 [main] INFO  org.testng.internal.Utils - [Invoker 1159190947] Invoking @BeforeMethod BaseSteps.Setup(java.lang.String,java.lang.String)[pri:0, instance:tests.RegisterTest@4b3a45f1]
+17:01:06.399 [main] INFO  utils.ReportUtil - Test 'verifyPassWordFieldFollowComplexityStandards' started running.
+17:01:06.399 [main] INFO  org.testng.internal.Utils - [Invoker 1159190947] Invoking tests.RegisterTest.verifyPassWordFieldFollowComplexityStandards
+17:01:09.914 [main] WARN  utils.ReportUtil - verifyPassWordFieldFollowComplexityStandards :: ERROR,Retrying test - Attempt 1
+17:01:09.915 [main] INFO  org.testng.internal.Utils - [Invoker 1159190947] Invoking @AfterMethod BaseSteps.tearDown()[pri:0, instance:tests.RegisterTest@4b3a45f1]
+17:01:10.009 [main] INFO  org.testng.internal.Utils - [Invoker 1159190947] Invoking @BeforeMethod BaseSteps.Setup(java.lang.String,java.lang.String)[pri:0, instance:tests.RegisterTest@4b3a45f1]
+17:01:13.680 [main] INFO  utils.ReportUtil - Test 'verifyPassWordFieldFollowComplexityStandards' started running.
+17:01:13.680 [main] INFO  org.testng.internal.Utils - [Invoker 1159190947] Invoking tests.RegisterTest.verifyPassWordFieldFollowComplexityStandards
+17:01:16.773 [main] INFO  utils.ReportUtil - Test 'verifyPassWordFieldFollowComplexityStandards' failed after all retry attempts.
+17:01:16.774 [main] INFO  org.testng.internal.Utils - [Invoker 1159190947] Invoking @AfterMethod BaseSteps.tearDown()[pri:0, instance:tests.RegisterTest@4b3a45f1]
+17:01:16.877 [main] INFO  org.testng.internal.Utils - [Invoker 1159190947] Invoking @BeforeMethod BaseSteps.Setup(java.lang.String,java.lang.String)[pri:0, instance:tests.RegisterTest@4b3a45f1]
+17:01:21.011 [main] INFO  utils.ReportUtil - Test 'verifyPassWordFieldFollowComplexityStandards' started running.
+17:01:21.012 [main] INFO  org.testng.internal.Utils - [Invoker 1159190947] Invoking tests.RegisterTest.verifyPassWordFieldFollowComplexityStandards
+17:01:23.985 [main] WARN  utils.ReportUtil - verifyPassWordFieldFollowComplexityStandards :: ERROR,Retrying test - Attempt 1
+17:01:23.987 [main] INFO  org.testng.internal.Utils - [Invoker 1159190947] Invoking @AfterMethod BaseSteps.tearDown()[pri:0, instance:tests.RegisterTest@4b3a45f1]
+17:01:24.098 [main] INFO  org.testng.internal.Utils - [Invoker 1159190947] Invoking @BeforeMethod BaseSteps.Setup(java.lang.String,java.lang.String)[pri:0, instance:tests.RegisterTest@4b3a45f1]
+17:01:28.298 [main] INFO  utils.ReportUtil - Test 'verifyPassWordFieldFollowComplexityStandards' started running.
+17:01:28.298 [main] INFO  org.testng.internal.Utils - [Invoker 1159190947] Invoking tests.RegisterTest.verifyPassWordFieldFollowComplexityStandards
+17:01:31.667 [main] INFO  utils.ReportUtil - Test 'verifyPassWordFieldFollowComplexityStandards' failed after all retry attempts.
+17:01:31.668 [main] INFO  org.testng.internal.Utils - [Invoker 1159190947] Invoking @AfterMethod BaseSteps.tearDown()[pri:0, instance:tests.RegisterTest@4b3a45f1]
+17:01:31.775 [main] INFO  org.testng.internal.Utils - [Invoker 1159190947] Invoking @BeforeMethod BaseSteps.Setup(java.lang.String,java.lang.String)[pri:0, instance:tests.RegisterTest@4b3a45f1]
+17:01:36.166 [main] INFO  utils.ReportUtil - Test 'verifyPassWordFieldFollowComplexityStandards' started running.
+17:01:36.167 [main] INFO  org.testng.internal.Utils - [Invoker 1159190947] Invoking tests.RegisterTest.verifyPassWordFieldFollowComplexityStandards
+17:01:39.495 [main] WARN  utils.ReportUtil - verifyPassWordFieldFollowComplexityStandards :: ERROR,Retrying test - Attempt 1
+17:01:39.496 [main] INFO  org.testng.internal.Utils - [Invoker 1159190947] Invoking @AfterMethod BaseSteps.tearDown()[pri:0, instance:tests.RegisterTest@4b3a45f1]
+17:01:39.593 [main] INFO  org.testng.internal.Utils - [Invoker 1159190947] Invoking @BeforeMethod BaseSteps.Setup(java.lang.String,java.lang.String)[pri:0, instance:tests.RegisterTest@4b3a45f1]
+17:01:43.295 [main] INFO  utils.ReportUtil - Test 'verifyPassWordFieldFollowComplexityStandards' started running.
+17:01:43.295 [main] INFO  org.testng.internal.Utils - [Invoker 1159190947] Invoking tests.RegisterTest.verifyPassWordFieldFollowComplexityStandards
+17:01:47.299 [main] INFO  utils.ReportUtil - Test 'verifyPassWordFieldFollowComplexityStandards' failed after all retry attempts.
+17:01:47.301 [main] INFO  org.testng.internal.Utils - [Invoker 1159190947] Invoking @AfterMethod BaseSteps.tearDown()[pri:0, instance:tests.RegisterTest@4b3a45f1]
+17:01:47.408 [main] INFO  org.testng.internal.Utils - [Invoker 1159190947] Invoking @BeforeMethod BaseSteps.Setup(java.lang.String,java.lang.String)[pri:0, instance:tests.RegisterTest@4b3a45f1]
+17:01:51.892 [main] INFO  utils.ReportUtil - Test 'verifyPassWordFieldFollowComplexityStandards' started running.
+17:01:51.893 [main] INFO  org.testng.internal.Utils - [Invoker 1159190947] Invoking tests.RegisterTest.verifyPassWordFieldFollowComplexityStandards
+17:01:55.278 [main] WARN  utils.ReportUtil - verifyPassWordFieldFollowComplexityStandards :: ERROR,Retrying test - Attempt 1
+17:01:55.280 [main] INFO  org.testng.internal.Utils - [Invoker 1159190947] Invoking @AfterMethod BaseSteps.tearDown()[pri:0, instance:tests.RegisterTest@4b3a45f1]
+17:01:55.399 [main] INFO  org.testng.internal.Utils - [Invoker 1159190947] Invoking @BeforeMethod BaseSteps.Setup(java.lang.String,java.lang.String)[pri:0, instance:tests.RegisterTest@4b3a45f1]
+17:01:59.011 [main] INFO  utils.ReportUtil - Test 'verifyPassWordFieldFollowComplexityStandards' started running.
+17:01:59.011 [main] INFO  org.testng.internal.Utils - [Invoker 1159190947] Invoking tests.RegisterTest.verifyPassWordFieldFollowComplexityStandards
+17:02:02.701 [main] INFO  utils.ReportUtil - Test 'verifyPassWordFieldFollowComplexityStandards' failed after all retry attempts.
+17:02:02.702 [main] INFO  org.testng.internal.Utils - [Invoker 1159190947] Invoking @AfterMethod BaseSteps.tearDown()[pri:0, instance:tests.RegisterTest@4b3a45f1]
+17:02:02.817 [main] INFO  org.testng.internal.Utils - [Invoker 1159190947] Invoking @BeforeMethod BaseSteps.Setup(java.lang.String,java.lang.String)[pri:0, instance:tests.RegisterTest@4b3a45f1]
+17:02:06.493 [main] INFO  utils.ReportUtil - Test 'verifyPassWordFieldFollowComplexityStandards' started running.
+17:02:06.493 [main] INFO  org.testng.internal.Utils - [Invoker 1159190947] Invoking tests.RegisterTest.verifyPassWordFieldFollowComplexityStandards
+17:02:10.012 [main] WARN  utils.ReportUtil - verifyPassWordFieldFollowComplexityStandards :: ERROR,Retrying test - Attempt 1
+17:02:10.013 [main] INFO  org.testng.internal.Utils - [Invoker 1159190947] Invoking @AfterMethod BaseSteps.tearDown()[pri:0, instance:tests.RegisterTest@4b3a45f1]
+17:02:10.113 [main] INFO  org.testng.internal.Utils - [Invoker 1159190947] Invoking @BeforeMethod BaseSteps.Setup(java.lang.String,java.lang.String)[pri:0, instance:tests.RegisterTest@4b3a45f1]
+17:02:13.762 [main] INFO  utils.ReportUtil - Test 'verifyPassWordFieldFollowComplexityStandards' started running.
+17:02:13.762 [main] INFO  org.testng.internal.Utils - [Invoker 1159190947] Invoking tests.RegisterTest.verifyPassWordFieldFollowComplexityStandards
+17:02:17.934 [main] INFO  utils.ReportUtil - Test 'verifyPassWordFieldFollowComplexityStandards' failed after all retry attempts.
+17:02:17.935 [main] INFO  org.testng.internal.Utils - [Invoker 1159190947] Invoking @AfterMethod BaseSteps.tearDown()[pri:0, instance:tests.RegisterTest@4b3a45f1]
+17:02:18.030 [main] INFO  org.testng.internal.Utils - [Invoker 1159190947] Invoking @BeforeMethod BaseSteps.Setup(java.lang.String,java.lang.String)[pri:0, instance:tests.RegisterTest@4b3a45f1]
+17:02:21.727 [main] INFO  utils.ReportUtil - Test 'verifyCheckboxNotCheckedByDefault' started running.
+17:02:21.728 [main] INFO  org.testng.internal.Utils - [Invoker 1159190947] Invoking tests.RegisterTest.verifyCheckboxNotCheckedByDefault
+17:02:22.623 [main] INFO  utils.ReportUtil - Test 'verifyCheckboxNotCheckedByDefault'Test PASSED.
+17:02:22.624 [main] INFO  org.testng.internal.Utils - [Invoker 1159190947] Invoking @AfterMethod BaseSteps.tearDown()[pri:0, instance:tests.RegisterTest@4b3a45f1]
+17:02:22.740 [main] INFO  org.testng.internal.Utils - [Invoker 1159190947] Invoking @BeforeMethod BaseSteps.Setup(java.lang.String,java.lang.String)[pri:0, instance:tests.RegisterTest@4b3a45f1]
+17:02:26.525 [main] INFO  utils.ReportUtil - Test 'verifyRegisteringWithNotSelectingPrivacyPolicy' started running.
+17:02:26.525 [main] INFO  org.testng.internal.Utils - [Invoker 1159190947] Invoking tests.RegisterTest.verifyRegisteringWithNotSelectingPrivacyPolicy
+17:02:29.802 [main] INFO  utils.ReportUtil - Test 'verifyRegisteringWithNotSelectingPrivacyPolicy'Test PASSED.
+17:02:29.803 [main] INFO  org.testng.internal.Utils - [Invoker 1159190947] Invoking @AfterMethod BaseSteps.tearDown()[pri:0, instance:tests.RegisterTest@4b3a45f1]
+17:02:29.921 [main] INFO  org.testng.internal.Utils - [Invoker 1159190947] Invoking @BeforeMethod BaseSteps.Setup(java.lang.String,java.lang.String)[pri:0, instance:tests.RegisterTest@4b3a45f1]
+17:02:33.589 [main] INFO  utils.ReportUtil - Test 'verifyPasswordAndConfirmPasswordToggledToHide' started running.
+17:02:33.589 [main] INFO  org.testng.internal.Utils - [Invoker 1159190947] Invoking tests.RegisterTest.verifyPasswordAndConfirmPasswordToggledToHide
+17:02:34.938 [main] INFO  utils.ReportUtil - Test 'verifyPasswordAndConfirmPasswordToggledToHide'Test PASSED.
+17:02:34.939 [main] INFO  org.testng.internal.Utils - [Invoker 1159190947] Invoking @AfterMethod BaseSteps.tearDown()[pri:0, instance:tests.RegisterTest@4b3a45f1]
+17:02:35.063 [main] INFO  org.testng.internal.Utils - [Invoker 1159190947] Invoking @BeforeMethod BaseSteps.Setup(java.lang.String,java.lang.String)[pri:0, instance:tests.RegisterTest@4b3a45f1]
+17:02:38.889 [main] INFO  utils.ReportUtil - Test 'verifyRegisteringWithNotEnteringPassConfirm' started running.
+17:02:38.889 [main] INFO  org.testng.internal.Utils - [Invoker 1159190947] Invoking tests.RegisterTest.verifyRegisteringWithNotEnteringPassConfirm
+17:02:42.254 [main] INFO  utils.ReportUtil - Test 'verifyRegisteringWithNotEnteringPassConfirm'Test PASSED.
+17:02:42.256 [main] INFO  org.testng.internal.Utils - [Invoker 1159190947] Invoking @AfterMethod BaseSteps.tearDown()[pri:0, instance:tests.RegisterTest@4b3a45f1]
+17:02:42.370 [main] INFO  org.testng.internal.Utils - [Invoker 1159190947] Invoking @BeforeMethod BaseSteps.Setup(java.lang.String,java.lang.String)[pri:0, instance:tests.RegisterTest@4b3a45f1]
+17:02:45.978 [main] INFO  utils.ReportUtil - Test 'verifyConfirmationEmailSendForSuccessfullRegistration' started running.
+17:02:45.978 [main] INFO  org.testng.internal.Utils - [Invoker 1159190947] Invoking tests.RegisterTest.verifyConfirmationEmailSendForSuccessfullRegistration
+17:02:49.791 [main] INFO  utils.ReportUtil - Test 'verifyConfirmationEmailSendForSuccessfullRegistration'Test PASSED.
+17:02:49.793 [main] INFO  org.testng.internal.Utils - [Invoker 1159190947] Invoking @AfterMethod BaseSteps.tearDown()[pri:0, instance:tests.RegisterTest@4b3a45f1]
+17:02:49.898 [main] INFO  org.testng.internal.Utils - [Invoker 1159190947] Invoking @BeforeMethod BaseSteps.Setup(java.lang.String,java.lang.String)[pri:0, instance:tests.LogoutTest@17a87e37]
+17:02:53.292 [main] INFO  utils.ReportUtil - Test 'logoutFromMyAccountDropMenu' started running.
+17:02:53.292 [main] INFO  org.testng.internal.Utils - [Invoker 1159190947] Invoking tests.LogoutTest.logoutFromMyAccountDropMenu
+17:02:56.059 [main] INFO  utils.ReportUtil - Test 'logoutFromMyAccountDropMenu'Test PASSED.
+17:02:56.059 [main] INFO  org.testng.internal.Utils - [Invoker 1159190947] Invoking @AfterMethod BaseSteps.tearDown()[pri:0, instance:tests.LogoutTest@17a87e37]
+17:02:56.157 [main] INFO  org.testng.internal.Utils - [Invoker 1159190947] Invoking @BeforeMethod BaseSteps.Setup(java.lang.String,java.lang.String)[pri:0, instance:tests.LogoutTest@17a87e37]
+17:03:00.395 [main] INFO  utils.ReportUtil - Test 'verifyLogoutFromRightColumnOption' started running.
+17:03:00.395 [main] INFO  org.testng.internal.Utils - [Invoker 1159190947] Invoking tests.LogoutTest.verifyLogoutFromRightColumnOption
+17:03:03.348 [main] INFO  utils.ReportUtil - Test 'verifyLogoutFromRightColumnOption'Test PASSED.
+17:03:03.348 [main] INFO  org.testng.internal.Utils - [Invoker 1159190947] Invoking @AfterMethod BaseSteps.tearDown()[pri:0, instance:tests.LogoutTest@17a87e37]
+17:03:04.422 [main] INFO  utils.ReportUtil - Test execution Finished for: Grouping-Suite
+17:03:04.456 [main] INFO  org.testng.internal.Utils - [[Utils]] Attempting to create C:\Users\Vishnu\FrameworkConcepts\OpenCart\test-output\Grouping-Suite\Test.xml
+17:03:04.456 [main] INFO  org.testng.internal.Utils - [[Utils]]   Directory C:\Users\Vishnu\FrameworkConcepts\OpenCart\test-output\Grouping-Suite exists: true
+17:03:04.457 [main] INFO  org.testng.internal.Utils - Creating C:\Users\Vishnu\FrameworkConcepts\OpenCart\test-output\Grouping-Suite\Test.xml
+17:03:04.605 [main] INFO  org.testng.internal.Utils - [TestNG] Time taken by org.testng.reporters.jq.Main@72d59de4: 121 ms
+17:03:04.616 [main] INFO  org.testng.internal.Utils - [[Utils]] Attempting to create C:\Users\Vishnu\FrameworkConcepts\OpenCart\test-output\testng-failed.xml
+17:03:04.616 [main] INFO  org.testng.internal.Utils - [[Utils]]   Directory C:\Users\Vishnu\FrameworkConcepts\OpenCart\test-output exists: true
+17:03:04.617 [main] INFO  org.testng.internal.Utils - Creating C:\Users\Vishnu\FrameworkConcepts\OpenCart\test-output\testng-failed.xml
+17:03:04.620 [main] INFO  org.testng.internal.Utils - [[Utils]] Attempting to create C:\Users\Vishnu\FrameworkConcepts\OpenCart\test-output\Grouping-Suite\testng-failed.xml
+17:03:04.620 [main] INFO  org.testng.internal.Utils - [[Utils]]   Directory C:\Users\Vishnu\FrameworkConcepts\OpenCart\test-output\Grouping-Suite exists: true
+17:03:04.621 [main] INFO  org.testng.internal.Utils - Creating C:\Users\Vishnu\FrameworkConcepts\OpenCart\test-output\Grouping-Suite\testng-failed.xml

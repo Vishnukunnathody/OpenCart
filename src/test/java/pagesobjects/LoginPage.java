@@ -16,7 +16,7 @@ public class LoginPage extends BasePage {
 	private final String loginInputTextFields = "//input[@class='form-control']";
 
 	@FindBy(how = How.XPATH, using = "//span[text()='My Account']  ")
-	public WebElement myAccountOption;
+	private WebElement myAccountOption;
 
 	@FindBy(how = How.XPATH, using = "(//a[text()='Login'])[1]")
 	public WebElement logInOption;
@@ -43,7 +43,7 @@ public class LoginPage extends BasePage {
 	private WebElement continueBtn;
 
 	@FindBy(how = How.XPATH, using = "//div[@class='alert alert-danger alert-dismissible']/i")
-	public WebElement pleaseTryAgainIn1HourWarMsg;
+	private WebElement pleaseTryAgainIn1HourWarMsg;
 	
 	
 	public void clickOnmyAccountOption() {
@@ -53,6 +53,7 @@ public class LoginPage extends BasePage {
 	public void clickOnLoginOption() {
 		clickElement(logInOption);
 	}
+	
 
 	public void clickOnLogoutOption() {
 		clickElement(logoutOption);

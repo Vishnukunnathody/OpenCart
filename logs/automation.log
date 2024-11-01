@@ -1,10 +1,14 @@
-14:15:56.277 [main] INFO  org.testng.internal.Utils - Creating C:\Users\Vishnu\FrameworkConcepts\OpenCart\test-output\Grouping-Suite\Test.xml
-14:15:56.372 [main] INFO  org.testng.internal.Utils - [TestNG] Time taken by org.testng.reporters.jq.Main@44be69aa: 81 ms
-14:15:56.372 [main] INFO  org.testng.internal.Utils - [TestNG] Time taken by org.testng.reporters.FailedReporter@7219ac49: 0 ms
-14:15:56.384 [main] INFO  org.testng.internal.Utils - [TestNG] Time taken by org.testng.reporters.XMLReporter@561953e3: 11 ms
-14:15:56.393 [main] INFO  org.testng.internal.Utils - [TestNG] Time taken by org.testng.reporters.EmailableReporter2@138aa3cc: 9 ms
-14:15:56.400 [main] INFO  org.testng.internal.Utils - [[Utils]] Attempting to create C:\Users\Vishnu\FrameworkConcepts\OpenCart\test-output\junitreports\TEST-tests.LogoutTest.xml
-14:15:56.401 [main] INFO  org.testng.internal.Utils - [[Utils]]   Directory C:\Users\Vishnu\FrameworkConcepts\OpenCart\test-output\junitreports exists: true
-14:15:56.401 [main] INFO  org.testng.internal.Utils - Creating C:\Users\Vishnu\FrameworkConcepts\OpenCart\test-output\junitreports\TEST-tests.LogoutTest.xml
-14:15:56.403 [main] INFO  org.testng.internal.Utils - [TestNG] Time taken by org.testng.reporters.JUnitReportReporter@ceddaf8: 8 ms
-14:15:56.403 [main] INFO  org.testng.internal.Utils - [TestNG] Time taken by org.testng.internal.ExitCodeListener@3d90eeb3: 0 ms
+17:03:04.622 [main] INFO  org.testng.internal.Utils - [TestNG] Time taken by org.testng.reporters.FailedReporter@59489572: 17 ms
+17:03:04.696 [main] INFO  org.testng.internal.Utils - [TestNG] Time taken by org.testng.reporters.XMLReporter@58e0804f: 72 ms
+17:03:04.720 [main] INFO  org.testng.internal.Utils - [TestNG] Time taken by org.testng.reporters.EmailableReporter2@2afd2c08: 24 ms
+17:03:04.797 [main] INFO  org.testng.internal.Utils - [[Utils]] Attempting to create C:\Users\Vishnu\FrameworkConcepts\OpenCart\test-output\junitreports\TEST-tests.RegisterTest.xml
+17:03:04.799 [main] INFO  org.testng.internal.Utils - [[Utils]]   Directory C:\Users\Vishnu\FrameworkConcepts\OpenCart\test-output\junitreports exists: true
+17:03:04.979 [main] INFO  org.testng.internal.Utils - Creating C:\Users\Vishnu\FrameworkConcepts\OpenCart\test-output\junitreports\TEST-tests.RegisterTest.xml
+17:03:04.980 [main] INFO  org.testng.internal.Utils - [[Utils]] Attempting to create C:\Users\Vishnu\FrameworkConcepts\OpenCart\test-output\junitreports\TEST-tests.LogoutTest.xml
+17:03:04.982 [main] INFO  org.testng.internal.Utils - [[Utils]]   Directory C:\Users\Vishnu\FrameworkConcepts\OpenCart\test-output\junitreports exists: true
+17:03:04.982 [main] INFO  org.testng.internal.Utils - Creating C:\Users\Vishnu\FrameworkConcepts\OpenCart\test-output\junitreports\TEST-tests.LogoutTest.xml
+17:03:04.989 [main] INFO  org.testng.internal.Utils - [[Utils]] Attempting to create C:\Users\Vishnu\FrameworkConcepts\OpenCart\test-output\junitreports\TEST-tests.LoginTest.xml
+17:03:04.990 [main] INFO  org.testng.internal.Utils - [[Utils]]   Directory C:\Users\Vishnu\FrameworkConcepts\OpenCart\test-output\junitreports exists: true
+17:03:04.990 [main] INFO  org.testng.internal.Utils - Creating C:\Users\Vishnu\FrameworkConcepts\OpenCart\test-output\junitreports\TEST-tests.LoginTest.xml
+17:03:04.991 [main] INFO  org.testng.internal.Utils - [TestNG] Time taken by org.testng.reporters.JUnitReportReporter@31e85ad5: 271 ms
+17:03:04.991 [main] INFO  org.testng.internal.Utils - [TestNG] Time taken by org.testng.internal.ExitCodeListener@6d1cf84c: 0 ms
