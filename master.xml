@@ -4,14 +4,16 @@
 	
 	<listeners>
 		<listener class-name="utils.ReportUtil"></listener>
+		<listener class-name="utils.RetryUtil"></listener>
 	</listeners>
 	
 	<test  name="Test">
 		<parameter name="os" value="Windows"></parameter>       <!-- Created parameter with os Windows -->
 		<parameter name="browser" value="chrome"></parameter>   <!-- Created parameter with browser chrome -->
+		<parameter name="environment" value="stage"></parameter>   <!-- Created parameter with Enviroment -->
 		<classes>
 			<class name="tests.LoginTest"></class>
-			<class name="tests.RegisterTest"></class>
+		<!--	<class name="tests.RegisterTest"></class>-->
 		</classes>
 	</test>
 </suite> 

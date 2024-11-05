@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Crossbrowser-Suite" >
+<suite name="Crossbrowser-Suite" thread-count="5" parallel="tests">
 	
       
 	<listeners>
 		<listener class-name="utils.ReportUtil"></listener>
+		<listener class-name="utils.RetryUtil"></listener>
 	</listeners>
 	
 	<test name="chrometest">
-		<parameter name="os" value="Windows"></parameter>       <!-- Created parameter with os Windows -->
-		<parameter name="browser" value="chrome"></parameter>   <!-- Created parameter with browser chrome -->
 		<classes>
 			<class name="tests.LoginTest"></class>
 			<class name="tests.RegisterTest"></class>

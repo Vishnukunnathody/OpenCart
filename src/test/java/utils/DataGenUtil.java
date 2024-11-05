@@ -15,7 +15,7 @@ public class DataGenUtil {
 		return generatedstring.toUpperCase();
 	}
 
-	public String randomEmail(int maxlength) {
+	public static String randomEmail(int maxlength) {
 		String generatedEmail = RandomStringUtils.randomAlphabetic(maxlength);
 		return (generatedEmail.toUpperCase() + "@gmail.com");
 	}
@@ -38,7 +38,7 @@ public class DataGenUtil {
 	}
 
 	// generate valid email.
-	public String getRandomvalidEmail() {
+	public static String getRandomvalidEmail() {
 		String[] validEmails = { "vishnu.71881@gmail.com", "vishnu.71882@gmail.com", "vishnu.71883@gmail.com",
 				"vishnu.71884@gmail.com", "vishnu.71885@gmail.com", "vishnu.71886@gmail.com",
 				"vishnu.71889@gmail.com" };

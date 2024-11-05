@@ -3,17 +3,13 @@ package tests;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
-import java.time.Duration;
 import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.edge.EdgeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.events.EventFiringDecorator;
 import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Parameters;
 
+import base.BasePage;
 import pagesobjects.AccountLogoutPage;
 import pagesobjects.AccountSuccessPage;
 import pagesobjects.ChangePasswordPage;
@@ -21,62 +17,60 @@ import pagesobjects.ForgotPasswordPage;
 import pagesobjects.LandingPage;
 import pagesobjects.LoginPage;
 import pagesobjects.RegisterPage;
+import utils.DriverType;
+import utils.EnvironmentType;
 import utils.ReportUtil;
+import utils.WebEventListener;
 
-public class BaseSteps {
 
+public class BaseSteps  {
 	public static WebDriver driver;
-	public Properties prop;
+    public Properties prop;
 
-	LandingPage landingPage;
-	RegisterPage registerPage;
-	AccountSuccessPage accountSuccessPage;
-	LoginPage loginPage;
-	ForgotPasswordPage forgotPasswordPage;
-	AccountLogoutPage accountLogoutPage;
-	ChangePasswordPage changePasswordPage;
+    LandingPage landingPage;
+    RegisterPage registerPage;
+    AccountSuccessPage accountSuccessPage;
+    LoginPage loginPage;
+    ForgotPasswordPage forgotPasswordPage;
+    AccountLogoutPage accountLogoutPage;
+    ChangePasswordPage changePasswordPage;
+     BasePage basepage;
+    public BaseSteps() {
+        loadProperties();
+    }
 
-	@BeforeMethod(groups = { "Sanity", "Regression", "Master", "DataDriven","test" })
-	@Parameters({ "os", "browser" })
-	public void Setup(String os, String br) {
+    private void loadProperties() {
+        try {
+            prop = new Properties();
+            File propfile = new File(System.getProperty("user.dir") + "/src/test/resources/projectdata.properties");
+            FileReader fr = new FileReader(propfile);
+            prop.load(fr);
+            ReportUtil.setProperties(prop);
+        } catch (IOException e) {
+            System.err.println("Error loading properties file: " + e.getMessage());
+            e.printStackTrace();
+        }
+    }
 
-		try {
-			prop = new Properties();
-			File propfile = new File(System.getProperty("user.dir") + "/src/test/resources/projectdata.properties");
-			FileReader fr = new FileReader(propfile);
-			prop.load(fr);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+    public void initialize() {
+        driver = DriverType.getDriverType(prop);
+        WebEventListener eventListener = new WebEventListener();
+        EventFiringDecorator<WebDriver> decorator = new EventFiringDecorator<>(eventListener);
+        driver = decorator.decorate(driver);
+        
+        if (driver != null) {
+        	EnvironmentType.setEnvType(driver, prop);
+            ReportUtil.setDriver(driver);
+        } else {
+            System.err.println("WebDriver initialization failed. Please check browser configuration.");
+        }
+    }
 
-		switch (br.toLowerCase()) {
-		case "chrome":
-			driver = new ChromeDriver();
-			break;
-		case "edge":
-			driver = new EdgeDriver();
-			break;
-		case "firefox":
-			driver = new FirefoxDriver();
-			break;
-		default:
-			System.out.println("Invalid browser name ....");
-			return;// returns means Exit from the execution.
-		}
-
-		driver.manage().deleteAllCookies();
-		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-		ReportUtil.setDriver(driver);
-		driver.get(prop.getProperty("url"));
-	}
-
-	@AfterMethod(groups = { "Sanity", "Regression", "Master", "DataDriven" ,"test"})
-	public void tearDown() {
-		if (driver != null) {
-			driver.quit();
-			driver = null;
-		}
-	}
-
+    @AfterMethod(groups = { "Sanity", "Regression", "Master", "DataDriven", "test" })
+    public void tearDown() {
+        if (driver != null) {
+            driver.quit();
+            driver = null;
+        }
+    }
 }

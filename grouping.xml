@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Grouping-Suite" verbose="3"  >
+<suite name="Grouping-Suite" verbose="6"  >
 	<groups>
 		<run>
 			<include name="Master"></include>
@@ -17,8 +17,7 @@
 	</listeners>
 	
 	<test  name="Test">
-		<parameter name="os" value="Windows"></parameter>       <!-- Created parameter with os Windows -->
-		<parameter name="browser" value="chrome"></parameter>   <!-- Created parameter with browser chrome -->
+		
 		<classes>
 			<class name="tests.LoginTest"></class>
 			<class name="tests.RegisterTest"></class>
@@ -26,4 +25,4 @@
 		</classes>
 	</test>
 	
-</suite> 
+</suite>  

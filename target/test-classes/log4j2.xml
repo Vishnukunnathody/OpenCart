@@ -1,25 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Configuration status="WARN">
-	
-	<properties>
-		 <Property name="basePath">./logs</Property>
-	</properties>
-
-	<Appenders>
-		<Console name="Console" target="SYSTEM_OUT">
-			<PatternLayout
-				pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
-		</Console>
-
-		<RollingFile name="File" fileName="${basePath}/automation.log" filePattern="${basePath}/automation-%d{yyyy-MM-dd}.log">
-			<PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
-			<SizeBasedTriggeringPolicy size="25000" />
-		</RollingFile>
-
-	</Appenders>
-	<Loggers>
-		<Root level="Info"> <!--Here use Multiple log levels -->
-			<AppenderRef ref="File" />
-		</Root>
-	</Loggers>
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
+        </Console>
+        <RollingFile name="File" fileName="logs/automation.log" filePattern="logs/automation-%d{yyyy-MM-dd}.log">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
+            <SizeBasedTriggeringPolicy size="10MB" />
+        </RollingFile>
+    </Appenders>
+    <Loggers>
+        <Root level="INFO">
+            <AppenderRef ref="Console" />
+            <AppenderRef ref="File" />
+        </Root>
+    </Loggers>
 </Configuration>

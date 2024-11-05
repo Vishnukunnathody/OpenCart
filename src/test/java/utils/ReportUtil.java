@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+import java.util.Properties;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -20,7 +21,7 @@ import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 
-import pagesobjects.BasePage;
+import base.BasePage;
 
  
 public class ReportUtil implements ITestListener {
@@ -29,13 +30,16 @@ public class ReportUtil implements ITestListener {
 	private ExtentReports extent;
 	public static ExtentTest test;
 	static WebDriver driver;
+	private static Properties prop;
 	String repName;
 	public static Logger logger = LogManager.getLogger(ReportUtil.class);
 
+	public static void setProperties(Properties properties) {
+	    prop = properties;
+	}
 	public static void setDriver(WebDriver driver) {
 		ReportUtil.driver = driver;
 	}
-
 	public static String addStepLog(Status status, String message) {
 		if (test != null) {
 			test.log(status, message);
@@ -44,13 +48,7 @@ public class ReportUtil implements ITestListener {
 	}
 	@Override
 	public void onStart(ITestContext testContext) {
-
-		/*
-		 * SimpleDateFormat df= new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss"); Date dt=
-		 * new Date(); String currentdatetimestamp=df.format(dt); // creating a time
-		 * stamp and returning in a string format.
-		 */
-
+      
 		String timeStamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());// creating a time stamp and
 																							// returning in a string format.
 		repName = "Test-Report-" + timeStamp + ".html";// creating a report name with .html format
@@ -67,12 +65,16 @@ public class ReportUtil implements ITestListener {
 		extent.setSystemInfo("Sub Module", "Customers");
 		extent.setSystemInfo("User Name", System.getProperty("user.name"));// displays the tester name
 		extent.setSystemInfo("Environment", "QA");
+		
+		if (prop != null) {
+			String os = prop.getProperty("os", System.getProperty("os"));
+	         extent.setSystemInfo("Operating System", os);
 
-		String os = testContext.getCurrentXmlTest().getParameter("os");
-		extent.setSystemInfo("Operating System", os);// operating system info
-
-		String browser = testContext.getCurrentXmlTest().getParameter("browser");
-		extent.setSystemInfo("Browser", browser); // browser info
+	        String browser = prop.getProperty("browser", System.getProperty("browser"));
+	        extent.setSystemInfo("Browser", browser);
+	   } else {
+	        System.out.println("Properties not set in ReportUtil. Please set it before running tests.");
+	    }
 
 		List<String> includedGroups = testContext.getCurrentXmlTest().getIncludedGroups();
 		if (!includedGroups.isEmpty()) {

@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>chrometest</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>28/2/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>0/0/1</td>
 </tr><tr>
-<td>Started on:</td><td>Tue Oct 29 21:36:06 EDT 2024</td>
+<td>Started on:</td><td>Sat Nov 02 12:31:44 EDT 2024</td>
 </tr>
-<tr><td>Total time:</td><td>204 seconds (204283 ms)</td>
+<tr><td>Total time:</td><td>38 seconds (38732 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,8 +67,8 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
-<table width='100%' border='1' class='invocation-failed'>
-<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<table width='100%' border='1' class='invocation-skipped'>
+<tr><td colspan='4' align='center'><b>SKIPPED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
 <td><b>Attribute(s)</b></td>
 <td width="30%"><b>Exception</b></td>
@@ -76,18 +76,66 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='tests.RegisterTest.verifyUserCannotuseInvalidPhoneNumber()'><b>verifyUserCannotuseInvalidPhoneNumber</b><br>Test class: tests.RegisterTest</td>
-<td><div><pre>java.lang.AssertionError: did not expect [Your Account Has Been Created!] but found [Your Account Has Been Created!]
-	at tests.RegisterTest.verifyUserCannotuseInvalidPhoneNumber(RegisterTest.java:116)
+<td title='tests.LoginTest.verifyLoginToApplicationUsingvalidCredentials()'><b>verifyLoginToApplicationUsingvalidCredentials</b><br>Test class: tests.LoginTest<br>Parameters: {Runmode=Y, Description=Admin Login, Username=vishnu.71881@gmail.com, Expected Result=Success, Password=Vishnu123}</td>
+<td><div><pre>org.openqa.selenium.NoSuchElementException: Unable to locate element: #input\-email
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: &apos;4.25.0&apos;, revision: &apos;8a8aea2337&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21&apos;
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Command: [7f0e65b7-60bc-4f05-92e2-166a826960e3, findElement {using=id, value=input-email}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 132.0, moz:accessibilityChecks: false, moz:buildID: 20241021175835, moz:debuggerAddress: 127.0.0.1:44608, moz:geckodriverVersion: 0.35.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 42408, moz:profile: C:\Users\Vishnu\AppData\Loc..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://127.0.0.1:44608/devtoo..., se:cdpVersion: 85.0, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
+Session ID: 7f0e65b7-60bc-4f05-92e2-166a826960e3
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:66)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy31.sendKeys(Unknown Source)
+	at pagesobjects.LoginPage.enterEmail(LoginPage.java:65)
+	at pagesobjects.LoginPage.loginToTheApplication(LoginPage.java:87)
+	at tests.LoginTest.verifyLoginToApplicationUsingvalidCredentials(LoginTest.java:22)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-... Removed 30 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1872941234", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1872941234'><pre>java.lang.AssertionError: did not expect [Your Account Has Been Created!] but found [Your Account Has Been Created!]
-	at org.testng.Assert.fail(Assert.java:111)
-	at org.testng.Assert.failEquals(Assert.java:1582)
-	at org.testng.Assert.assertNotEqualsImpl(Assert.java:157)
-	at org.testng.Assert.assertNotEquals(Assert.java:2201)
-	at org.testng.Assert.assertNotEquals(Assert.java:2223)
-	at tests.RegisterTest.verifyUserCannotuseInvalidPhoneNumber(RegisterTest.java:116)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+... Removed 18 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace738322741", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace738322741'><pre>org.openqa.selenium.NoSuchElementException: Unable to locate element: #input\-email
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: &apos;4.25.0&apos;, revision: &apos;8a8aea2337&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21&apos;
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Command: [7f0e65b7-60bc-4f05-92e2-166a826960e3, findElement {using=id, value=input-email}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 132.0, moz:accessibilityChecks: false, moz:buildID: 20241021175835, moz:debuggerAddress: 127.0.0.1:44608, moz:geckodriverVersion: 0.35.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 42408, moz:profile: C:\Users\Vishnu\AppData\Loc..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://127.0.0.1:44608/devtoo..., se:cdpVersion: 85.0, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
+Session ID: 7f0e65b7-60bc-4f05-92e2-166a826960e3
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:66)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy31.sendKeys(Unknown Source)
+	at pagesobjects.LoginPage.enterEmail(LoginPage.java:65)
+	at pagesobjects.LoginPage.loginToTheApplication(LoginPage.java:87)
+	at tests.LoginTest.verifyLoginToApplicationUsingvalidCredentials(LoginTest.java:22)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -102,212 +150,15 @@ function toggleAllBoxes() {
 	at org.testng.TestRunner.privateRun(TestRunner.java:739)
 	at org.testng.TestRunner.run(TestRunner.java:614)
 	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-	at org.testng.TestNG.runSuites(TestNG.java:1112)
-	at org.testng.TestNG.run(TestNG.java:1079)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:463)
+	at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:64)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
 </pre></div></td>
-<td>3</td>
-<td>tests.RegisterTest@7d42c224</td></tr>
-<tr>
-<td title='tests.RegisterTest.verifyPassWordFieldFollowComplexityStandards()'><b>verifyPassWordFieldFollowComplexityStandards</b><br>Test class: tests.RegisterTest</td>
-<td><div><pre>java.lang.AssertionError: did not expect [Your Account Has Been Created!] but found [Your Account Has Been Created!]
-	at tests.RegisterTest.verifyPassWordFieldFollowComplexityStandards(RegisterTest.java:183)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-... Removed 30 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace87487369", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace87487369'><pre>java.lang.AssertionError: did not expect [Your Account Has Been Created!] but found [Your Account Has Been Created!]
-	at org.testng.Assert.fail(Assert.java:111)
-	at org.testng.Assert.failEquals(Assert.java:1582)
-	at org.testng.Assert.assertNotEqualsImpl(Assert.java:157)
-	at org.testng.Assert.assertNotEquals(Assert.java:2201)
-	at org.testng.Assert.assertNotEquals(Assert.java:2223)
-	at tests.RegisterTest.verifyPassWordFieldFollowComplexityStandards(RegisterTest.java:183)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at org.testng.TestRunner.privateRun(TestRunner.java:739)
-	at org.testng.TestRunner.run(TestRunner.java:614)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-	at org.testng.TestNG.runSuites(TestNG.java:1112)
-	at org.testng.TestNG.run(TestNG.java:1079)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-</pre></div></td>
-<td>3</td>
-<td>tests.RegisterTest@7d42c224</td></tr>
-</table><p>
-<table width='100%' border='1' class='invocation-passed'>
-<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
-<tr><td><b>Test method</b></td>
-<td><b>Attribute(s)</b></td>
-<td width="30%"><b>Exception</b></td>
-<td width="10%"><b>Time (seconds)</b></td>
-<td><b>Instance</b></td>
-</tr>
-<tr>
-<td title='tests.RegisterTest.verifyRegisterAccountWithoutanyDetails()'><b>verifyRegisterAccountWithoutanyDetails</b><br>Test class: tests.RegisterTest</td>
-<td></td>
-<td>3</td>
-<td>tests.RegisterTest@7d42c224</td></tr>
-<tr>
-<td title='tests.RegisterTest.verifyThePlaceholders()'><b>verifyThePlaceholders</b><br>Test class: tests.RegisterTest</td>
-<td></td>
-<td>1</td>
-<td>tests.RegisterTest@7d42c224</td></tr>
-<tr>
-<td title='tests.LoginTest.verifyLoginToApplicationUsingValidEmailInvalidPass()'><b>verifyLoginToApplicationUsingValidEmailInvalidPass</b><br>Test class: tests.LoginTest</td>
-<td></td>
-<td>1</td>
-<td>tests.LoginTest@3b0c9195</td></tr>
-<tr>
-<td title='tests.RegisterTest.verifyRegisterAccountUsingAllFields()'><b>verifyRegisterAccountUsingAllFields</b><br>Test class: tests.RegisterTest</td>
-<td></td>
-<td>3</td>
-<td>tests.RegisterTest@7d42c224</td></tr>
-<tr>
-<td title='tests.RegisterTest.verifyDiffWayNavigatingToRegisterAccount()'><b>verifyDiffWayNavigatingToRegisterAccount</b><br>Test class: tests.RegisterTest</td>
-<td></td>
-<td>2</td>
-<td>tests.RegisterTest@7d42c224</td></tr>
-<tr>
-<td title='tests.RegisterTest.verifyRegisterAccountNoSelectedForNewsletter()'><b>verifyRegisterAccountNoSelectedForNewsletter</b><br>Test class: tests.RegisterTest</td>
-<td></td>
-<td>3</td>
-<td>tests.RegisterTest@7d42c224</td></tr>
-<tr>
-<td title='tests.RegisterTest.verifyPasswordAndConfirmPasswordToggledToHide()'><b>verifyPasswordAndConfirmPasswordToggledToHide</b><br>Test class: tests.RegisterTest</td>
-<td></td>
-<td>1</td>
-<td>tests.RegisterTest@7d42c224</td></tr>
-<tr>
-<td title='tests.RegisterTest.verifyRegisteringWithNotEnteringPassConfirm()'><b>verifyRegisteringWithNotEnteringPassConfirm</b><br>Test class: tests.RegisterTest</td>
-<td></td>
-<td>3</td>
-<td>tests.RegisterTest@7d42c224</td></tr>
-<tr>
-<td title='tests.LoginTest.verifyPasswordNotVisibleInPageSource()'><b>verifyPasswordNotVisibleInPageSource</b><br>Test class: tests.LoginTest</td>
-<td></td>
-<td>0</td>
-<td>tests.LoginTest@3b0c9195</td></tr>
-<tr>
-<td title='tests.RegisterTest.verifyRegisterAccountUsingMandatoryFields()'><b>verifyRegisterAccountUsingMandatoryFields</b><br>Test class: tests.RegisterTest</td>
-<td></td>
-<td>3</td>
-<td>tests.RegisterTest@7d42c224</td></tr>
-<tr>
-<td title='tests.LoginTest.verifyLoginToApplicationUsingInvalidEmailValidPass()'><b>verifyLoginToApplicationUsingInvalidEmailValidPass</b><br>Test class: tests.LoginTest</td>
-<td></td>
-<td>1</td>
-<td>tests.LoginTest@3b0c9195</td></tr>
-<tr>
-<td title='tests.LoginTest.verifyMaxLoginAttempts()'><b>verifyMaxLoginAttempts</b><br>Test class: tests.LoginTest</td>
-<td></td>
-<td>4</td>
-<td>tests.LoginTest@3b0c9195</td></tr>
-<tr>
-<td title='tests.LoginTest.verifyLoginUsingInvalidCredentials()'><b>verifyLoginUsingInvalidCredentials</b><br>Test class: tests.LoginTest</td>
-<td></td>
-<td>1</td>
-<td>tests.LoginTest@3b0c9195</td></tr>
-<tr>
-<td title='tests.LoginTest.verifyPasswordFieldToggleToHide()'><b>verifyPasswordFieldToggleToHide</b><br>Test class: tests.LoginTest</td>
-<td></td>
-<td>1</td>
-<td>tests.LoginTest@3b0c9195</td></tr>
-<tr>
-<td title='tests.RegisterTest.verifyConfirmationEmailSendForSuccessfullRegistration()'><b>verifyConfirmationEmailSendForSuccessfullRegistration</b><br>Test class: tests.RegisterTest</td>
-<td></td>
-<td>3</td>
-<td>tests.RegisterTest@7d42c224</td></tr>
-<tr>
-<td title='tests.LoginTest.verifyForgotPasswordLink()'><b>verifyForgotPasswordLink</b><br>Test class: tests.LoginTest</td>
-<td></td>
-<td>1</td>
-<td>tests.LoginTest@3b0c9195</td></tr>
-<tr>
-<td title='tests.LoginTest.verifyLoginToApplicationUsingInvalidCredentials()'><b>verifyLoginToApplicationUsingInvalidCredentials</b><br>Test class: tests.LoginTest</td>
-<td></td>
-<td>1</td>
-<td>tests.LoginTest@3b0c9195</td></tr>
-<tr>
-<td title='tests.LoginTest.verifyLoginToApplicationUsingvalidCredentials()'><b>verifyLoginToApplicationUsingvalidCredentials</b><br>Test class: tests.LoginTest</td>
-<td></td>
-<td>2</td>
-<td>tests.LoginTest@3b0c9195</td></tr>
-<tr>
-<td title='tests.RegisterTest.verifyRegisteringWithDifferentPassAndConfirmPass()'><b>verifyRegisteringWithDifferentPassAndConfirmPass</b><br>Test class: tests.RegisterTest</td>
-<td></td>
-<td>2</td>
-<td>tests.RegisterTest@7d42c224</td></tr>
-<tr>
-<td title='tests.RegisterTest.verifyAsterickSymbolForMandatoryFields()'><b>verifyAsterickSymbolForMandatoryFields</b><br>Test class: tests.RegisterTest</td>
-<td></td>
-<td>1</td>
-<td>tests.RegisterTest@7d42c224</td></tr>
-<tr>
-<td title='tests.RegisterTest.verifyInvalidEmailTooltipMsg()'><b>verifyInvalidEmailTooltipMsg</b><br>Test class: tests.RegisterTest</td>
-<td></td>
-<td>5</td>
-<td>tests.RegisterTest@7d42c224</td></tr>
-<tr>
-<td title='tests.RegisterTest.verifyRegisteringWithExistingDetails()'><b>verifyRegisteringWithExistingDetails</b><br>Test class: tests.RegisterTest</td>
-<td></td>
-<td>2</td>
-<td>tests.RegisterTest@7d42c224</td></tr>
-<tr>
-<td title='tests.LoginTest.verifyPasswordCannotCopied()'><b>verifyPasswordCannotCopied</b><br>Test class: tests.LoginTest</td>
-<td></td>
-<td>1</td>
-<td>tests.LoginTest@3b0c9195</td></tr>
-<tr>
-<td title='tests.RegisterTest.verifyRegisterAccountYesSelectedForNewsletter()'><b>verifyRegisterAccountYesSelectedForNewsletter</b><br>Test class: tests.RegisterTest</td>
-<td></td>
-<td>3</td>
-<td>tests.RegisterTest@7d42c224</td></tr>
-<tr>
-<td title='tests.RegisterTest.verifyRegisteringWithNotSelectingPrivacyPolicy()'><b>verifyRegisteringWithNotSelectingPrivacyPolicy</b><br>Test class: tests.RegisterTest</td>
-<td></td>
-<td>2</td>
-<td>tests.RegisterTest@7d42c224</td></tr>
-<tr>
-<td title='tests.LoginTest.verifyPlaceholdersOnLoginPage()'><b>verifyPlaceholdersOnLoginPage</b><br>Test class: tests.LoginTest</td>
-<td></td>
-<td>0</td>
-<td>tests.LoginTest@3b0c9195</td></tr>
-<tr>
-<td title='tests.LoginTest.verifyLoginToApplicationUsingNoCredentilals()'><b>verifyLoginToApplicationUsingNoCredentilals</b><br>Test class: tests.LoginTest</td>
-<td></td>
-<td>1</td>
-<td>tests.LoginTest@3b0c9195</td></tr>
-<tr>
-<td title='tests.RegisterTest.verifyCheckboxNotCheckedByDefault()'><b>verifyCheckboxNotCheckedByDefault</b><br>Test class: tests.RegisterTest</td>
-<td></td>
-<td>1</td>
-<td>tests.RegisterTest@7d42c224</td></tr>
+<td>12</td>
+<td>tests.LoginTest@dfddc9a</td></tr>
 </table><p>
 </body>
 </html>
