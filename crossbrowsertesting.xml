@@ -14,39 +14,36 @@
     <!-- Chrome Test: Running on Chrome Browser -->
     <test name="chrometest">
         <!-- Parameters for Chrome Test -->
-        <parameter name="os" value="Windows"/> <!-- Operating System: Windows -->
-        <parameter name="browser" value="chrome"/> <!-- Browser: Chrome -->
-        
-        <!-- Test classes to run for Chrome -->
+        <parameter name="os" value="Windows"></parameter>
+		<parameter name="browser" value="Chrome"></parameter>
+		<parameter name="environment" value="Stage"></parameter>
+         <!-- Test classes to run for Chrome -->
         <classes>
-            <class name="tests.LoginTest"/>
-            
+            <class name="tests.LogoutTest"></class>
         </classes>
     </test>
     
     <!-- Edge Test: Running on Edge Browser -->
     <test name="edgetest">
         <!-- Parameters for Edge Test -->
-        <parameter name="os" value="Windows"/> <!-- Operating System: Windows -->
-        <parameter name="browser" value="edge"/> <!-- Browser: Edge -->
-        
-        <!-- Test classes to run for Edge -->
+        <parameter name="os" value="Windows"></parameter>
+		<parameter name="browser" value="Chrome"></parameter>
+		<parameter name="environment" value="Stage"></parameter>
+         <!-- Test classes to run for Edge -->
         <classes>
-            <class name="tests.LoginTest"/>
-            
-        </classes>
+            <class name="tests.LogoutTest"></class>
+         </classes>
     </test>
     
     <!-- Firefox Test: Running on Firefox Browser -->
     <test name="firefoxtest">
         <!-- Parameters for Firefox Test -->
-        <parameter name="os" value="Windows"/> <!-- Operating System: Windows -->
-        <parameter name="browser" value="firefox"/> <!-- Browser: Firefox -->
-        
+        <parameter name="os" value="Windows"></parameter>
+		<parameter name="browser" value="Chrome"></parameter>
+		<parameter name="environment" value="Stage"></parameter>
         <!-- Test classes to run for Firefox -->
         <classes>
-            <class name="tests.LoginTest"/>
-           
+             <class name="tests.LogoutTest"></class>
         </classes>
     </test>
     

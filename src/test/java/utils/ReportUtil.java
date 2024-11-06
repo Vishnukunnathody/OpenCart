@@ -66,30 +66,29 @@ public class ReportUtil implements ITestListener {
         extent = new ExtentReports();
         extent.attachReporter(sparkReporter);
         
-        setSystemInfo();
+        setSystemInfo(testContext);
         List<String> includedGroups = testContext.getCurrentXmlTest().getIncludedGroups();
         if (!includedGroups.isEmpty()) {
             extent.setSystemInfo("Groups", includedGroups.toString());
         }
     }
 
-    private void setSystemInfo() {
+    private void setSystemInfo(ITestContext testContext) {
         extent.setSystemInfo("Application", "OpenCart");
         extent.setSystemInfo("Module", "Admin");
         extent.setSystemInfo("Sub Module", "Customers");
         extent.setSystemInfo("User Name", System.getProperty("user.name"));
-        extent.setSystemInfo("Environment", "QA");
+        
+        String os = testContext.getCurrentXmlTest().getParameter("os");
+		extent.setSystemInfo("Operating System", os);// operating system info
 
-        if (prop != null) {
-            String os = prop.getProperty("os", System.getProperty("os.name"));
-            extent.setSystemInfo("Operating System", os);
-
-            String browser = prop.getProperty("browser", System.getProperty("browser"));
-            extent.setSystemInfo("Browser", browser);
-        } else {
-            logger.warn("Properties not set in ReportUtil. Please set it before running tests.");
-        }
-    }
+		String browser = testContext.getCurrentXmlTest().getParameter("browser");
+		extent.setSystemInfo("Browser", browser); // browser info 
+		
+		String env = testContext.getCurrentXmlTest().getParameter("environment");
+		extent.setSystemInfo("Environment", env);// operating system info
+		
+}
 
     @Override
     public void onTestStart(ITestResult result) {

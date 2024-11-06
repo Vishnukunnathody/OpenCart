@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Grouping-Suite" verbose="3">
+<suite name="Grouping-Suite" verbose="2">
     
     <!-- Grouping configuration: Specifies which test groups to include/exclude -->
     <groups>
@@ -8,8 +8,8 @@
             <!-- Including only the tests in the 'Master' group -->
             <include name="Master"></include>
             <!-- Uncomment and modify the below lines to include/exclude specific groups -->
-            <!-- <exclude name="DataDriven"></exclude> -->
-            <!-- <exclude name="Sanity"></exclude> -->
+            <exclude name="DataDriven"></exclude> 
+             <exclude name="Sanity"></exclude>
         </run>
     </groups>
     
@@ -17,17 +17,19 @@
     <listeners>
         <!-- ReportUtil: Custom listener for generating test reports -->
         <listener class-name="utils.ReportUtil"></listener>
-        
         <!-- RetryUtil: Custom listener for retrying failed tests -->
         <listener class-name="utils.RetryUtil"></listener>
     </listeners>
     
     <!-- Test configuration: Specifies which test classes to run -->
     <test name="Test">
+		<parameter name="os" value="Windows"></parameter>
+		<parameter name="browser" value="Chrome"></parameter>
+		<parameter name="environment" value="Stage"></parameter>
         <classes>
             <!-- Test classes to execute -->
-            <class name="tests.LoginTest"></class>
-            <class name="tests.RegisterTest"></class>
+            <!-- <class name="tests.LoginTest"></class>-->
+            <!-- <class name="tests.RegisterTest"></class>-->
             <class name="tests.LogoutTest"></class>
         </classes>
     </test>

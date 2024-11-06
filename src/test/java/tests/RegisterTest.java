@@ -4,6 +4,7 @@ import java.util.HashMap;
 
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import com.aventstack.extentreports.Status;
@@ -24,8 +25,9 @@ public class RegisterTest extends BaseSteps {
 
     // Setup method: runs before each test to initialize the environment
     @BeforeMethod(groups = {"Sanity", "Regression", "Master", "DataDriven", "test"})
-    public void setUp() {
-        initialize();  // Initialize WebDriver and other necessary setups
+    @Parameters({"browser","environment"})
+    public void setUp(String browser,String environment) {
+    	initialize(browser,environment); // Initialize WebDriver and other necessary setups
         registerPage = new LandingPage(driver).navigateToRegisterPage();  // Navigate to Register Page
     }
 

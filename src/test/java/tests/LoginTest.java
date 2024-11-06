@@ -17,10 +17,11 @@ public class LoginTest extends BaseSteps {
     public LoginTest() {
         super();
     }
-    @Parameters({"browser"})
+    
     @BeforeMethod(groups = {"Sanity", "Regression", "Master", "DataDriven", "test"})
-    public void setUp() {
-        initialize();
+    @Parameters({"browser","environment"})
+    public void setUp(String browser,String environment) {
+        initialize(browser,environment);
         loginPage = new LandingPage(driver).navigateToLoginPage();
     }
 

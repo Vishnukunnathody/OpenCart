@@ -2,6 +2,7 @@ package tests;
 
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import pagesobjects.LandingPage;
 
@@ -12,8 +13,9 @@ public class LogoutTest extends BaseSteps {
     }
 
     @BeforeMethod(groups = {"Sanity", "Regression", "Master", "DataDriven", "test"})
-    public void setUp() {
-        initialize();
+    @Parameters({"browser","environment"})
+    public void setUp(String browser,String environment) {
+    	initialize(browser,environment);
         loginPage = new LandingPage(driver).navigateToLoginPage();
         accountSuccessPage = loginPage.performLogin(prop.getProperty("validemail"), prop.getProperty("password"));
     }

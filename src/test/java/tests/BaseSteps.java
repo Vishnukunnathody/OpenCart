@@ -48,14 +48,15 @@ public class BaseSteps {
             logger.error("Error loading properties file: " + e.getMessage(), e);
         }
     }
-    public void initialize() {
-        driver = DriverType.getDriverType(prop);
+    
+   public void initialize(String browser,String environment) {
+        driver = DriverType.getDriverType(prop,browser);
         WebEventListener eventListener = new WebEventListener();
         EventFiringDecorator<WebDriver> decorator = new EventFiringDecorator<>(eventListener);
         driver = decorator.decorate(driver);
         
         if (driver != null) {
-        	EnvironmentType.setEnvType(driver, prop);
+        	EnvironmentType.setEnvType(driver, prop,environment);
             ReportUtil.setDriver(driver);
         } else {
             System.err.println("WebDriver initialization failed. Please check browser configuration.");
