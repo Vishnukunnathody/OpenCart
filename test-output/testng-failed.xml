@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Grouping-Suite]" guice-stage="DEVELOPMENT" verbose="6">
+<suite name="Failed suite [Grouping-Suite]" guice-stage="DEVELOPMENT" verbose="3">
   <listeners>
     <listener class-name="utils.ReportUtil"/>
     <listener class-name="utils.RetryUtil"/>
   </listeners>
-  <test thread-count="5" name="Test(failed)" verbose="6">
+  <test thread-count="5" name="Test(failed)" verbose="3">
     <groups>
       <run>
         <include name="Master"/>
@@ -14,19 +14,19 @@
     <classes>
       <class name="tests.LoginTest">
         <methods>
-          <include name="verifyLoggingAfterchangingPassword_Test"/>
-          <include name="verifyNavigatingBackAfterLogout_Test"/>
-          <include name="verifyNavigatingBackAfterSuccessfullLogin_Test"/>
+          <include name="verifyNavigationBackAfterLogout_Test"/>
+          <include name="verifyNavigationBackAfterSuccessfulLogin_Test"/>
+          <include name="setUp"/>
           <include name="tearDown"/>
-          <include name="SetUp"/>
         </methods>
       </class> <!-- tests.LoginTest -->
       <class name="tests.RegisterTest">
         <methods>
-          <include name="SetUp"/>
-          <include name="verifyUserCannotuseInvalidPhoneNumber_Test" invocation-numbers="0 1 2 3 4"/>
-          <include name="verifyPassWordFieldFollowComplexityStandards_Test" invocation-numbers="0 1 2 3 4 5 6"/>
+          <include name="setUp"/>
+          <include name="verifyConfirmationEmailSentForSuccessfulRegistration"/>
+          <include name="verifyUserCannotUseInvalidPhoneNumberForRegistration_Test" invocation-numbers="0 1 2 3 4"/>
           <include name="tearDown"/>
+          <include name="verifyPasswordFieldFollowsComplexityStandards" invocation-numbers="0 1 2 3 4 5 6"/>
         </methods>
       </class> <!-- tests.RegisterTest -->
     </classes>

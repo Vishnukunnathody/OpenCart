@@ -5,7 +5,8 @@
     <classes>
       <class name="tests.RegisterTest">
         <methods>
-          <include name="verifyRegisterAccountUsingMandatoryFields"/>
+          <include name="verifyRegisteringAccountUsingNonMandatoryFields_Test"/>
+          <include name="setUp"/>
           <include name="tearDown"/>
         </methods>
       </class> <!-- tests.RegisterTest -->

@@ -1,6 +1,5 @@
 package utils;
 
-
 import javax.mail.*;
 import javax.mail.internet.InternetAddress;
 import javax.mail.search.FlagTerm;
@@ -8,145 +7,133 @@ import java.util.*;
 import java.util.regex.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class EmailVerifierUtil {
-	private static final String IMAP_HOST = "imap.mail.outlook.com";
+    private static final String IMAP_HOST = "imap.mail.outlook.com";
     private static final String IMAP_PORT = "993";
-    private static final String USERNAME = "vishnu.test123@outlook.com"; // Replace with your Yahoo email
-    private static final String PASSWORD = "Password@1";               // Replace with your Yahoo password
+    private static final String USERNAME = System.getenv("EMAIL_USERNAME"); // Use environment variable
+    private static final String PASSWORD = System.getenv("EMAIL_PASSWORD"); // Use environment variable
+    private static final Logger logger = LogManager.getLogger(EmailVerifierUtil.class);
 
     public static boolean verifyEmailAndLinks(String expectedSender, String expectedBody, String expectedSubject, List<String> expectedRedirectURLs) {
+        Properties properties = createEmailProperties();
+        Session emailSession = Session.getDefaultInstance(properties);
+        
+        try (Store store = emailSession.getStore("imap")) {
+            store.connect(IMAP_HOST, USERNAME, PASSWORD);
+            Folder inbox = store.getFolder("INBOX");
+            inbox.open(Folder.READ_ONLY);
+            
+            Message[] messages = inbox.search(new FlagTerm(new Flags(Flags.Flag.SEEN), false));
+            return processMessages(messages, expectedSender, expectedBody, expectedSubject, expectedRedirectURLs);
+        } catch (Exception e) {
+            logger.error("Error during email verification: ", e);
+            return false;
+        }
+    }
+
+    private static Properties createEmailProperties() {
         Properties properties = new Properties();
         properties.put("mail.imap.host", IMAP_HOST);
         properties.put("mail.imap.port", IMAP_PORT);
         properties.put("mail.imap.ssl.enable", "true");
+        return properties;
+    }
 
-        Session emailSession = Session.getDefaultInstance(properties);
-        boolean success = false;
-
-        try {
-            // Connect to the store
-            Store store = emailSession.getStore("imap");
-            store.connect(IMAP_HOST, USERNAME, PASSWORD);
-
-            // Open the inbox folder
-            Folder inbox = store.getFolder("INBOX");
-            inbox.open(Folder.READ_ONLY);
-
-            // Search for unseen messages
-            Message[] messages = inbox.search(new FlagTerm(new Flags(Flags.Flag.SEEN), false));
-
-            for (Message message : messages) {
+    private static boolean processMessages(Message[] messages, String expectedSender, String expectedBody, String expectedSubject, List<String> expectedRedirectURLs) {
+        for (Message message : messages) {
+            try {
                 String senderEmail = ((InternetAddress) message.getFrom()[0]).getAddress();
                 String subject = message.getSubject();
                 String body = message.getContent().toString();
 
-                // Verify sender email
-                if (!senderEmail.equals(expectedSender)) {
-                    System.out.println("Sender email doesn't match.");
-                    continue;
+                if (isEmailValid(senderEmail, expectedSender, subject, expectedSubject, body, expectedBody)) {
+                    return verifyLinksInEmail(body, expectedRedirectURLs);
                 }
-
-                // Verify subject
-                if (!subject.equals(expectedSubject)) {
-                    System.out.println("Subject doesn't match.");
-                    continue;
-                }
-
-                // Verify body
-                if (!body.contains(expectedBody)) {
-                    System.out.println("Email body doesn't match.");
-                    continue;
-                }
-
-                // Extract and verify links from the email body
-                List<String> links = extractLinks(body);
-                if (links.isEmpty()) {
-                    System.out.println("No links found in the email body.");
-                } else {
-                    System.out.println("Found links in the email body:");
-                    int i = 0;
-                    for (String link : links) {
-                        System.out.println("Verifying link: " + link);
-                        String finalURL = followRedirect(link);
-                        
-                        if (expectedRedirectURLs.size() > i && finalURL.equals(expectedRedirectURLs.get(i))) {
-                            System.out.println("Link redirects to the correct page: " + finalURL);
-                        } else {
-                            System.out.println("Link redirects to an unexpected page: " + finalURL);
-                        }
-                        i++;
-                    }
-                }
-
-                success = true;
-                break;
+            } catch (Exception e) {
+                logger.error("Error processing message: ", e);
             }
-
-            // Close resources
-            inbox.close(false);
-            store.close();
-        } catch (Exception e) {
-            e.printStackTrace();
         }
-
-        // Return success flag based on matches found
-        return success;
+        return false;
     }
 
-    // Extract URLs from email body
+    private static boolean isEmailValid(String senderEmail, String expectedSender, String subject, String expectedSubject, String body, String expectedBody) {
+        if (!senderEmail.equals(expectedSender)) {
+            logger.warn("Sender email doesn't match.");
+            return false;
+        }
+        if (!subject.equals(expectedSubject)) {
+            logger.warn("Subject doesn't match.");
+            return false;
+        }
+        if (!body.contains(expectedBody)) {
+            logger.warn("Email body doesn't match.");
+            return false;
+        }
+        return true;
+    }
+
+    private static boolean verifyLinksInEmail(String body, List<String> expectedRedirectURLs) {
+        List<String> links = extractLinks(body);
+        if (links.isEmpty()) {
+            logger.warn("No links found in the email body.");
+            return false;
+        }
+        
+        logger.info("Found links in the email body:");
+        boolean allLinksVerified = true;
+        
+        for (int i = 0; i < links.size(); i++) {
+            String link = links.get(i);
+            logger.info("Verifying link: " + link);
+            String finalURL = followRedirect(link);
+            if (expectedRedirectURLs.size() > i && finalURL.equals(expectedRedirectURLs.get(i))) {
+                logger.info("Link redirects to the correct page: " + finalURL);
+            } else {
+                logger.warn("Link redirects to an unexpected page: " + finalURL);
+                allLinksVerified = false;
+            }
+        }
+        
+        return allLinksVerified;
+    }
+
     private static List<String> extractLinks(String text) {
         List<String> links = new ArrayList<>();
         String regex = "\\bhttps?://[a-zA-Z0-9./?=_-]+\\b";
-        Pattern pattern = Pattern.compile(regex);
-        Matcher matcher = pattern.matcher(text);
-
+        Matcher matcher = Pattern.compile(regex).matcher(text);
+        
         while (matcher.find()) {
             links.add(matcher.group());
         }
         return links;
     }
 
-    // Follow redirects and return the final URL
     private static String followRedirect(String link) {
         try {
-            URL url = new URL(link);
-            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+            HttpURLConnection connection = (HttpURLConnection) new URL(link).openConnection();
             connection.setInstanceFollowRedirects(false); // Disable auto-following redirects
-
             int statusCode = connection.getResponseCode();
 
-            // Check if it's a redirect (3xx)
             if (statusCode >= 300 && statusCode < 400) {
                 String redirectURL = connection.getHeaderField("Location");
-                System.out.println("Redirect found: " + redirectURL);
+                logger.info("Redirect found: " + redirectURL);
                 if (redirectURL != null) {
                     return followRedirect(redirectURL); // Recursively follow the redirect
                 }
             } else if (statusCode >= 200 && statusCode < 300) {
-                // Return the final URL if it's successful
-                return link;
+                return link; // Successful response
             }
         } catch (Exception e) {
-            System.out.println("Error verifying link: " + link);
-            e.printStackTrace();
+            logger.error("Error verifying link: " + link, e);
         }
-        return link;
-    }
-
-    public static void main(String[] args) {
-        // Example with multiple expected URLs
-        List<String> expectedRedirectURLs = Arrays.asList(
-                "https://expected-final-url1.com",
-                "https://expected-final-url2.com"
-        );
-
-        boolean result = verifyEmailAndLinks(
-                "expectedSender@example.com", 
-                "expected email body", 
-                "expected subject", 
-                expectedRedirectURLs
-        );
-        System.out.println("Verification result: " + result);
+        return link; // Return original link if an error occurs
     }
 }
+
+    
+
+       
+       

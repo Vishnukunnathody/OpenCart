@@ -6,43 +6,25 @@
     <listener class-name="utils.RetryUtil"/>
   </listeners>
   <test thread-count="5" name="Test(failed)">
+    <parameter name="environment" value="stage"/>
+    <parameter name="os" value="Windows"/>
+    <parameter name="browser" value="chrome"/>
     <classes>
-      <class name="tests.RegisterTest">
-        <methods>
-          <include name="verifyPasswordAndConfirmPasswordToggledToHide"/>
-          <include name="verifyRegisteringWithNotEnteringPassConfirm"/>
-          <include name="verifyPassWordFieldFollowComplexityStandards" invocation-numbers="0 1 2 3 4 5 6"/>
-          <include name="verifyThePlaceholders"/>
-          <include name="verifyRegisterAccountWithoutanyDetails"/>
-          <include name="verifyUserCannotuseInvalidPhoneNumber" invocation-numbers="0 1 2 3 4"/>
-          <include name="verifyCheckboxNotCheckedByDefault"/>
-          <include name="verifyRegisteringWithNotSelectingPrivacyPolicy"/>
-          <include name="verifyAsterickSymbolForMandatoryFields"/>
-          <include name="verifyConfirmationEmailSendForSuccessfullRegistration"/>
-          <include name="verifyRegisterAccountUsingMandatoryFields"/>
-          <include name="verifyRegisterAccountNoSelectedForNewsletter"/>
-          <include name="verifyRegisterAccountYesSelectedForNewsletter"/>
-          <include name="verifyInvalidEmailTooltipMsg"/>
-          <include name="verifyRegisteringWithExistingDetails"/>
-          <include name="tearDown"/>
-          <include name="verifyRegisteringWithDifferentPassAndConfirmPass"/>
-          <include name="verifyDiffWayNavigatingToRegisterAccount"/>
-          <include name="verifyRegisterAccountUsingAllFields"/>
-        </methods>
-      </class> <!-- tests.RegisterTest -->
       <class name="tests.LoginTest">
         <methods>
-          <include name="verifyPasswordFieldToggleToHide"/>
-          <include name="verifyPasswordCannotCopied"/>
-          <include name="verifyMaxLoginAttempts"/>
-          <include name="verifyPasswordNotVisibleInPageSource"/>
-          <include name="verifyPlaceholdersOnLoginPage"/>
-          <include name="verifyLoggingAfterchangingPassword"/>
-          <include name="verifyLoginToApplicationUsingvalidCredentials"/>
+          <include name="verifyLoginToApplicationUsingvalidCredentials_Test"/>
+          <include name="verifyLoginToApplicationUsingInvalidCredentials_Test"/>
+          <include name="verifyLoggingAfterchangingPassword_Test"/>
+          <include name="verifyNavigatingBackAfterLogout_Test"/>
+          <include name="verifyNavigatingBackAfterSuccessfullLogin_Test"/>
+          <include name="verifyForgotPasswordLink_Test"/>
+          <include name="verifyMaxLoginAttempts_Test"/>
+          <include name="verifyPlaceholdersOnLoginPage_Test"/>
+          <include name="verifyPasswordFieldToggleToHide_Test"/>
+          <include name="verifyPasswordNotVisibleInPageSource_Test"/>
           <include name="tearDown"/>
-          <include name="verifyForgotPasswordLink"/>
+          <include name="verifyPasswordCannotCopied_Test"/>
           <include name="SetUp"/>
-          <include name="verifyLoginToApplicationUsingInvalidCredentials"/>
         </methods>
       </class> <!-- tests.LoginTest -->
     </classes>

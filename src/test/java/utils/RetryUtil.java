@@ -12,25 +12,36 @@ import com.aventstack.extentreports.Status;
 
 public class RetryUtil implements IRetryAnalyzer, IAnnotationTransformer {
 
-	private int retryCount = 0;
-	private static final int maxRetryLimit = 1;
+    private int retryCount = 0;
+    private static final int maxRetryLimit = 1;
 
-	@Override
-	public boolean retry(ITestResult result) {
-		//ReportUtil.test.assignCategory(result.getMethod().getGroups());
-		
-	
-		
-		if (retryCount < maxRetryLimit) {
-			retryCount++;
-			ReportUtil.test.log(Status.WARNING, result.getName() +" :: ERROR,Retrying test"+" - Attempt " + retryCount);
-			ReportUtil.logger.warn(result.getName() +" :: ERROR,Retrying test"+" - Attempt " + retryCount);
-			return true; // Indicate that the test should be retried
-		}
-		return false; // Indicate that the test should not be retried
-	}
+    /**
+     * Retry failed test based on retry limit.
+     *
+     * @param result ITestResult containing test details
+     * @return true if the test should be retried, false otherwise
+     */
+    @Override
+    public boolean retry(ITestResult result) {
+        if (retryCount < maxRetryLimit) {
+            retryCount++;
+            String message = String.format("%s :: ERROR, Retrying test - Attempt %d", result.getName(), retryCount);
+            ReportUtil.test.log(Status.WARNING, message);
+            ReportUtil.logger.warn(message);
+            return true; // Indicate that the test should be retried
+        }
+        return false; // Indicate that the test should not be retried
+    }
 
-	@Override
+    /**
+     * Automatically sets RetryUtil as the retry analyzer for all tests.
+     *
+     * @param annotation      The test annotation to transform
+     * @param testClass       The test class (can be null)
+     * @param testConstructor The test constructor (can be null)
+     * @param testMethod      The test method to be transformed
+     */
+    @Override
 	public void transform(ITestAnnotation annotation, Class testClass, Constructor testConstructor, Method testMethod) {
 		System.out.println("Transforming: " + testMethod.getName());
 
@@ -40,5 +51,4 @@ public class RetryUtil implements IRetryAnalyzer, IAnnotationTransformer {
 
 		}
 	}
-
 }

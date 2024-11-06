@@ -12,196 +12,260 @@ import pagesobjects.LandingPage;
 import utils.Constant;
 import utils.DataGenUtil;
 import utils.DataProviders;
+import utils.EmailVerifierUtil;
 import utils.ReportUtil;
 
 public class RegisterTest extends BaseSteps {
-	
-	
-	public RegisterTest() {
-		super();
-	}
-	@BeforeMethod(groups = {"Sanity", "Regression", "Master", "DataDriven","test" })
-	public void SetUp() {
-		initialize();
-		registerPage = new LandingPage(driver).navigateToRegisterPage();
-	}
 
-	@Test(priority = 1,groups= {"Regression","Master"})
-	public void verifyRegisterAccountUsingMandatoryFields_Test() {
-		registerPage.registerAnAccount(prop.getProperty("fristname"), prop.getProperty("lastname"),
-				DataGenUtil.generateRandomNewEmail(), prop.getProperty("telephone"), prop.getProperty("validpassword"),
-				prop.getProperty("validpassword"), null, true);
-             Assert.assertEquals(registerPage.getTitle(), Constant.Your_Account_Created_PageTitle);
-	}
+    // Constructor to initialize the RegisterTest class
+    public RegisterTest() {
+        super();
+    }
 
-	@Test(priority = 2,groups= {"Regression","Master"})
-	public void verifyRegisterAccountUsingAllFields_Test() {
-	
-		registerPage.registerAnAccount(prop.getProperty("fristname"), prop.getProperty("lastname"),
-				DataGenUtil.generateRandomNewEmail(), prop.getProperty("telephone"), prop.getProperty("validpassword"),
-				prop.getProperty("validpassword"), true, true);
+    // Setup method: runs before each test to initialize the environment
+    @BeforeMethod(groups = {"Sanity", "Regression", "Master", "DataDriven", "test"})
+    public void setUp() {
+        initialize();  // Initialize WebDriver and other necessary setups
+        registerPage = new LandingPage(driver).navigateToRegisterPage();  // Navigate to Register Page
+    }
 
-		Assert.assertEquals(registerPage.getTitle(), Constant.Your_Account_Created_PageTitle);
+    // Test Case 1: Verify registration with mandatory fields only
+    @Test(priority = 1, groups = {"Regression", "Master"})
+    public void verifyRegisteringAccountUsingMandatoryFields_Test() {
+        registerPage.registerAnAccount(
+            prop.getProperty("firstname"), 
+            prop.getProperty("lastname"),
+            DataGenUtil.generateRandomNewEmail(),
+            prop.getProperty("telephone"),
+            prop.getProperty("password"),
+            prop.getProperty("password"),
+            null, true
+        );
 
-	}
+        Assert.assertEquals(registerPage.getPageTitle(), Constant.Your_Account_Created_PageTitle);
+    }
 
-	@Test(priority = 3,groups= {"Regression","Master"})
-	public void verifyRegisterAccountWithoutanyDetails_Test() {
-		
-		registerPage.registerAnAccount("", "", "", "", "", "", false, false);
+    // Test Case 2: Verify registration with all fields filled
+    @Test(priority = 2, groups = {"Regression", "Master"})
+    public void verifyRegisteringAccountUsingNonMandatoryFields_Test() {
+        registerPage.registerAnAccount(
+            prop.getProperty("firstname"), 
+            prop.getProperty("lastname"),
+            DataGenUtil.generateRandomNewEmail(),
+            prop.getProperty("telephone"),
+            prop.getProperty("password"),
+            prop.getProperty("password"),
+            true, true
+        );
 
-		Assert.assertEquals(registerPage.getFirstNameWarnigMsg(), Constant.Expected_FirstName_WarningMsg);
-		Assert.assertEquals(registerPage.getLastNameWarnigMsg(), Constant.Expected_LastName_WarningMsg);
-		Assert.assertEquals(registerPage.getEmailWarnigMsg(), Constant.Expected_Email_WarningMsg);
-		Assert.assertEquals(registerPage.getTelephoneWarnigMsg(), Constant.Expected_Telephone_WarningMsg);
-		Assert.assertEquals(registerPage.getpasswordWarnigMsg(), Constant.Expected_Password_WarningMsg);
-		Assert.assertTrue(registerPage.getprivacyPolicyWarnigMsg().contains(Constant.Expected_Privacy_WarningMsg));
+        Assert.assertEquals(registerPage.getPageTitle(), Constant.Your_Account_Created_PageTitle);
+    }
 
-	}
+    // Test Case 3: Verify registration without any details
+    @Test(priority = 3, groups = {"Regression", "Master"})
+    public void verifyRegisteringAccountWithoutAnyDetails_Test() {
+        registerPage.registerAnAccount("", "", "", "", "", "", false, false);
 
-	@Test(priority = 4,groups= {"Regression","Master"})
-	public void verifyRegisterAccountYesSelectedForNewsletter_Test() {
-		
-		registerPage.registerAnAccount(prop.getProperty("fristname"), prop.getProperty("lastname"),
-				DataGenUtil.generateRandomNewEmail(), prop.getProperty("telephone"), prop.getProperty("validpassword"),
-				prop.getProperty("validpassword"), true, true);
+        // Verify warning messages for all required fields
+        Assert.assertEquals(registerPage.getFirstNameWarningMsg(), Constant.Expected_FirstName_WarningMsg);
+        Assert.assertEquals(registerPage.getLastNameWarningMsg(), Constant.Expected_LastName_WarningMsg);
+        Assert.assertEquals(registerPage.getEmailWarningMsg(), Constant.Expected_Email_WarningMsg);
+        Assert.assertEquals(registerPage.getTelephoneWarningMsg(), Constant.Expected_Telephone_WarningMsg);
+        Assert.assertEquals(registerPage.getPasswordWarningMsg(), Constant.Expected_Password_WarningMsg);
+        Assert.assertTrue(registerPage.getPrivacyPolicyWarningMsg().contains(Constant.Expected_Privacy_WarningMsg));
+    }
 
-		Assert.assertEquals(registerPage.getTitle(), Constant.Your_Account_Created_PageTitle);
+    // Test Case 4: Verify registration with "Yes" selected for Newsletter
+    @Test(priority = 4, groups = {"Regression", "Master"})
+    public void verifyRegisteringAccountWithYesSelectedForNewsletter_Test() {
+        registerPage.registerAnAccount(
+            prop.getProperty("firstname"),
+            prop.getProperty("lastname"),
+            DataGenUtil.generateRandomNewEmail(),
+            prop.getProperty("telephone"),
+            prop.getProperty("password"),
+            prop.getProperty("password"),
+            true, true
+        );
 
-	}
+        Assert.assertEquals(registerPage.getPageTitle(), Constant.Your_Account_Created_PageTitle);
+    }
 
-	@Test(priority = 5,groups= {"Regression","Master"})
-	public void verifyRegisterAccountNoSelectedForNewsletter_Test() {
-		
-		registerPage.registerAnAccount(prop.getProperty("fristname"), prop.getProperty("lastname"),
-				DataGenUtil.generateRandomNewEmail(), prop.getProperty("telephone"), prop.getProperty("validpassword"),
-				prop.getProperty("validpassword"), false, true);
+    // Test Case 5: Verify registration with "No" selected for Newsletter
+    @Test(priority = 5, groups = {"Regression", "Master"})
+    public void verifyRegisteringAccountWithNoSelectedForNewsletter_Test() {
+        registerPage.registerAnAccount(
+            prop.getProperty("firstname"),
+            prop.getProperty("lastname"),
+            DataGenUtil.generateRandomNewEmail(),
+            prop.getProperty("telephone"),
+            prop.getProperty("password"),
+            prop.getProperty("password"),
+            false, true
+        );
 
-		Assert.assertEquals(registerPage.getTitle(), Constant.Your_Account_Created_PageTitle);
+        Assert.assertEquals(registerPage.getPageTitle(), Constant.Your_Account_Created_PageTitle);
+    }
 
-	}
+    // Test Case 6: Verify navigating to the register page via different links
+    @Test(priority = 6, groups = {"Regression", "Master"})
+    public void verifyDiffWaysNavigatingToRegisterAccount_Test() {
+    	loginPage=new LandingPage(driver).navigateToLoginPage();
+        loginPage.clickOnNewCustomerRegisterContinueBtn().clickSidebarRegisterLink();
+        Assert.assertEquals(registerPage.getPageTitle(), Constant.Register_Account_PageTitle);
+    }
 
-	@Test(priority = 6,groups= {"Regression","Master"})
-	public void verifyDiffWayNavigatingToRegisterAccount_Test() {
-		registerPage = new LandingPage(driver).registerFromLoginPage().clickContinueBtn().clickOnRightregisterGrplink();
-              Assert.assertEquals(registerPage.getTitle(), Constant.Register_Account_PageTitle);
+    // Test Case 7: Verify registration with mismatched passwords
+    @Test(priority = 7, groups = {"Regression", "Master"})
+    public void verifyRegisteringWithDifferentPassAndConfirmPass_Test() {
+        registerPage.registerAnAccount(
+            prop.getProperty("firstname"),
+            prop.getProperty("lastname"),
+            DataGenUtil.generateRandomNewEmail(),
+            prop.getProperty("telephone"),
+            prop.getProperty("validpassword"),
+            prop.getProperty("invalidpassword"),
+            true, true
+        );
 
-	}
+        Assert.assertEquals(registerPage.getPassMismatchMsg(), Constant.Expected_Confirm_Password_WarningMsg);
+    }
 
-	@Test(priority = 7,groups= {"Regression","Master"})
-	public void verifyRegisteringWithDifferentPassAndConfirmPass_Test() {
-		registerPage.registerAnAccount(prop.getProperty("fristname"), prop.getProperty("lastname"),
-				DataGenUtil.generateRandomNewEmail(), prop.getProperty("telephone"), prop.getProperty("validpassword"),
-				prop.getProperty("invalidpassword"), true, true);
+    // Test Case 8: Verify registration with an already existing email
+    @Test(priority = 8, groups = {"Regression", "Master"})
+    public void verifyRegisteringWithExistingDetails_Test() {
+        registerPage.registerAnAccount(
+            prop.getProperty("firstname"),
+            prop.getProperty("lastname"),
+            prop.getProperty("validemail"),
+            prop.getProperty("telephone"),
+            prop.getProperty("password"),
+            prop.getProperty("password"),
+            true, true
+        );
 
-		Assert.assertEquals(registerPage.getpassMissmatchMsg(), Constant.Expected_Confirm_Password_WarningMsg);
+        Assert.assertEquals(registerPage.getEmailAlreadyRegMsg(), Constant.Expected_EmailAlreadyExists_WarningMsg);
+    }
 
-	}
+    // Test Case 9: Verify tooltip messages for invalid email formats
+    @Test(priority = 9, groups = {"Regression", "Master"})
+    public void verifyInvalidEmailTooltipMsgs_Test() throws InterruptedException {
+        Assert.assertTrue(registerPage.getDynamicToolTipMsg(prop.getProperty("invalidemailno@"), Constant.Email_TooltipErrmMsg_NoAtSign));
+        Assert.assertTrue(registerPage.getDynamicToolTipMsg(prop.getProperty("invalidemailnothingafter@"), Constant.Email_TooltipErrmMsg_NoTextAfterAtSign));
+        Assert.assertTrue(registerPage.getDynamicToolTipMsg(prop.getProperty("invalidemailnodomain"), Constant.Email_TooltipErrmMsg_DotInWrongPosition));
+    }
 
-	@Test(priority = 8,groups= {"Regression","Master"})
-	public void verifyRegisteringWithExistingDetails_Test() {
-		registerPage.registerAnAccount(prop.getProperty("fristname"), prop.getProperty("lastname"),
-				prop.getProperty("validemail"), prop.getProperty("telephone"), prop.getProperty("validpassword"),
-				prop.getProperty("validpassword"), true, true);
+    // Test Case 10: Verify invalid phone number scenario with data-driven testing
+    @Test(priority = 10, groups = {"Regression", "Master", "DataDriven"}, dataProvider = "invalidPhoneNumbersDataSupplier", dataProviderClass = DataProviders.class)
+    public void verifyUserCannotUseInvalidPhoneNumberForRegistration_Test(HashMap<String, String> hmap) {
+        registerPage.validateTelephoneField(
+            hmap.get("FirstName"),
+            hmap.get("LastName"),
+            DataGenUtil.generateRandomNewEmail(),
+            hmap.get("Telephone"),
+            hmap.get("Password"),
+            hmap.get("PasswordConfirm")
+        );
+        ReportUtil.addStepLog(Status.INFO, hmap.get("Description"));
+        Assert.assertNotEquals(driver.getTitle(), Constant.Your_Account_Created_PageTitle);
+    }
 
-		Assert.assertEquals(registerPage.getEmailAlreadyRegMsg(), Constant.Expected_EmailAlreadyExists_WarningMsg);
-	}
+    // Test Case 11: Verify that placeholder text is correct for the fields
+    @Test(priority = 11, groups = {"Regression", "Master"})
+    public void verifyRegisterPagePlaceholders_Test() {
+        Assert.assertTrue(registerPage.getPlaceholderText(Constant.FirstName_Label, Constant.Fname_PlaceHolder));
+        Assert.assertTrue(registerPage.getPlaceholderText(Constant.Last_Name_Label, Constant.Lname_PlaceHolder));
+        Assert.assertTrue(registerPage.getPlaceholderText(Constant.E_Mail_Label, Constant.Email_PlaceHolder));
+        Assert.assertTrue(registerPage.getPlaceholderText(Constant.Telephone_Label, Constant.Phone_PlaceHolder));
+        Assert.assertTrue(registerPage.getPlaceholderText(Constant.Password_Label, Constant.Pwd_PlaceHolder));
+        Assert.assertTrue(registerPage.getPlaceholderText(Constant.Password_Confirm_Label, Constant.ConfirmPwd_PlaceHolder));
+    }
 
-	@Test(priority = 9,groups= {"Regression","Master"})
-	public void verifyInvalidEmailTooltipMsg_Test() throws InterruptedException {
-		Assert.assertEquals(registerPage.getDynamicToolTipMsg(prop.getProperty("invalidemailno@"), Constant.Email_TooltipErrmMsg_NoAtSign), true);
-		Assert.assertEquals(registerPage.getDynamicToolTipMsg(prop.getProperty("invalidemailnothingafter@"), Constant.Email_TooltipErrmMsg_NoTextAfterAtSign),
-				true);
-		Assert.assertEquals(
-				registerPage.getDynamicToolTipMsg(prop.getProperty("invalidemailnodomain"), Constant.Email_TooltipErrmMsg_DotInWrongPosition),
-				true);
+    // Test Case 12: Verify that asterisk symbol appears for mandatory fields
+    @Test(priority = 12, groups = {"Regression", "Master"})
+    public void verifyAsterickSymbolForMandatoryFields_Test() {
+        Assert.assertTrue(registerPage.getAsteriskValues(Constant.FirstName_Label, Constant.color_Red, Constant.Asteric_Symbol));
+        Assert.assertTrue(registerPage.getAsteriskValues(Constant.Last_Name_Label, Constant.color_Red, Constant.Asteric_Symbol));
+        Assert.assertTrue(registerPage.getAsteriskValues(Constant.E_Mail_Label, Constant.color_Red, Constant.Asteric_Symbol));
+        Assert.assertTrue(registerPage.getAsteriskValues(Constant.Telephone_Label, Constant.color_Red, Constant.Asteric_Symbol));
+        Assert.assertTrue(registerPage.getAsteriskValues(Constant.Password_Label, Constant.color_Red, Constant.Asteric_Symbol));
+        Assert.assertTrue(registerPage.getAsteriskValues(Constant.Password_Confirm_Label, Constant.color_Red, Constant.Asteric_Symbol));
+    }
 
-	}
+    @Test(priority = 13, dataProvider = "PwdComplexityDataSupplier", dataProviderClass = DataProviders.class, groups = {"DataDriven", "Master", "Regression"})
+    public void verifyPasswordFieldFollowsComplexityStandards(HashMap<String, String> hMap) {
+        registerPage.registerAnAccount(
+            hMap.get("FirstName"), 
+            hMap.get("LastName"),
+            DataGenUtil.generateRandomNewEmail(),
+            hMap.get("Telephone"),
+            hMap.get("Password"), 
+            hMap.get("PasswordConfirm"), 
+            null, 
+            true
+        );
+        ReportUtil.addStepLog(Status.INFO, hMap.get("Description"));
+        Assert.assertNotEquals(registerPage.getPageTitle(), Constant.Your_Account_Created_PageTitle);
+    }
 
-	@Test(priority = 10,groups= {"Regression","Master","DataDriven"},dataProvider="invalidPhoneNumbersDataSupplier",dataProviderClass=DataProviders.class)
-	public void verifyUserCannotuseInvalidPhoneNumber_Test(HashMap<String,String>hmap) {
-		registerPage.validateTelephoneField(hmap.get("FirstName"), hmap.get("LastName"),
-				DataGenUtil.generateRandomNewEmail(), hmap.get("Telephone"),
-				hmap.get("Password"), hmap.get("PasswordConfirm"));
-		ReportUtil.addStepLog(Status.INFO, hmap.get("Description"));
-		Assert.assertNotEquals(driver.getTitle(), Constant.Your_Account_Created_PageTitle);
+    @Test(priority = 14, groups = {"Regression", "Master"})
+    public void verifyPrivacyPolicyCheckboxNotCheckedByDefault() {
+        Assert.assertFalse(registerPage.getPrivacyPolicyStatus(), "Privacy policy checkbox should not be checked by default.");
+    }
 
-		
-	}
+    @Test(priority = 15, groups = {"Regression", "Master"})
+    public void verifyRegistrationWithoutSelectingPrivacyPolicy() {
+        registerPage.registerAnAccount(
+            prop.getProperty("firstname"), 
+            prop.getProperty("lastname"),
+            DataGenUtil.generateRandomNewEmail(), 
+            prop.getProperty("telephone"), 
+            prop.getProperty("validpassword"),
+            prop.getProperty("validpassword"), 
+            true, 
+            false
+        );
+        Assert.assertEquals(registerPage.getPrivacyPolicyWarningMsg(), Constant.Expected_Privacy_WarningMsg, "Expected privacy policy warning message not displayed.");
+    }
 
-	@Test(priority = 11,groups= {"Regression","Master"})
-	public void verifyRegisterPagePlaceholders_Test() {
-		Assert.assertTrue(registerPage.getplaceHolderText(Constant.FirstName_Label, Constant.Fname_PlaceHolder));
-		Assert.assertTrue(registerPage.getplaceHolderText(Constant.Last_Name_Label, Constant.Lname_PlaceHolder));
-		Assert.assertTrue(registerPage.getplaceHolderText(Constant.E_Mail_Label, Constant.Email_PlaceHolder));
-		Assert.assertTrue(registerPage.getplaceHolderText(Constant.Telephone_Label, Constant.Phone_PlaceHolder));
-		Assert.assertTrue(registerPage.getplaceHolderText(Constant.Password_Label, Constant.Pwd_PlaceHolder));
-		Assert.assertTrue(
-				registerPage.getplaceHolderText(Constant.Password_Confirm_Label, Constant.ConfirmPwd_PlaceHolder));
+    @Test(priority = 16, groups = {"Regression", "Master"})
+    public void verifyPasswordAndConfirmPasswordAreHidden() {
+        Assert.assertTrue(registerPage.getTypeStatus(prop.getProperty("validpassword")), "Password and confirm password fields should be toggled to hide.");
+    }
 
-	}
+    @Test(priority = 17, groups = {"Regression", "Master"})
+    public void verifyRegistrationWithoutConfirmPasswordInput_Test() {
+        registerPage.registerAnAccount(
+            prop.getProperty("firstname"), 
+            prop.getProperty("lastname"),
+            DataGenUtil.generateRandomNewEmail(), 
+            prop.getProperty("telephone"), 
+            prop.getProperty("validpassword"),
+            "", 
+            true, 
+            true
+        );
+        Assert.assertEquals(registerPage.getPassMismatchMsg(), Constant.Expected_Confirm_Password_WarningMsg, "Expected password mismatch warning message not displayed.");
+    }
 
-	@Test(priority = 12,groups= {"Regression","Master"})
-	public void verifyAsterickSymbolForMandatoryFields_Test() {
-		Assert.assertTrue(
-				registerPage.getAstericValues(Constant.FirstName_Label, Constant.color_Red, Constant.Asteric_Symbol));
-		Assert.assertTrue(
-				registerPage.getAstericValues(Constant.Last_Name_Label, Constant.color_Red, Constant.Asteric_Symbol));
-		Assert.assertTrue(
-				registerPage.getAstericValues(Constant.E_Mail_Label, Constant.color_Red, Constant.Asteric_Symbol));
-		Assert.assertTrue(
-				registerPage.getAstericValues(Constant.Telephone_Label, Constant.color_Red, Constant.Asteric_Symbol));
-		Assert.assertTrue(
-				registerPage.getAstericValues(Constant.Password_Label, Constant.color_Red, Constant.Asteric_Symbol));
-		Assert.assertTrue(registerPage.getAstericValues(Constant.Password_Confirm_Label, Constant.color_Red,
-				Constant.Asteric_Symbol));
+    @Test(priority = 18, groups = {"Regression", "Master"})
+    public void verifyConfirmationEmailSentForSuccessfulRegistration() {
+        // Attempt to register a new account with valid details
+        registerPage.registerAnAccount(
+            prop.getProperty("firstName"), 
+            prop.getProperty("lastName"),
+            DataGenUtil.generateRandomNewEmail(), 
+            prop.getProperty("telephone"), 
+            prop.getProperty("validPassword"),
+            prop.getProperty("validPassword"), 
+            true, 
+            true
+        );
+      //  Assert.assertTrue(EmailVerifierUtil.verifyEmailAndLinks(null, null, null, null));
+     }}
 
-	}
 
-	@Test(priority = 13,dataProvider="PwdComplexityDataSupplier",dataProviderClass = DataProviders.class,groups= {"DataDriven","Master","Regression"})
-	public void verifyPassWordFieldFollowComplexityStandards_Test(HashMap<String, String> hMap) {
-           registerPage.registerAnAccount(hMap.get("FirstName"), hMap.get("LastName"),
-				DataGenUtil.generateRandomNewEmail(),hMap.get("Telephone"),
-				hMap.get("Password"), hMap.get("PasswordConfirm"), null, true);
-		ReportUtil.addStepLog(Status.INFO, hMap.get("Description"));
-		Assert.assertNotEquals(registerPage.getTitle(), Constant.Your_Account_Created_PageTitle);
-			
-	}
 
-	@Test(priority = 14,groups= {"Regression","Master"})
-	public void verifyCheckboxNotCheckedByDefault_Test() {
-		Assert.assertFalse(registerPage.getPrivacyPolicyStatus());
 
-	}
 
-	@Test(priority = 15,groups= {"Regression","Master"})
-	public void verifyRegisteringWithNotSelectingPrivacyPolicy_Test() {
-		registerPage.registerAnAccount(prop.getProperty("fristname"), prop.getProperty("lastname"),
-				DataGenUtil.generateRandomNewEmail(), prop.getProperty("telephone"), prop.getProperty("validpassword"),
-				prop.getProperty("invalidpassword"), true, false);
-		Assert.assertEquals(registerPage.getprivacyPolicyWarnigMsg(), Constant.Expected_Privacy_WarningMsg);
 
-	}
-
-	@Test(priority = 16,groups= {"Regression","Master"})
-	public void verifyPasswordAndConfirmPasswordToggledToHide_Test() {
-		Assert.assertTrue(registerPage.getTypeStatus(prop.getProperty("validpassword")));
-	}
-
-	@Test(priority = 17,groups= {"Regression","Master"})
-	public void verifyRegisteringWithNotEnteringPassConfirm_Test() {
-		registerPage.registerAnAccount(prop.getProperty("fristname"), prop.getProperty("lastname"),
-				DataGenUtil.generateRandomNewEmail(), prop.getProperty("telephone"), prop.getProperty("validpassword"),
-				"", true, true);
-		Assert.assertEquals(registerPage.getpassMissmatchMsg(), Constant.Expected_Confirm_Password_WarningMsg);
-
-	}
-
-	@Test(priority = 18,groups= {"Regression","Master"})
-	public void verifyConfirmationEmailSendForSuccessfullRegistration_Test() {
-		registerPage.registerAnAccount(prop.getProperty("fristname"), prop.getProperty("lastname"),
-				DataGenUtil.generateRandomNewEmail(), prop.getProperty("telephone"), prop.getProperty("validpassword"),
-				prop.getProperty("validpassword"), true, true);
-
-	}
-}

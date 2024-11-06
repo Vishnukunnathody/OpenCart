@@ -1,12 +1,10 @@
 package pagesobjects;
 
 import java.util.List;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
-
 import base.BasePage;
 
 public class LoginPage extends BasePage {
@@ -17,160 +15,147 @@ public class LoginPage extends BasePage {
 
 	private final String loginInputTextFields = "//input[@class='form-control']";
 
-	@FindBy(how = How.XPATH, using = "//span[text()='My Account']  ")
+	@FindBy(how = How.XPATH, using = "//span[text()='My Account']")
 	private WebElement myAccountOption;
 
 	@FindBy(how = How.XPATH, using = "(//a[text()='Login'])[1]")
-	public WebElement logInOption;
+	public WebElement loginOption;
 
 	@FindBy(how = How.XPATH, using = "(//a[text()='Logout'])[1]")
 	public WebElement logoutOption;
 
 	@FindBy(how = How.ID, using = "input-email")
-	private WebElement emailInputfield;
+	private WebElement emailInputField;
 
 	@FindBy(how = How.ID, using = "input-password")
-	private WebElement passwordInputfield;
+	private WebElement passwordInputField;
 
 	@FindBy(how = How.XPATH, using = "//input[@value='Login']")
-	private WebElement loginBtn;
+	private WebElement loginButton;
 
 	@FindBy(how = How.XPATH, using = "//div[@class='alert alert-danger alert-dismissible']")
-	private WebElement invalidCredentialWarMsg;
+	private WebElement invalidCredentialWarningMessage;
 
 	@FindBy(how = How.XPATH, using = "//input[@id='input-password']/following-sibling::a")
 	private WebElement forgotPasswordLink;
 
 	@FindBy(how = How.XPATH, using = "//a[text()='Continue']")
-	private WebElement continueBtn;
+	private WebElement continueButton;
 
 	@FindBy(how = How.XPATH, using = "//div[@class='alert alert-danger alert-dismissible']/i")
-	private WebElement pleaseTryAgainIn1HourWarMsg;
-	
-	
-	public void clickOnmyAccountOption() {
+	private WebElement pleaseTryAgainIn1HourWarningMessage;
+
+	// Clicks My Account option
+	public void clickOnMyAccountOption() {
 		clickElement(myAccountOption);
 	}
 
+	// Clicks Login option in the MainMenu
 	public void clickOnLoginOption() {
-		clickElement(logInOption);
+		clickElement(loginOption);
+	}
+
+// Clicks Logout option
+	public AccountLogoutPage clickOnLogoutOption() {
+		clickElement(logoutOption);
+		return new AccountLogoutPage(driver);
 	}
 	
+    //clicks in the Continue button for the new customer.
+	public RegisterPage clickOnNewCustomerRegisterContinueBtn() {
+		clickElement(continueButton);
+		return new RegisterPage(driver);
 
-	public void clickOnLogoutOption() {
-		clickElement(logoutOption);
 	}
 
-	public void enterEmail(String EmailData) {
-		emailInputfield.sendKeys(EmailData);
+	// Enters email in the email field
+	public void enterEmail(String emailData) {
+		emailInputField.sendKeys(emailData);
 	}
 
-	public void enterPassword(String PasswordData) {
-		passwordInputfield.sendKeys(PasswordData);
+	// Enters password in the password field
+	public void enterPassword(String passwordData) {
+		passwordInputField.sendKeys(passwordData);
 	}
 
-	public AccountSuccessPage clickLoginBtn() {
-		clickElement(loginBtn);
+	// Clicks the Login button and returns the success page
+	public AccountSuccessPage clickLoginButton() {
+		clickElement(loginButton);
 		return new AccountSuccessPage(driver);
 	}
 
-	public String getInvalidCredentialWarningMsg() {
-		return invalidCredentialWarMsg.getText();
+	// Retrieves the invalid credential warning message text
+	public String getInvalidCredentialWarningMessage() {
+		return invalidCredentialWarningMessage.getText();
 	}
 
-	public RegisterPage clickContinueBtn() {
-		clickElement(continueBtn);
-		return new RegisterPage(driver);
-	}
-
-	public AccountSuccessPage loginToTheApplication(String emailAddressData, String PasswordData) {
-		enterEmail(emailAddressData);
-		enterPassword(PasswordData);
-		return clickLoginBtn();
-	}
-
-	public ForgotPasswordPage clickForgotPassLink() {
+	// Navigates to Forgot Password page
+	public ForgotPasswordPage clickForgotPasswordLink() {
 		clickElement(forgotPasswordLink);
 		return new ForgotPasswordPage(driver);
 	}
 
-	public void logout() {
-		clickOnmyAccountOption();
-		clickOnLogoutOption();
-	}
-	
-
-	public String getPleaseTryAgainIn1HourWarMsg() {
-		return getText(pleaseTryAgainIn1HourWarMsg);
-	}
-
-	public boolean getPlaceHolderTexts(String fieldName, String ExpectedPlaceholderValue) {
+	// Returns true if placeholder text matches expected value for given field
+	public boolean isPlaceholderTextCorrect(String fieldName, String expectedPlaceholderValue) {
 		List<WebElement> elements = getElements(loginInputTextFields);
 
 		for (WebElement element : elements) {
-			String Placeholderval = getAttributeVal(element, "placeholder");// getting the placeholder text
-			if (fieldName.equals(Placeholderval)) {
-				System.out.println(Placeholderval + "Actual");
-				System.out.println(ExpectedPlaceholderValue + "expected");
-				return Placeholderval.equals(ExpectedPlaceholderValue);// returns true if fieldname passed equal to
-				// Placeholderval and Placeholderval equal to ExpectedPlaceholderValue, else
-				// returns false.
+			String placeholderValue = getAttribute(element, "placeholder");
+			if (fieldName.equals(placeholderValue) && placeholderValue.equals(expectedPlaceholderValue)) {
+				return true;
 			}
 		}
 		return false;
 	}
 
-	public boolean tryLoginMaxAttempts(String emailAddressData, String PasswordData) {
-		loginToTheApplication(emailAddressData, PasswordData);
-		boolean success = true;
-		int count = 0;
-		for (int i = 0; i <= 5; i++) {
-			clickLoginBtn();
-			count = count + 1;
-			System.out.println(count);
-		}
-		if (count == 6 && pleaseTryAgainIn1HourWarMsg.isDisplayed()) {
-			return success;
-		} else
-			return success = false;
+	public AccountSuccessPage performLogin(String emailAddress, String password) {
+		// Log the login attempt
+		System.out.println("Attempting to log in with email: " + emailAddress);
 
+		// Validate inputs
+		if (emailAddress == null || emailAddress.isEmpty() || password == null || password.isEmpty()) {
+			System.out.println("Email or password is missing.");
+			return null; // Alternatively, throw an IllegalArgumentException or handle appropriately
+		}
+		// Click login and return the appropriate page
+		clickOnMyAccountOption();
+		clickOnLoginOption();
+		enterText(emailInputField, emailAddress);
+		enterText(passwordInputField, password);
+		return clickLoginButton();
 	}
 
-	public boolean getPasswordFieldAttribute(String emailData, String passwordData) {
-		boolean success = false;
+	// Attempts login multiple times and returns true if warning is displayed after
+	// max attempts
+	public boolean tryLoginMaxAttempts(String emailData, String passwordData) {
+		performLogin(emailData, passwordData);
+		int attempts = 6;
+
+		for (int i = 1; i <= attempts; i++) {
+			clickLoginButton();
+		}
+		return pleaseTryAgainIn1HourWarningMessage.isDisplayed();
+	}
+
+	// Verifies if password field type attribute is "password"
+	public boolean isPasswordFieldSecured(String emailData, String passwordData) {
 		enterEmail(emailData);
 		enterPassword(passwordData);
-		String passCssval = getAttributeVal(passwordInputfield, "type");
-		if (passCssval.equals("password")) {
-			success = true;
-		}
-		return success;
+		return "password".equals(getAttribute(passwordInputField, "type"));
 	}
 
-	public boolean PasswordCopyFunctionality(String passwordData) {
-		boolean success = true;
+	// Verifies that password is not copied to clipboard
+	public boolean isPasswordNonCopyable(String passwordData) {
 		enterPassword(passwordData);
-		copyTextFromField(passwordInputfield);
-		String copiedText = getClipboardText();
-		if (passwordData.equals(copiedText)) {
-			success = false;
-		}
-		return success;
+		copyTextFromField(passwordInputField);
+		return !passwordData.equals(getClipboardText());
 	}
-	public boolean getPasswordFromPageSource (String emailData, String passwordData) {
-		boolean success=true;
+
+	// Verifies password is not visible in page source
+	public boolean isPasswordHiddenInPageSource(String emailData, String passwordData) {
 		enterEmail(emailData);
 		enterPassword(passwordData);
-		String pageSource=getPageSource(driver);
-		if(pageSource.contains(passwordData)) {
-			success=false;
-		}
-		return success;
+		return !getPageSource().contains(passwordData);
 	}
-	public void changePasswordAndLoginWithNewCredentials(String emailAddressData, String PasswordData) {
-		loginToTheApplication(emailAddressData,PasswordData);
-		
-		
-		
-	}
+
 }

@@ -44,8 +44,11 @@ public class WebEventListener extends BaseSteps implements WebDriverListener {
     }
 
     public void afterClick(WebElement element) {
-        logger.info("Clicked on: {}", getElementDescription(element));
-        System.out.println("Clicked on: " + element.getAttribute("outerHTML"));
+    	if (element != null) {
+            logger.info("Clicked on: " + element.toString());
+        } else {
+            logger.warn("Clicked on: Unknown element");
+        }
     }
 
     public void beforeChangeValueOf(WebElement element, CharSequence[] keysToSend) {
@@ -103,8 +106,11 @@ public class WebEventListener extends BaseSteps implements WebDriverListener {
     }
 
     public void afterClickOn(WebElement element, WebDriver driver) {
-        logger.info("Clicked on: {}", getElementDescription(element));
-        System.out.println("Clicked on: " + element.toString());
+    	if (element != null) {
+            logger.info("Clicked on: " + element.toString());
+        } else {
+            logger.warn("Clicked on: Unknown element");
+        }
     }
 
     public void beforeFindBy(By by, WebElement element, WebDriver driver) {

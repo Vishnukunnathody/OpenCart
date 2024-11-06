@@ -1,142 +1,77 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Crossbrowser-Suite]" guice-stage="DEVELOPMENT">
+<suite parallel="tests" name="Failed suite [Crossbrowser-Suite]" guice-stage="DEVELOPMENT">
   <listeners>
     <listener class-name="utils.ReportUtil"/>
+    <listener class-name="utils.RetryUtil"/>
   </listeners>
-  <test thread-count="5" name="chrometest(failed)">
-    <parameter name="os" value="Windows"/>
-    <parameter name="browser" value="chrome"/>
-    <classes>
-      <class name="tests.RegisterTest">
-        <methods>
-          <include name="verifyPasswordAndConfirmPasswordToggledToHide"/>
-          <include name="verifyRegisteringWithNotEnteringPassConfirm"/>
-          <include name="verifyRegisterAccountWithoutanyDetails"/>
-          <include name="Setup"/>
-          <include name="verifyThePlaceholders"/>
-          <include name="verifyPassWordFieldFollowComplexityStandards"/>
-          <include name="verifyUserCannotuseInvalidPhoneNumber"/>
-          <include name="verifyCheckboxNotCheckedByDefault"/>
-          <include name="verifyRegisteringWithNotSelectingPrivacyPolicy"/>
-          <include name="verifyAsterickSymbolForMandatoryFields"/>
-          <include name="verifyConfirmationEmailSendForSuccessfullRegistration"/>
-          <include name="verifyRegisterAccountUsingMandatoryFields"/>
-          <include name="verifyRegisterAccountNoSelectedForNewsletter"/>
-          <include name="verifyInvalidEmailTooltipMsg"/>
-          <include name="verifyRegisteringWithExistingDetails"/>
-          <include name="verifyRegisterAccountYesSelectedForNewsletter"/>
-          <include name="tearDown"/>
-          <include name="verifyRegisteringWithDifferentPassAndConfirmPass"/>
-          <include name="verifyDiffWayNavigatingToRegisterAccount"/>
-          <include name="verifyRegisterAccountUsingAllFields"/>
-        </methods>
-      </class> <!-- tests.RegisterTest -->
-      <class name="tests.LoginTest">
-        <methods>
-          <include name="verifyPasswordFieldToggleToHide"/>
-          <include name="verifyPasswordCannotCopied"/>
-          <include name="Setup"/>
-          <include name="verifyMaxLoginAttempts"/>
-          <include name="verifyPasswordNotVisibleInPageSource"/>
-          <include name="verifyPlaceholdersOnLoginPage"/>
-          <include name="verifyLoggingAfterchangingPassword"/>
-          <include name="verifyLoginToApplicationUsingvalidCredentials"/>
-          <include name="verifyForgotPasswordLink"/>
-          <include name="tearDown"/>
-          <include name="verifyLoginToApplicationUsingInvalidCredentials"/>
-        </methods>
-      </class> <!-- tests.LoginTest -->
-    </classes>
-  </test> <!-- chrometest(failed) -->
-  <test thread-count="5" name="edgetest(failed)">
-    <parameter name="os" value="Windows"/>
-    <parameter name="browser" value="edge"/>
-    <classes>
-      <class name="tests.RegisterTest">
-        <methods>
-          <include name="verifyPasswordAndConfirmPasswordToggledToHide"/>
-          <include name="verifyRegisteringWithNotEnteringPassConfirm"/>
-          <include name="verifyPassWordFieldFollowComplexityStandards"/>
-          <include name="verifyThePlaceholders"/>
-          <include name="verifyRegisterAccountWithoutanyDetails"/>
-          <include name="Setup"/>
-          <include name="verifyUserCannotuseInvalidPhoneNumber"/>
-          <include name="verifyCheckboxNotCheckedByDefault"/>
-          <include name="verifyRegisteringWithNotSelectingPrivacyPolicy"/>
-          <include name="verifyAsterickSymbolForMandatoryFields"/>
-          <include name="verifyConfirmationEmailSendForSuccessfullRegistration"/>
-          <include name="verifyRegisterAccountUsingMandatoryFields"/>
-          <include name="verifyRegisterAccountNoSelectedForNewsletter"/>
-          <include name="verifyInvalidEmailTooltipMsg"/>
-          <include name="verifyRegisteringWithExistingDetails"/>
-          <include name="verifyRegisterAccountYesSelectedForNewsletter"/>
-          <include name="tearDown"/>
-          <include name="verifyRegisteringWithDifferentPassAndConfirmPass"/>
-          <include name="verifyDiffWayNavigatingToRegisterAccount"/>
-          <include name="verifyRegisterAccountUsingAllFields"/>
-        </methods>
-      </class> <!-- tests.RegisterTest -->
-      <class name="tests.LoginTest">
-        <methods>
-          <include name="verifyPasswordFieldToggleToHide"/>
-          <include name="verifyPasswordCannotCopied"/>
-          <include name="Setup"/>
-          <include name="verifyMaxLoginAttempts"/>
-          <include name="verifyPasswordNotVisibleInPageSource"/>
-          <include name="verifyPlaceholdersOnLoginPage"/>
-          <include name="verifyLoginToApplicationUsingvalidCredentials"/>
-          <include name="verifyLoggingAfterchangingPassword"/>
-          <include name="verifyForgotPasswordLink"/>
-          <include name="tearDown"/>
-          <include name="verifyLoginToApplicationUsingInvalidCredentials"/>
-        </methods>
-      </class> <!-- tests.LoginTest -->
-    </classes>
-  </test> <!-- edgetest(failed) -->
-  <test thread-count="5" name="firefoxtest(failed)">
+  <test thread-count="5" parallel="tests" name="firefoxtest(failed)">
     <parameter name="os" value="Windows"/>
     <parameter name="browser" value="firefox"/>
     <classes>
-      <class name="tests.RegisterTest">
-        <methods>
-          <include name="verifyPasswordAndConfirmPasswordToggledToHide"/>
-          <include name="verifyRegisteringWithNotEnteringPassConfirm"/>
-          <include name="verifyRegisterAccountWithoutanyDetails"/>
-          <include name="Setup"/>
-          <include name="verifyPassWordFieldFollowComplexityStandards"/>
-          <include name="verifyThePlaceholders"/>
-          <include name="verifyUserCannotuseInvalidPhoneNumber"/>
-          <include name="verifyCheckboxNotCheckedByDefault"/>
-          <include name="verifyRegisteringWithNotSelectingPrivacyPolicy"/>
-          <include name="verifyAsterickSymbolForMandatoryFields"/>
-          <include name="verifyConfirmationEmailSendForSuccessfullRegistration"/>
-          <include name="verifyRegisterAccountUsingMandatoryFields"/>
-          <include name="verifyRegisterAccountNoSelectedForNewsletter"/>
-          <include name="verifyRegisterAccountYesSelectedForNewsletter"/>
-          <include name="verifyInvalidEmailTooltipMsg"/>
-          <include name="verifyRegisteringWithExistingDetails"/>
-          <include name="tearDown"/>
-          <include name="verifyRegisteringWithDifferentPassAndConfirmPass"/>
-          <include name="verifyDiffWayNavigatingToRegisterAccount"/>
-          <include name="verifyRegisterAccountUsingAllFields"/>
-        </methods>
-      </class> <!-- tests.RegisterTest -->
       <class name="tests.LoginTest">
         <methods>
-          <include name="verifyPasswordFieldToggleToHide"/>
-          <include name="verifyPasswordCannotCopied"/>
-          <include name="Setup"/>
-          <include name="verifyMaxLoginAttempts"/>
-          <include name="verifyPasswordNotVisibleInPageSource"/>
-          <include name="verifyPlaceholdersOnLoginPage"/>
-          <include name="verifyLoggingAfterchangingPassword"/>
-          <include name="verifyLoginToApplicationUsingvalidCredentials"/>
-          <include name="verifyForgotPasswordLink"/>
+          <include name="verifyNavigationBackAfterLogout_Test"/>
+          <include name="verifyLoginAfterChangingPassword_Test"/>
+          <include name="verifyNavigationBackAfterSuccessfulLogin_Test"/>
+          <include name="setUp"/>
+          <include name="verifyForgotPasswordLink_Test"/>
+          <include name="verifyMaxLoginAttempts_Test"/>
+          <include name="verifyPlaceholdersOnLoginPage_Test"/>
+          <include name="verifyPasswordFieldToggleToHide_Test"/>
+          <include name="verifyPasswordNotVisibleInPageSource_Test"/>
+          <include name="verifyPasswordCannotBeCopied_Test"/>
           <include name="tearDown"/>
-          <include name="verifyLoginToApplicationUsingInvalidCredentials"/>
+          <include name="verifyLoginWithInvalidCredentials_Test"/>
+          <include name="verifyLoginWithValidCredentials_Test"/>
         </methods>
       </class> <!-- tests.LoginTest -->
     </classes>
   </test> <!-- firefoxtest(failed) -->
+  <test thread-count="5" parallel="tests" name="chrometest(failed)">
+    <parameter name="os" value="Windows"/>
+    <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="tests.LoginTest">
+        <methods>
+          <include name="verifyNavigationBackAfterLogout_Test"/>
+          <include name="verifyLoginAfterChangingPassword_Test"/>
+          <include name="verifyNavigationBackAfterSuccessfulLogin_Test"/>
+          <include name="setUp"/>
+          <include name="verifyMaxLoginAttempts_Test"/>
+          <include name="verifyForgotPasswordLink_Test"/>
+          <include name="verifyPlaceholdersOnLoginPage_Test"/>
+          <include name="verifyPasswordFieldToggleToHide_Test"/>
+          <include name="verifyPasswordNotVisibleInPageSource_Test"/>
+          <include name="verifyLoginWithInvalidCredentials_Test"/>
+          <include name="tearDown"/>
+          <include name="verifyPasswordCannotBeCopied_Test"/>
+          <include name="verifyLoginWithValidCredentials_Test"/>
+        </methods>
+      </class> <!-- tests.LoginTest -->
+    </classes>
+  </test> <!-- chrometest(failed) -->
+  <test thread-count="5" parallel="tests" name="edgetest(failed)">
+    <parameter name="os" value="Windows"/>
+    <parameter name="browser" value="edge"/>
+    <classes>
+      <class name="tests.LoginTest">
+        <methods>
+          <include name="verifyNavigationBackAfterLogout_Test"/>
+          <include name="verifyLoginAfterChangingPassword_Test"/>
+          <include name="verifyNavigationBackAfterSuccessfulLogin_Test"/>
+          <include name="setUp"/>
+          <include name="verifyForgotPasswordLink_Test"/>
+          <include name="verifyMaxLoginAttempts_Test"/>
+          <include name="verifyPlaceholdersOnLoginPage_Test"/>
+          <include name="verifyPasswordFieldToggleToHide_Test"/>
+          <include name="verifyPasswordNotVisibleInPageSource_Test"/>
+          <include name="tearDown"/>
+          <include name="verifyLoginWithInvalidCredentials_Test"/>
+          <include name="verifyPasswordCannotBeCopied_Test"/>
+          <include name="verifyLoginWithValidCredentials_Test"/>
+        </methods>
+      </class> <!-- tests.LoginTest -->
+    </classes>
+  </test> <!-- edgetest(failed) -->
 </suite> <!-- Failed suite [Crossbrowser-Suite] -->

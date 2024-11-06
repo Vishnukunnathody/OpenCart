@@ -1,100 +1,82 @@
 package utils;
 
 import java.util.HashMap;
-
 import org.testng.annotations.DataProvider;
 
 public class ExcelUtil {
 
-	@DataProvider(name = "hashDataProvider")
-	public static Object[][] getTestData(MyXLSReader xls_received, String testName, String sheetName) throws Exception {
+    /**
+     * DataProvider method to retrieve test data from Excel in the form of a HashMap for each test case.
+     *
+     * @param xls_received  MyXLSReader instance for reading Excel data
+     * @param testName      Name of the test case to retrieve data for
+     * @param sheetName     Name of the sheet containing the test data
+     * @return              2D Object array compatible with TestNG's DataProvider
+     * @throws Exception    if there is an error in retrieving the test data
+     */
+    @DataProvider(name = "hashDataProvider")
+    public static Object[][] getTestData(MyXLSReader xls_received, String testName, String sheetName) throws Exception {
 
-		MyXLSReader xls = xls_received;
+        int testStartRowNumber = 1;
+        // Find the starting row for the specified test case
+        while (!xls_received.getCellData(sheetName, 1, testStartRowNumber).equals(testName)) {
+            testStartRowNumber++;
+        }
 
-		String testCaseName = testName;
+        int columnStartRowNumber = testStartRowNumber + 1;
+        int dataStartRowNumber = testStartRowNumber + 2;
 
-		String testDataSheet = sheetName;
+        // Calculate the number of data rows
+        int rows = 0;
+        while (!xls_received.getCellData(sheetName, 1, dataStartRowNumber + rows).isEmpty()) {
+            rows++;
+        }
 
-		int testStartRowNumber = 1;
+        // Calculate the number of data columns
+        int columns = 1;
+        while (!xls_received.getCellData(sheetName, columns, columnStartRowNumber).isEmpty()) {
+            columns++;
+        }
 
-		while (!(xls.getCellData(testDataSheet, 1, testStartRowNumber).equals(testCaseName))) {
+        Object[][] testDataArray = new Object[rows][1];
 
-			testStartRowNumber++;
+        // Read data into HashMap and populate the test data array
+        for (int i = 0, row = dataStartRowNumber; i < rows; i++, row++) {
+            HashMap<String, String> dataMap = new HashMap<>();
 
-		}
+            for (int j = 0, column = 1; j < columns - 1; j++, column++) {
+                String key = xls_received.getCellData(sheetName, column, columnStartRowNumber);
+                String value = xls_received.getCellData(sheetName, column, row);
+                dataMap.put(key, value);
+            }
 
-		int columnStartRowNumber = testStartRowNumber + 1;
-		int dataStartRowNumber = testStartRowNumber + 2;
+            testDataArray[i][0] = dataMap;
+        }
 
-		int rows = 0;
-		while (!(xls.getCellData(testDataSheet, 1, dataStartRowNumber + rows).equals(""))) {
+        return testDataArray;
+    }
 
-			rows++;
+    /**
+     * Checks if a given test case is marked as runnable based on the 'Runmode' flag in the Excel sheet.
+     *
+     * @param xls_received  MyXLSReader instance for reading Excel data
+     * @param testName      Name of the test case to check
+     * @param sheetName     Name of the sheet containing the test data
+     * @return              true if the test case is marked as runnable, otherwise false
+     */
+    public static boolean isRunnable(MyXLSReader xls_received, String testName, String sheetName) {
 
-		}
+        int totalRows = xls_received.getRowCount(sheetName);
 
-		// Total number of columns in the required test
-		int columns = 1;
+        for (int row = 2; row <= totalRows; row++) {
+            String currentTestName = xls_received.getCellData(sheetName, 1, row);
 
-		while (!(xls.getCellData(testDataSheet, columns, columnStartRowNumber).equals(""))) {
+            if (currentTestName.equals(testName)) {
+                String runmode = xls_received.getCellData(sheetName, "Runmode", row);
+                return "Y".equalsIgnoreCase(runmode);
+            }
+        }
 
-			columns++;
-
-		}
-
-		Object[][] obj = new Object[rows][1];
-
-		HashMap<String, String> map = null;
-
-		// Reading the data in the test
-		for (int i = 0, row = dataStartRowNumber; row < dataStartRowNumber + rows; row++, i++) {
-
-			map = new HashMap<String, String>();
-
-			for (int j = 0, column = 1; column < columns; column++, j++) {
-
-				String key = xls.getCellData(testDataSheet, column, columnStartRowNumber);
-
-				String value = xls.getCellData(testDataSheet, column, row);
-
-				map.put(key, value);
-
-			}
-
-			obj[i][0] = map;
-
-		}
-
-		return obj;
-
-	}
-
-	public static boolean isRunnable(MyXLSReader xls_received, String tName, String sheet) {
-
-		String sheetName = sheet;
-
-		MyXLSReader xls = xls_received;
-
-		int rows = xls.getRowCount(sheetName);
-
-		for (int r = 2; r <= rows; r++) {
-
-			String testName = xls.getCellData(sheetName, 1, r);
-
-			if (testName.equals(tName)) {
-
-				String runmode = xls.getCellData(sheetName, "Runmode", r);
-
-				if (runmode.equals("Y"))
-					return true;
-				else
-					return false;
-
-			}
-
-		}
-
-		return false;
-
-	}
+        return false;
+    }
 }

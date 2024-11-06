@@ -23,119 +23,126 @@ import com.aventstack.extentreports.reporter.configuration.Theme;
 
 import base.BasePage;
 
- 
 public class ReportUtil implements ITestListener {
-	
-	private ExtentSparkReporter sparkReporter;
-	private ExtentReports extent;
-	public static ExtentTest test;
-	static WebDriver driver;
-	private static Properties prop;
-	String repName;
-	public static Logger logger = LogManager.getLogger(ReportUtil.class);
 
-	public static void setProperties(Properties properties) {
-	    prop = properties;
-	}
-	public static void setDriver(WebDriver driver) {
-		ReportUtil.driver = driver;
-	}
-	public static String addStepLog(Status status, String message) {
-		if (test != null) {
-			test.log(status, message);
-		}
-		return message;
-	}
-	@Override
-	public void onStart(ITestContext testContext) {
-      
-		String timeStamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());// creating a time stamp and
-																							// returning in a string format.
-		repName = "Test-Report-" + timeStamp + ".html";// creating a report name with .html format
-		sparkReporter = new ExtentSparkReporter(System.getProperty("user.dir") + "\\reports\\" + repName);// specify the
-																								// location of the report.
-		sparkReporter.config().setDocumentTitle("opencart Automation Report");// Title of the report
-		sparkReporter.config().setReportName("opencart Functional Testing");// name of the report.
-		sparkReporter.config().setTheme(Theme.DARK);// Theme of the report.
+    private ExtentSparkReporter sparkReporter;
+    private ExtentReports extent;
+    public static ExtentTest test;
+    static WebDriver driver;
+    private static Properties prop;
+    private String reportName;
+    public static Logger logger = LogManager.getLogger(ReportUtil.class);
 
-		extent = new ExtentReports();
-		extent.attachReporter(sparkReporter);
-		extent.setSystemInfo("Application", "opencart");//
-		extent.setSystemInfo("Module", "Admin");
-		extent.setSystemInfo("Sub Module", "Customers");
-		extent.setSystemInfo("User Name", System.getProperty("user.name"));// displays the tester name
-		extent.setSystemInfo("Environment", "QA");
-		
-		if (prop != null) {
-			String os = prop.getProperty("os", System.getProperty("os"));
-	         extent.setSystemInfo("Operating System", os);
+    public static void setProperties(Properties properties) {
+        prop = properties;
+    }
 
-	        String browser = prop.getProperty("browser", System.getProperty("browser"));
-	        extent.setSystemInfo("Browser", browser);
-	   } else {
-	        System.out.println("Properties not set in ReportUtil. Please set it before running tests.");
-	    }
+    public static void setDriver(WebDriver driver) {
+        ReportUtil.driver = driver;
+    }
 
-		List<String> includedGroups = testContext.getCurrentXmlTest().getIncludedGroups();
-		if (!includedGroups.isEmpty()) {
-			extent.setSystemInfo("Groups", includedGroups.toString()); // displays the info about the groupings
-		}
+    public static String addStepLog(Status status, String message) {
+        if (test != null) {
+            test.log(status, message);
+        }
+        return message;
+    }
 
-		logger.info("Test execution started for: {}", testContext.getSuite().getName());
+    @Override
+    public void onStart(ITestContext testContext) {
+        createReport(testContext);
+        logger.info("Test execution started for: {}", testContext.getSuite().getName());
+    }
 
-	}
+    private void createReport(ITestContext testContext) {
+        String timeStamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
+        reportName = "Test-Report-" + timeStamp + ".html";
+        sparkReporter = new ExtentSparkReporter(System.getProperty("user.dir") + "\\reports\\" + reportName);
+        
+        sparkReporter.config().setDocumentTitle("OpenCart Automation Report");
+        sparkReporter.config().setReportName("OpenCart Functional Testing");
+        sparkReporter.config().setTheme(Theme.DARK);
+        
+        extent = new ExtentReports();
+        extent.attachReporter(sparkReporter);
+        
+        setSystemInfo();
+        List<String> includedGroups = testContext.getCurrentXmlTest().getIncludedGroups();
+        if (!includedGroups.isEmpty()) {
+            extent.setSystemInfo("Groups", includedGroups.toString());
+        }
+    }
 
-	@Override
-	public void onTestStart(ITestResult result) {
-		test = extent.createTest(result.getName());
-		logger.info("Test '{}' started running.", result.getName());
-		test.log(Status.INFO, result.getName() + "    TEST EXECUTION STARTED.");
+    private void setSystemInfo() {
+        extent.setSystemInfo("Application", "OpenCart");
+        extent.setSystemInfo("Module", "Admin");
+        extent.setSystemInfo("Sub Module", "Customers");
+        extent.setSystemInfo("User Name", System.getProperty("user.name"));
+        extent.setSystemInfo("Environment", "QA");
 
-	}
-	@Override
-	public void onTestSuccess(ITestResult result) {
-		test.assignCategory(result.getMethod().getGroups()); // on success getting the groups in the report
-		test.log(Status.PASS, result.getName() + "    TEST GOT PASSED.");
-		logger.info("Test '{}'Test PASSED.", result.getName());
-	}
-	@Override
-	public void onTestFailure(ITestResult result) {
-		test.assignCategory(result.getMethod().getGroups()) ;
-		test.log(Status.INFO, result.getThrowable().getMessage());// displays the fail message
-		test.log(Status.FAIL, result.getName() + " TEST GOT FAILED");
-		
-		 // Capture screenshot on final failure
-		if (driver != null) {
-			try {
-				String imgPath = new BasePage(driver).captureScreen(result.getName());
-				test.addScreenCaptureFromPath(imgPath);
-			} catch (IOException e1) {
-				e1.printStackTrace();
-			}
+        if (prop != null) {
+            String os = prop.getProperty("os", System.getProperty("os.name"));
+            extent.setSystemInfo("Operating System", os);
 
-		} else {
-			test.log(Status.WARNING, "WebDriver is not initialized. Cannot capture screenshot.");
-			System.out.println("Screenshot not taken: driver is null.");
-		}
-		logger.info("Test '{}' failed after all retry attempts.", result.getName());
-	}
-	@Override
-	public void onFinish(ITestContext testContext) {
-		extent.flush();
-		String pathOfExtentReport = System.getProperty("user.dir") + "\\reports\\" + repName;
-		File extentReport = new File(pathOfExtentReport);
+            String browser = prop.getProperty("browser", System.getProperty("browser"));
+            extent.setSystemInfo("Browser", browser);
+        } else {
+            logger.warn("Properties not set in ReportUtil. Please set it before running tests.");
+        }
+    }
 
-		try {
-			Desktop.getDesktop().browse(extentReport.toURI()); // opens the report automatically in the browser when the
-																// testing is complete.
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		logger.info("Test execution Finished for: {}", testContext.getSuite().getName());
+    @Override
+    public void onTestStart(ITestResult result) {
+        test = extent.createTest(result.getName());
+        logger.info("Test '{}' started running.", result.getName());
+        test.log(Status.INFO, result.getName() + " TEST EXECUTION STARTED.");
+    }
 
-		// E-mailing the report
+    @Override
+    public void onTestSuccess(ITestResult result) {
+        test.assignCategory(result.getMethod().getGroups());
+        test.log(Status.PASS, result.getName() + " TEST GOT PASSED.");
+        logger.info("Test '{}' PASSED.", result.getName());
+    }
 
-	}
+    @Override
+    public void onTestFailure(ITestResult result) {
+        test.assignCategory(result.getMethod().getGroups());
+        test.log(Status.FAIL, result.getName() + " TEST GOT FAILED. " + result.getThrowable().getMessage());
+        
+        captureScreenshot(result);
+        logger.error("Test '{}' failed after all retry attempts.", result.getName());
+    }
+
+    private void captureScreenshot(ITestResult result) {
+        if (driver != null) {
+            try {
+                String imgPath = new BasePage(driver).captureScreenshot(result.getName());
+                test.addScreenCaptureFromPath(imgPath);
+            } catch (IOException e) {
+                logger.error("Error capturing screenshot for test '{}': {}", result.getName(), e.getMessage());
+            }
+        } else {
+            test.log(Status.WARNING, "WebDriver is not initialized. Cannot capture screenshot.");
+            logger.warn("Screenshot not taken: WebDriver is null.");
+        }
+    }
+
+    @Override
+    public void onFinish(ITestContext testContext) {
+        extent.flush();
+        openReport();
+        logger.info("Test execution finished for: {}", testContext.getSuite().getName());
+    }
+
+    private void openReport() {
+        String pathOfExtentReport = System.getProperty("user.dir") + "\\reports\\" + reportName;
+        File extentReport = new File(pathOfExtentReport);
+
+        try {
+            Desktop.getDesktop().browse(extentReport.toURI());
+        } catch (IOException e) {
+            logger.error("Failed to open report: {}", e.getMessage());
+        }
+    }
 }
-
-	
