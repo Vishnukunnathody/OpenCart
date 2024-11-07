@@ -6,7 +6,6 @@
     <listeners>
         <!-- Custom listener for generating reports -->
         <listener class-name="utils.ReportUtil"></listener>
-        
         <!-- Custom listener to retry failed tests -->
         <listener class-name="utils.RetryUtil"></listener>
     </listeners>
@@ -15,36 +14,38 @@
     <test name="chrometest">
         <!-- Parameters for Chrome Test -->
         <parameter name="os" value="Windows"></parameter>
-		<parameter name="browser" value="Chrome"></parameter>
-		<parameter name="environment" value="Stage"></parameter>
+        <parameter name="browser" value="Chrome"></parameter>
+        <parameter name="environment" value="Test"></parameter>
          <!-- Test classes to run for Chrome -->
         <classes>
+           
             <class name="tests.LogoutTest"></class>
         </classes>
     </test>
     
     <!-- Edge Test: Running on Edge Browser -->
-    <test name="edgetest">
+    <test name="Edgetest">
         <!-- Parameters for Edge Test -->
         <parameter name="os" value="Windows"></parameter>
-		<parameter name="browser" value="Chrome"></parameter>
-		<parameter name="environment" value="Stage"></parameter>
+        <parameter name="browser" value="Edge"></parameter>
+        <parameter name="environment" value="Test"></parameter>
          <!-- Test classes to run for Edge -->
         <classes>
+           
             <class name="tests.LogoutTest"></class>
          </classes>
     </test>
     
-    <!-- Firefox Test: Running on Firefox Browser -->
-    <test name="firefoxtest">
-        <!-- Parameters for Firefox Test -->
+    <!-- Edge Test: Running on FireFox Browser -->
+    <test name="Firefoxtest">
+        <!-- Parameters for Edge Test -->
         <parameter name="os" value="Windows"></parameter>
-		<parameter name="browser" value="Chrome"></parameter>
-		<parameter name="environment" value="Stage"></parameter>
-        <!-- Test classes to run for Firefox -->
+        <parameter name="browser" value="Firefox"></parameter>
+        <parameter name="environment" value="Stage"></parameter>
+         <!-- Test classes to run for Edge -->
         <classes>
-             <class name="tests.LogoutTest"></class>
-        </classes>
+			
+            <class name="tests.LogoutTest"></class>
+         </classes>
     </test>
-    
 </suite>

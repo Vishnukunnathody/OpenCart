@@ -25,27 +25,37 @@ import base.BasePage;
 
 public class ReportUtil implements ITestListener {
 
-    private ExtentSparkReporter sparkReporter;
-    private ExtentReports extent;
-    public static ExtentTest test;
-    static WebDriver driver;
-    private static Properties prop;
+    static final Logger logger = LogManager.getLogger(ReportUtil.class);
+
+    // Thread-local variables to store instances for each test thread
+    private ThreadLocal<ExtentReports> extentReports = new ThreadLocal<>();
+    public static ThreadLocal<ExtentTest> test = new ThreadLocal<>();
+    private static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
+    private static ThreadLocal<Properties> prop = new ThreadLocal<>();
+
+    private boolean systemInfoSet = false;  // Flag to set system info once per suite
     private String reportName;
-    public static Logger logger = LogManager.getLogger(ReportUtil.class);
 
+    // Set properties for the report (instance method, non-static)
     public static void setProperties(Properties properties) {
-        prop = properties;
+        prop.set(properties);
     }
 
-    public static void setDriver(WebDriver driver) {
-        ReportUtil.driver = driver;
+    // Set the WebDriver for the report capture (instance method, non-static)
+    public static void setDriver(WebDriver driverInstance) {
+        driver.set(driverInstance);
     }
 
-    public static String addStepLog(Status status, String message) {
-        if (test != null) {
-            test.log(status, message);
+    // Thread-safe method to add step logs
+    public static void addStepLog(Status status, String message) {
+        if (getTest() != null) {
+            getTest().log(status, message);
         }
-        return message;
+    }
+
+    // Thread-local method to access the current test instance
+    public static ExtentTest getTest() {
+        return test.get();
     }
 
     @Override
@@ -57,16 +67,21 @@ public class ReportUtil implements ITestListener {
     private void createReport(ITestContext testContext) {
         String timeStamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
         reportName = "Test-Report-" + timeStamp + ".html";
-        sparkReporter = new ExtentSparkReporter(System.getProperty("user.dir") + "\\reports\\" + reportName);
-        
+        ExtentSparkReporter sparkReporter = new ExtentSparkReporter(System.getProperty("user.dir") + "\\reports\\" + reportName);
+
         sparkReporter.config().setDocumentTitle("OpenCart Automation Report");
         sparkReporter.config().setReportName("OpenCart Functional Testing");
         sparkReporter.config().setTheme(Theme.DARK);
-        
-        extent = new ExtentReports();
+
+        ExtentReports extent = new ExtentReports();
         extent.attachReporter(sparkReporter);
-        
-        setSystemInfo(testContext);
+        extentReports.set(extent);
+
+        if (!systemInfoSet) {
+            setSystemInfo(testContext);
+            systemInfoSet = true;
+        }
+
         List<String> includedGroups = testContext.getCurrentXmlTest().getIncludedGroups();
         if (!includedGroups.isEmpty()) {
             extent.setSystemInfo("Groups", includedGroups.toString());
@@ -74,62 +89,74 @@ public class ReportUtil implements ITestListener {
     }
 
     private void setSystemInfo(ITestContext testContext) {
+        ExtentReports extent = extentReports.get();
         extent.setSystemInfo("Application", "OpenCart");
         extent.setSystemInfo("Module", "Admin");
         extent.setSystemInfo("Sub Module", "Customers");
         extent.setSystemInfo("User Name", System.getProperty("user.name"));
-        
-        String os = testContext.getCurrentXmlTest().getParameter("os");
-		extent.setSystemInfo("Operating System", os);// operating system info
 
-		String browser = testContext.getCurrentXmlTest().getParameter("browser");
-		extent.setSystemInfo("Browser", browser); // browser info 
-		
-		String env = testContext.getCurrentXmlTest().getParameter("environment");
-		extent.setSystemInfo("Environment", env);// operating system info
-		
-}
+        String os = testContext.getCurrentXmlTest().getParameter("os");
+        extent.setSystemInfo("Operating System", os);
+
+        String browser = testContext.getCurrentXmlTest().getParameter("browser");
+        extent.setSystemInfo("Browser", browser);
+
+        String env = testContext.getCurrentXmlTest().getParameter("environment");
+        extent.setSystemInfo("Environment", env);
+    }
 
     @Override
     public void onTestStart(ITestResult result) {
-        test = extent.createTest(result.getName());
-        logger.info("Test '{}' started running.", result.getName());
-        test.log(Status.INFO, result.getName() + " TEST EXECUTION STARTED.");
+        // Create a new ExtentTest instance for the current thread
+        ExtentTest testInstance = extentReports.get().createTest(result.getName());
+        test.set(testInstance);
+
+        // Capture the browser dynamically for each test
+        String browser = result.getTestContext().getCurrentXmlTest().getParameter("browser");
+        if (browser == null) {
+            browser = "Unknown Browser";  // Fallback if browser info is missing
+        }
+        test.get().log(Status.INFO, "Running on Browser: " + browser);
+        logger.info("Test '{}' started on browser: {}", result.getName(), browser);
+        
+        // Log the test start event
+        test.get().log(Status.INFO, result.getName() + " TEST EXECUTION STARTED.");
     }
 
     @Override
     public void onTestSuccess(ITestResult result) {
-        test.assignCategory(result.getMethod().getGroups());
-        test.log(Status.PASS, result.getName() + " TEST GOT PASSED.");
+        test.get().assignCategory(result.getMethod().getGroups());
+        test.get().log(Status.PASS, result.getName() + " TEST GOT PASSED.");
         logger.info("Test '{}' PASSED.", result.getName());
     }
 
     @Override
     public void onTestFailure(ITestResult result) {
-        test.assignCategory(result.getMethod().getGroups());
-        test.log(Status.FAIL, result.getName() + " TEST GOT FAILED. " + result.getThrowable().getMessage());
-        
+        test.get().assignCategory(result.getMethod().getGroups());
+        test.get().log(Status.FAIL, result.getName() + " TEST GOT FAILED. " + result.getThrowable().getMessage());
+
         captureScreenshot(result);
-        logger.error("Test '{}' failed after all retry attempts.", result.getName());
+        logger.error("Test '{}' failed.", result.getName());
     }
 
     private void captureScreenshot(ITestResult result) {
-        if (driver != null) {
+        if (driver.get() != null) {
             try {
-                String imgPath = new BasePage(driver).captureScreenshot(result.getName());
-                test.addScreenCaptureFromPath(imgPath);
+                String imgPath = new BasePage(driver.get()).captureScreenshot(result.getName());
+                test.get().addScreenCaptureFromPath(imgPath);
             } catch (IOException e) {
                 logger.error("Error capturing screenshot for test '{}': {}", result.getName(), e.getMessage());
             }
         } else {
-            test.log(Status.WARNING, "WebDriver is not initialized. Cannot capture screenshot.");
+            test.get().log(Status.WARNING, "WebDriver is not initialized. Cannot capture screenshot.");
             logger.warn("Screenshot not taken: WebDriver is null.");
         }
     }
 
     @Override
     public void onFinish(ITestContext testContext) {
-        extent.flush();
+        // Flush the reports once all tests are done
+        extentReports.get().flush();
         openReport();
         logger.info("Test execution finished for: {}", testContext.getSuite().getName());
     }

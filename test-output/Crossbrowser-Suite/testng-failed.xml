@@ -5,73 +5,80 @@
     <listener class-name="utils.ReportUtil"/>
     <listener class-name="utils.RetryUtil"/>
   </listeners>
-  <test thread-count="5" parallel="tests" name="firefoxtest(failed)">
-    <parameter name="os" value="Windows"/>
-    <parameter name="browser" value="firefox"/>
-    <classes>
-      <class name="tests.LoginTest">
-        <methods>
-          <include name="verifyNavigationBackAfterLogout_Test"/>
-          <include name="verifyLoginAfterChangingPassword_Test"/>
-          <include name="verifyNavigationBackAfterSuccessfulLogin_Test"/>
-          <include name="setUp"/>
-          <include name="verifyForgotPasswordLink_Test"/>
-          <include name="verifyMaxLoginAttempts_Test"/>
-          <include name="verifyPlaceholdersOnLoginPage_Test"/>
-          <include name="verifyPasswordFieldToggleToHide_Test"/>
-          <include name="verifyPasswordNotVisibleInPageSource_Test"/>
-          <include name="verifyPasswordCannotBeCopied_Test"/>
-          <include name="tearDown"/>
-          <include name="verifyLoginWithInvalidCredentials_Test"/>
-          <include name="verifyLoginWithValidCredentials_Test"/>
-        </methods>
-      </class> <!-- tests.LoginTest -->
-    </classes>
-  </test> <!-- firefoxtest(failed) -->
   <test thread-count="5" parallel="tests" name="chrometest(failed)">
+    <parameter name="environment" value="Test"/>
     <parameter name="os" value="Windows"/>
-    <parameter name="browser" value="chrome"/>
+    <parameter name="browser" value="Chrome"/>
     <classes>
-      <class name="tests.LoginTest">
+      <class name="tests.RegisterTest">
         <methods>
-          <include name="verifyNavigationBackAfterLogout_Test"/>
-          <include name="verifyLoginAfterChangingPassword_Test"/>
-          <include name="verifyNavigationBackAfterSuccessfulLogin_Test"/>
           <include name="setUp"/>
-          <include name="verifyMaxLoginAttempts_Test"/>
-          <include name="verifyForgotPasswordLink_Test"/>
-          <include name="verifyPlaceholdersOnLoginPage_Test"/>
-          <include name="verifyPasswordFieldToggleToHide_Test"/>
-          <include name="verifyPasswordNotVisibleInPageSource_Test"/>
-          <include name="verifyLoginWithInvalidCredentials_Test"/>
+          <include name="verifyConfirmationEmailSentForSuccessfulRegistration"/>
+          <include name="initialize"/>
+          <include name="verifyUserCannotUseInvalidPhoneNumberForRegistration_Test" invocation-numbers="0 1 2 3 4"/>
           <include name="tearDown"/>
-          <include name="verifyPasswordCannotBeCopied_Test"/>
-          <include name="verifyLoginWithValidCredentials_Test"/>
+          <include name="verifyPasswordFieldFollowsComplexityStandards" invocation-numbers="0 1 2 3 4 5 6"/>
         </methods>
-      </class> <!-- tests.LoginTest -->
+      </class> <!-- tests.RegisterTest -->
+      <class name="tests.LogoutTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="initialize"/>
+          <include name="verifyLogoutFromMainMenuDropdown_Test"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- tests.LogoutTest -->
     </classes>
   </test> <!-- chrometest(failed) -->
-  <test thread-count="5" parallel="tests" name="edgetest(failed)">
+  <test thread-count="5" parallel="tests" name="Edgetest(failed)">
+    <parameter name="environment" value="Test"/>
     <parameter name="os" value="Windows"/>
-    <parameter name="browser" value="edge"/>
+    <parameter name="browser" value="Edge"/>
     <classes>
-      <class name="tests.LoginTest">
+      <class name="tests.RegisterTest">
         <methods>
-          <include name="verifyNavigationBackAfterLogout_Test"/>
-          <include name="verifyLoginAfterChangingPassword_Test"/>
-          <include name="verifyNavigationBackAfterSuccessfulLogin_Test"/>
           <include name="setUp"/>
-          <include name="verifyForgotPasswordLink_Test"/>
-          <include name="verifyMaxLoginAttempts_Test"/>
-          <include name="verifyPlaceholdersOnLoginPage_Test"/>
-          <include name="verifyPasswordFieldToggleToHide_Test"/>
-          <include name="verifyPasswordNotVisibleInPageSource_Test"/>
+          <include name="verifyConfirmationEmailSentForSuccessfulRegistration"/>
+          <include name="initialize"/>
+          <include name="verifyUserCannotUseInvalidPhoneNumberForRegistration_Test" invocation-numbers="0 1 2 3 4"/>
           <include name="tearDown"/>
-          <include name="verifyLoginWithInvalidCredentials_Test"/>
-          <include name="verifyPasswordCannotBeCopied_Test"/>
-          <include name="verifyLoginWithValidCredentials_Test"/>
+          <include name="verifyPasswordFieldFollowsComplexityStandards" invocation-numbers="0 1 2 3 4 5 6"/>
         </methods>
-      </class> <!-- tests.LoginTest -->
+      </class> <!-- tests.RegisterTest -->
+      <class name="tests.LogoutTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="initialize"/>
+          <include name="verifyLogoutFromMainMenuDropdown_Test"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- tests.LogoutTest -->
     </classes>
-  </test> <!-- edgetest(failed) -->
+  </test> <!-- Edgetest(failed) -->
+  <test thread-count="5" parallel="tests" name="Firefoxtest(failed)">
+    <parameter name="environment" value="Stage"/>
+    <parameter name="os" value="Windows"/>
+    <parameter name="browser" value="Firefox"/>
+    <classes>
+      <class name="tests.RegisterTest">
+        <methods>
+          <include name="verifyInvalidEmailTooltipMsgs_Test"/>
+          <include name="setUp"/>
+          <include name="verifyConfirmationEmailSentForSuccessfulRegistration"/>
+          <include name="initialize"/>
+          <include name="verifyUserCannotUseInvalidPhoneNumberForRegistration_Test" invocation-numbers="0 1 2 3 4"/>
+          <include name="tearDown"/>
+          <include name="verifyPasswordFieldFollowsComplexityStandards" invocation-numbers="0 1 2 3 4 5 6"/>
+        </methods>
+      </class> <!-- tests.RegisterTest -->
+      <class name="tests.LogoutTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="initialize"/>
+          <include name="tearDown"/>
+          <include name="verifyLogoutFromMainMenuDropdown_Test"/>
+        </methods>
+      </class> <!-- tests.LogoutTest -->
+    </classes>
+  </test> <!-- Firefoxtest(failed) -->
 </suite> <!-- Failed suite [Crossbrowser-Suite] -->

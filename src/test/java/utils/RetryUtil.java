@@ -26,7 +26,12 @@ public class RetryUtil implements IRetryAnalyzer, IAnnotationTransformer {
         if (retryCount < maxRetryLimit) {
             retryCount++;
             String message = String.format("%s :: ERROR, Retrying test - Attempt %d", result.getName(), retryCount);
-            ReportUtil.test.log(Status.WARNING, message);
+
+            // Access the ExtentTest instance from ThreadLocal
+            if (ReportUtil.test.get() != null) {
+                ReportUtil.test.get().log(Status.WARNING, message);  // Log using the ExtentTest instance
+            }
+            
             ReportUtil.logger.warn(message);
             return true; // Indicate that the test should be retried
         }

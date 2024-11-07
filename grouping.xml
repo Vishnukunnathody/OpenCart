@@ -8,8 +8,8 @@
             <!-- Including only the tests in the 'Master' group -->
             <include name="Master"></include>
             <!-- Uncomment and modify the below lines to include/exclude specific groups -->
-            <exclude name="DataDriven"></exclude> 
-             <exclude name="Sanity"></exclude>
+           <!-- <exclude name="DataDriven"></exclude>  -->
+             <!--<exclude name="Sanity"></exclude>-->
         </run>
     </groups>
     
@@ -24,14 +24,13 @@
     <!-- Test configuration: Specifies which test classes to run -->
     <test name="Test">
 		<parameter name="os" value="Windows"></parameter>
-		<parameter name="browser" value="Chrome"></parameter>
+		<parameter name="browser" value="firefox"></parameter>
 		<parameter name="environment" value="Stage"></parameter>
         <classes>
-            <!-- Test classes to execute -->
-            <!-- <class name="tests.LoginTest"></class>-->
-            <!-- <class name="tests.RegisterTest"></class>-->
             <class name="tests.LogoutTest"></class>
-        </classes>
+            <class name="tests.RegisterTest"></class>
+            <class name="tests.LogoutTest"></class>
+         </classes>
     </test>
     
 </suite>

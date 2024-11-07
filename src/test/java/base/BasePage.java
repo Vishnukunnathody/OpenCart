@@ -1,3 +1,13 @@
+/*
+ * Author : Vishnu Kunnathody
+ * This is the foundational class in this DataDriven Frame work. This class contains a constructor that 
+ * initializes pagefactory, and Webdriver , ActionsClass and WebDriverWait.This class also contains Reusable methods
+ * for Wait mechanism, Element interaction,Alert handling,JS executors ,Dropdown handling ,Iframe handling,
+ * Keybord and mouse actions,etc..
+ * This class is extended to all other Page classes.The Advantages are Reusability,MAintainability,
+ * Readability,This also keep the code DRY(Dont repeat yourself.)
+ */
+
 package base;
 
 import java.awt.Toolkit;
@@ -11,7 +21,6 @@ import java.util.Date;
 import java.util.List;
 import java.util.NoSuchElementException;
 
-import org.apache.commons.lang3.StringUtils;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -38,6 +47,7 @@ public class BasePage {
     protected WebDriver driver;
     protected Actions actions;
     protected WebDriverWait wait;
+    
 
     public BasePage(WebDriver driver) {
         this.driver = driver;

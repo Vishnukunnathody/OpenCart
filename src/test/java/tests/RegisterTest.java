@@ -13,7 +13,6 @@ import pagesobjects.LandingPage;
 import utils.Constant;
 import utils.DataGenUtil;
 import utils.DataProviders;
-import utils.EmailVerifierUtil;
 import utils.ReportUtil;
 
 public class RegisterTest extends BaseSteps {

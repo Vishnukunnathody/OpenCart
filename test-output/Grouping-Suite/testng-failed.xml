@@ -1,67 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Grouping-Suite]" guice-stage="DEVELOPMENT" verbose="3">
+<suite name="Failed suite [Grouping-Suite]" guice-stage="DEVELOPMENT" verbose="2">
   <listeners>
     <listener class-name="utils.ReportUtil"/>
     <listener class-name="utils.RetryUtil"/>
   </listeners>
-  <test thread-count="5" name="Test(failed)" verbose="3">
-    <parameter name="browser" value="chrome"/>
+  <test thread-count="5" name="Test(failed)" verbose="2">
+    <parameter name="environment" value="Stage"/>
+    <parameter name="os" value="Windows"/>
+    <parameter name="browser" value="firefox"/>
     <groups>
       <run>
         <include name="Master"/>
       </run>
     </groups>
     <classes>
-      <class name="tests.RegisterTest">
-        <methods>
-          <include name="verifyRegisteringAccountWithNoSelectedForNewsletter_Test"/>
-          <include name="verifyRegisteringAccountWithoutAnyDetails_Test"/>
-          <include name="verifyRegisteringAccountUsingNonMandatoryFields_Test"/>
-          <include name="setUp"/>
-          <include name="verifyRegisteringAccountWithYesSelectedForNewsletter_Test"/>
-          <include name="verifyRegisterPagePlaceholders_Test"/>
-          <include name="verifyConfirmationEmailSentForSuccessfulRegistration"/>
-          <include name="verifyPasswordAndConfirmPasswordAreHidden"/>
-          <include name="verifyRegistrationWithoutConfirmPasswordInput_Test"/>
-          <include name="verifyPrivacyPolicyCheckboxNotCheckedByDefault"/>
-          <include name="verifyRegisteringAccountUsingMandatoryFields_Test"/>
-          <include name="verifyAsterickSymbolForMandatoryFields_Test"/>
-          <include name="verifyPasswordFieldFollowsComplexityStandards"/>
-          <include name="verifyRegistrationWithoutSelectingPrivacyPolicy"/>
-          <include name="verifyRegisteringWithExistingDetails_Test"/>
-          <include name="verifyInvalidEmailTooltipMsgs_Test"/>
-          <include name="verifyRegisteringWithDifferentPassAndConfirmPass_Test"/>
-          <include name="verifyUserCannotUseInvalidPhoneNumberForRegistration_Test"/>
-          <include name="tearDown"/>
-          <include name="verifyDiffWaysNavigatingToRegisterAccount_Test"/>
-        </methods>
-      </class> <!-- tests.RegisterTest -->
       <class name="tests.LogoutTest">
         <methods>
           <include name="setUp"/>
+          <include name="initialize"/>
           <include name="tearDown"/>
-          <include name="verifyLogoutFromRightColumnOption_Test"/>
           <include name="verifyLogoutFromMainMenuDropdown_Test"/>
         </methods>
       </class> <!-- tests.LogoutTest -->
-      <class name="tests.LoginTest">
-        <methods>
-          <include name="verifyNavigationBackAfterLogout_Test"/>
-          <include name="verifyNavigationBackAfterSuccessfulLogin_Test"/>
-          <include name="verifyLoginAfterChangingPassword_Test"/>
-          <include name="setUp"/>
-          <include name="verifyForgotPasswordLink_Test"/>
-          <include name="verifyMaxLoginAttempts_Test"/>
-          <include name="verifyPasswordFieldToggleToHide_Test"/>
-          <include name="verifyPlaceholdersOnLoginPage_Test"/>
-          <include name="verifyPasswordNotVisibleInPageSource_Test"/>
-          <include name="tearDown"/>
-          <include name="verifyPasswordCannotBeCopied_Test"/>
-          <include name="verifyLoginWithInvalidCredentials_Test"/>
-          <include name="verifyLoginWithValidCredentials_Test"/>
-        </methods>
-      </class> <!-- tests.LoginTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Grouping-Suite] -->

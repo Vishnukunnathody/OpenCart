@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="tests.RegisterTest">
+      <class name="tests.LogoutTest">
         <methods>
-          <include name="verifyRegisteringAccountUsingNonMandatoryFields_Test"/>
           <include name="setUp"/>
           <include name="tearDown"/>
+          <include name="verifyLogoutFromMainMenuDropdown_Test"/>
         </methods>
-      </class> <!-- tests.RegisterTest -->
+      </class> <!-- tests.LogoutTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

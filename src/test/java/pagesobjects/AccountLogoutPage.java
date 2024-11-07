@@ -1,5 +1,11 @@
+/*Author: Vishnu Kunnathody
+ * Each web page in the application is represented by a pageobject class.
+ * This class extends BasePage, inheriting all its utility methods .
+ * This class contains webelements Defined with @FindBy annotations .
+ * Action methods that Defines various interaction with the elements.
+ * Constructor that accepts a WebDriver instance, which is passed to the BasePage constructor using super(driver).
+ */
 package pagesobjects;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
